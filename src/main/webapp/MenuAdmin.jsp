@@ -8,7 +8,7 @@
 <style type="text/css">
   <%@include file="MenuAdmin.css" %>
 </style>
-
+<!-- ULTIMO COMENTARIO-->
 </head>
 <body id="fondo">
 <%! String mensaje=""; %>

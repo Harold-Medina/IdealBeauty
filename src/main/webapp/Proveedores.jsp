@@ -13,6 +13,7 @@
 <%!String mensaje="",ciudad="",direccion="",nombre="",telefono="",  estado="";
 long nit=0L;
 %>
+<!-- ULTIMO COMENTARIO-->
 <%
 //recogemos la respuesta del servlet y la asociamos a variables
 if (request.getParameter("nit")!=null){

@@ -7,6 +7,7 @@
 <title>Ideal Beauty</title>
 <link rel="stylesheet" type="text/css" href="Index.css">
 </head>
+<!-- ULTIMO COMENTARIO-->
 <body id="fondo">
 <div class="content">
    <div class="box-area">
