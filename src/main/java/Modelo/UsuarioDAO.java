@@ -21,7 +21,7 @@ public class UsuarioDAO {
 	public boolean Inserta_Usuario(UsuarioDTO usu) {
 		boolean resul=false;
 		try {
-			String sql="insert into usuario values(?,?,?,?,?)";
+			String sql="insert into usuarios values(?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			
 			ps.setObject(1, usu.getCedula_usuario(), java.sql.Types.BIGINT);
