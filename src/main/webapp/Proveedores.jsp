@@ -10,28 +10,28 @@
 </style>
 </head>
 <body id="fondo">
-<%!String mensaje="",email="",nombre="",password="", usuario="", estado="";
-long cedula=0L;
+<%!String mensaje="",ciudad="",direccion="",nombre="",telefono="",  estado="";
+long nit=0L;
 %>
 <%
 //recogemos la respuesta del servlet y la asociamos a variables
-if (request.getParameter("cedula")!=null){
-	cedula=Long.parseLong(request.getParameter("cedula"));
-	email=request.getParameter("email");
+if (request.getParameter("nit")!=null){
+	nit=Long.parseLong(request.getParameter("nit"));
+	ciudad=request.getParameter("ciudad");
+	direccion=request.getParameter("direccion");	
 	nombre=request.getParameter("nombre");
-	password=request.getParameter("password");
-	usuario=request.getParameter("usuario");
+	telefono=request.getParameter("telefono");
 	estado="disabled";
 }
 %>
 
 <%
 if(request.getParameter("men")!=null){
-	cedula=0L;
-	email="";
+	nit=0L;
+	ciudad="";
+	direccion="";
 	nombre="";
-	password="";
-	usuario="";
+	telefono="";
 	estado="";
 	mensaje = request.getParameter("men");}
     //codigo javascript, mensaje con alert de javascript
@@ -48,7 +48,7 @@ if(request.getParameter("men")!=null){
 				<nav>
 					<a href="MenuAdmin.jsp">Usuarios</a>
                     <a href="Clientes.jsp">Clientes</a>
-                    <a href="#">Proveedores</a>
+                    <a href="Proveedores.jsp">Proveedores</a>
                     <a href="#">Productos</a>
                     <a href="#">Ventas</a>
                     <a href="#">Reportes</a>
@@ -58,23 +58,24 @@ if(request.getParameter("men")!=null){
 	</div>
 <hr>
 
-<form action="" method = "post" class=formul>
+<form action="Proveedor" method = "post" class=formul>
     <table class="tablit">
         <caption>Ingrese los datos para crear un nuevo proveedor</caption>
         	<tr><th id="padin"><label>NIT</label>
-        	<input type="number" placeholder="ingrese NIT proveedor" name="nit_proveedor" value="<%=cedula%>" <%=estado%> required>
-        	<input type="hidden" name="nitprov" value="<%=cedula%>">
+        	<input type="number" placeholder="Ingrese NIT proveedor" name="nitproveedor" value="<%=nit%>" <%=estado%> required>
+        	<input type="hidden" name="nitprov" value="<%=nit%>">
         	</th>
-        	<th id="padin"><label>Nombre Proveedor</label>
-    		<input type="text" placeholder="ingrese su Nombre de usuario" id="usuario" name="nombre_proveedor" value="<%=usuario%>" required></th>
+        	<th id="padin"><label>Teléfono</label>
+    		<input type="text" placeholder="Ingrese telefono proveedor" name="telefono_proveedor" value="<%=telefono%>" required></th>
+        	
         	</tr>
-        	<tr><th id="padin"><label>Direccion</label>
-    		<input type="text" placeholder="ingrese su Nombre Completo" name="direccion_proveedor" value="<%=nombre%>" required></th>
-    		<th id="padin"><label>Telefono</label>
-    		<input type="password" placeholder="ingrese su clave" name="telefono_proveedor" value="<%=password%>" required></th>
-    		</tr>
-        	<tr><th id="padin"><label>Ciudad</label>
-        	<input type="text" placeholder="ingrese su email" name="ciudad_proveedor" value="<%=email%>" required></th></tr>
+        	<tr><th id="padin"><label>Nombre Proveedor</label>
+    		<input type="text" placeholder="Ingrese nombre de proveedor" id="proveedor" name="nombre_proveedor" value="<%=nombre%>" required></th>
+        	<th id="padin"><label>Ciudad</label>
+        	<input type="text" placeholder="Ingrese ciudad proveedor" name="ciudad_proveedor" value="<%=ciudad%>" required></th>
+        	</tr>
+        	<tr><th id="padin"><label>Dirección</label>
+        	<input type="text" placeholder="Ingrese direccion proveedor" name="direccion_proveedor" value="<%=direccion%>" required></th></tr>
     </table>
     <div class="boton">
        
@@ -84,11 +85,9 @@ if(request.getParameter("men")!=null){
     </div>
  </form>
    
- <form action="" method = "post">	
-		<legend class="titulosconsultar" >Consultar</legend>
-		<div><label class="titulosconsultar" >Cedula :</label><input type="number" name="cedula2" required></div>
-		<div><input type="submit" name="consultar" value="Consultar"></div> 
-	
+ <form action="Proveedor" method = "post">			
+		<div><label class="titulosconsultar" >Cedula :</label><input type="number" name="nitproveedor2" required></div>
+		<div><input type="submit" name="consultar" value="Consultar"></div> 	
  </form> 
     
     

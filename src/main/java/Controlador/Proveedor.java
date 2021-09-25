@@ -33,7 +33,7 @@ public class Proveedor extends HttpServlet {
 		if(request.getParameter("registrar")!=null) {
 			String ciudad,direccion,nombre,telefono;
 			long nit;
-			nit = Long.parseLong(request.getParameter("nitproveedor"));
+			nit = Long.parseLong(request.getParameter("nit_proveedor"));
 			ciudad = request.getParameter("ciudad_proveedor");
 			direccion = request.getParameter("direccion_proveedor");
 			nombre = request.getParameter("nombre_proveedor");
@@ -65,8 +65,9 @@ public class Proveedor extends HttpServlet {
 				//ahora enviar por la url con el response a Proveedores.jsp o la vista jsp
 				response.sendRedirect("Proveedores.jsp?nit="+nit+"&&ciudad="+ciudad+"&&direccion="
 						+direccion+"&&nombre="+nombre+"&&telefono="+telefono);
-				
+				JOptionPane.showMessageDialog(null, "El Proveedor se consulto");
 			}else {
+				JOptionPane.showMessageDialog(null, "El Proveedor NOOOO se consulto");
 				response.sendRedirect("Proveedores.jsp?men=El Proveedor no Existe");
 	     	}
          }

@@ -77,7 +77,7 @@ public class Cliente extends HttpServlet {
 		if(request.getParameter("actualizar")!=null) {
 			String email,nombre,direccion,telefono;
 			long cedula;
-			cedula = Long.parseLong(request.getParameter("cedula_cliente"));
+			cedula = Long.parseLong(request.getParameter("ced"));
 			direccion = request.getParameter("direccion_cliente");
 			email = request.getParameter("email_cliente");
 			nombre = request.getParameter("nombre_cliente");
