@@ -11,6 +11,7 @@
 
 </head>
 <body id="fondo">
+<%! String mensaje=""; %>
 <div class="content">
 <div class="box-area">
 		<header>
@@ -28,33 +29,45 @@
 				</nav>
 			</div>
 		</header>
-	</div>
+</div>
 <hr>
-
-<form class=formul>
+<div>
+<form action="Usuario" method="post" class=formul>
     <table class="tablit">
         <caption>Ingrese los datos para crear un nuevo usuario</caption>
-        	<tr><th id="padin"><label>Cédula</label>
-        	<input type="number" placeholder="ingrese su número Cédula" id="cedula" required>
+        	<tr>
+        	<th id="padin"><label>Cédula</label>
+        	<input type="number" placeholder="ingrese su número Cédula" name="cedula" required>
         	</th>
         	<th id="padin"><label>Usuario</label>
-    		<input type="text" placeholder="ingrese su Nombre de usuario" id="usuario" required></th>
+    		<input type="text" placeholder="ingrese su Nombre de usuario" name="usuario" required>
+    		</th>
         	</tr>
         	<tr><th id="padin"><label>Nombre Completo</label>
-    		<input type="text" placeholder="ingrese su Nombre Completo" required></th>
+    		<input type="text" placeholder="ingrese su Nombre Completo" name="nombre" required></th>
     		<th id="padin"><label>contraseña</label>
-    		<input type="password" placeholder="ingrese su clave"></th>
+    		<input type="password" placeholder="ingrese su clave" name="clave" required></th>
     		</tr>
         	<tr><th id="padin"><label>Correo electronico</label>
-        	<input type="email" placeholder="ingrese su email" required></th></tr>
+        	<input type="email" placeholder="ingrese su email" name="email" required></th></tr>
+        	
     </table>
-    <div class="boton">
-        <input type="button" value="Consultar" >
-        <input type="button" value="Crear" >
-        <input type="button" value="Actualizar" >
-        <input type="button" value="Borrar" >
+    <div>      
+        <div><input type="submit" value="Crear Usuario" name="CrearU"  class="boton">
+		<a href="ConsultaCedula.jsp"><input type="button" value="Consultar Usuarios Existentes" class="boton"></a></div>
     </div>
 </form>
+</div>
+</div>
+
+<div>
+<h2 style="color: white; text-align: center; font-style: oblique;"><%
+if(request.getParameter("men")!=null)
+{
+mensaje=request.getParameter("men");
+}
+%>
+<%=mensaje %></h2>
 </div>
 </body>
 </html>
