@@ -66,24 +66,24 @@
 		<legend><h2>Clientes</h2></legend>
 		<div>
 			<label class="l1"> Cedula   </label>
-			<input type="number" name="Cedu" value="<%=cedula%>" required <%=estado%>>
+			<input type="number" name="cedula_cliente" value="<%=cedula%>" required <%=estado%>>
 		</div>
 		<input type="hidden" name="cod" value="<%=cedula%>">
 		<div>
 			<label class="l1">Telefono </label>
-			<input type="text" name="Tel" value="<%=tel%>" required>
+			<input type="text" name="telefono_cliente" value="<%=tel%>" required>
 		</div>
 		<div>
 			<label>Nombre Completo </label>
-			<input type="text" name="Nom" value="<%=nom%>" required>
+			<input type="text" name="nombre_cliente" value="<%=nom%>" required>
 		</div>
 		<div>
 			<label>Correo Electronico </label>
-			<input type="text" name="CorrEl" value="<%=corr%>" required>
+			<input type="text" name="email_cliente" value="<%=corr%>" required>
 		</div>
 		<div>
 			<label class="l1">Direccion </label>
-			<input type="text" name="Direccion" value="<%=direc%>">
+			<input type="text" name="direccion_cliente" value="<%=direc%>">
 		</div>
 		<div>
 			<input type="submit" name="registrar" value="Registrar" class="btn">
