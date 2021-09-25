@@ -18,7 +18,7 @@
 				<nav>
 					<a href="login.jsp">Usuarios</a>
                     <a href="Clientes.jsp">Clientes</a>
-                    <a href="#">Proveedores</a>
+                    <a href="Proveedores.jsp">Proveedores</a>
                     <a href="#">Productos</a>
                     <a href="#">Ventas</a>
                     <a href="#">Reportes</a>

@@ -51,13 +51,13 @@ public class Usuario extends HttpServlet {
 			UsuarioDTO usuDto = new UsuarioDTO(cedula,email,nombre,clave,usuario);
 			
 			if(usuDao.Inserta_Usuario(usuDto)) { 
-				response.sendRedirect("MenuAdmin.jsp?men=Usuario registrado exitosamente.");
+				response.sendRedirect("MenuAdmin.jsp?mens=Usuario registrado exitosamente.");
 			}else {
 				response.sendRedirect("MenuAdmin.jsp?=El Usuario no se registro.");
 				}
 			}
 		
-		if(request.getParameter("consult")!=null) {
+if(request.getParameter("consult")!=null) {
 			
 			BigInteger cedula;
 			String email,nombre,clave,usuario,identificacion;
@@ -73,7 +73,7 @@ public class Usuario extends HttpServlet {
 			usuario=usu.getUsuario();
 			identificacion=cedula.toString();
 			
-			response.sendRedirect("ConsultaCedula.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);
+			response.sendRedirect("MenuAdmin.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);
 			
 			}
 		
@@ -91,9 +91,29 @@ public class Usuario extends HttpServlet {
 			UsuarioDTO usuDto = new UsuarioDTO(cedula,email,nombre,clave,usuario);
 			
 			if(usuDao.Actualizar_Usuario(usuDto)) { 
-				response.sendRedirect("MenuAdmin.jsp?men=Usuario actualizado exitosamente.");
+				response.sendRedirect("MenuAdmin.jsp?mens=Usuario actualizado exitosamente.");
 			}else {
 				response.sendRedirect("MenuAdmin.jsp?=El Usuario no se modifico.");
+				}
+			}
+		
+			if(request.getParameter("delete")!=null) {
+			
+			BigInteger cedula;
+			String email,nombre,clave,usuario;
+
+			cedula= new BigInteger(request.getParameter("cedula"));
+			email=request.getParameter("email");
+			nombre=request.getParameter("nombre");
+			clave=request.getParameter("clave");
+			usuario=request.getParameter("usuario");
+			
+			UsuarioDTO usuDto = new UsuarioDTO(cedula,email,nombre,clave,usuario);
+			
+			if(usuDao.Eliminar_Usuario(usuDto)) { 
+				response.sendRedirect("MenuAdmin.jsp?mens=Usuario eliminado exitosamente.");
+			}else {
+				response.sendRedirect("MenuAdmin.jsp?=El Usuario no se elimino.");
 				}
 			}
 		

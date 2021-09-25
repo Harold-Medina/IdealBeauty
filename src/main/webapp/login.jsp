@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<%! String msg=""; %>
 	<div class="log">
 		<div class="log1">
 			<form action="loginn" method="post" id="formul">
@@ -30,10 +31,15 @@
 			   </div>
 			   <hr>
 			   <div id=status>
-					<%String msg=request.getParameter("mens"); %>
-					
-					Status: <%=msg %>
+					<h2 style="color: white; text-align: center; font-style: oblique;"><%
+					if(request.getParameter("mens")!=null)
+					{
+					msg=request.getParameter("mens");
+					}
+					%>
+					<%=msg %></h2>
 				</div>
+				
 			</form>
 		</div>	
 	</div>

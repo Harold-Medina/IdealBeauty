@@ -42,7 +42,7 @@ public class UsuarioDAO {
 		UsuarioDTO usu=null;
 		
 		try {
-			String sql="select * from usuario where cedula_usuario=?";
+			String sql="select * from usuarios where cedula_usuario=?";
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, Ucedul);
@@ -60,7 +60,7 @@ public class UsuarioDAO {
 	public boolean Actualizar_Usuario(UsuarioDTO usu) {
 		boolean resul=false;
 		try {
-			String sql="update usuario set email_usuario=?, nombre_usuario=?, password=?, usuario=? where cedula_usuario=?";
+			String sql="update usuarios set email_usuario=?, nombre_usuario=?, password=?, usuario=? where cedula_usuario=?";
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, usu.getEmail_usuario());
@@ -75,4 +75,21 @@ public class UsuarioDAO {
 		}
 		return resul;
 	}
+	
+	public boolean Eliminar_Usuario(UsuarioDTO usu) {
+		boolean resul=false;
+		try {
+			String sql="delete from usuarios where cedula_usuario=?";
+			ps=con.prepareStatement(sql);
+			
+			ps.setObject(1, usu.getCedula_usuario(), java.sql.Types.BIGINT);
+			
+			resul=ps.executeUpdate()>0;
+		} catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "error al Eliminar: "+ex);
+		}
+		return resul;
+	}
+	
+	
 }
