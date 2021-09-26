@@ -11,34 +11,35 @@
 </head>
 <!-- ULTIMO COMENTARIO-->
 <body>
+
 <%! String msgg=""; %>
 	<div class="log">
 		<div class="log1">
 			<form action="loginn" method="post" id="formul">
 			    <div class="input">
-			    	<h1><a href="Index.jsp" id="principal">Ideal Beauty</a></h1>
+			    	<h1 id="ideal"><a href="Index.jsp" id="principal">Ideal Beauty</a></h1>
 			    </div>
 			    <hr>			
 			    <div > 
 			        <input type="text" placeholder="Ingrese su Usuario" name="user" class="input1" required>
 			    </div>
 			    <div>
-			        <input type="password" placeholder="Ingrese su Contraseña" name="key" class="input1" required>
+			        <input type="password" placeholder="Ingrese su Contraseña" name="key" class="input1" id="inp2" required>
 			    </div>			    
-			    <div>
-			        <div><input type="submit" value="Aceptar" name="send"  class="boton"></div>
-			        <div><a href="Index.jsp"><input type="button" value="Cancelar" class="boton"></a></div>
-			   </div>
-			   <hr>
 			   <div id=status>
-					<h2 style="color: white; text-align: center; font-style: oblique;"><%
+					<h5 style=" text-align: right; margin:0px;"><%
 					if(request.getParameter("mens")!=null)
 					{
 					msgg=request.getParameter("mens");
 					}
 					%>
-					<%=msgg %></h2>
+					<%=msgg %></h5>
 				</div>
+			    <div>
+			        <div><input type="submit" value="Aceptar" name="send"  class="boton"></div>
+			        <div><a href="Index.jsp"><input type="button" value="Cancelar" class="boton"></a></div>
+			   </div>
+			   <hr>
 				
 			</form>
 		</div>	
