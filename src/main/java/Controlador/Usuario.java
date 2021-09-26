@@ -12,6 +12,7 @@ import Modelo.UsuarioDAO;
 import Modelo.UsuarioDTO;
 
 import java.math.*;
+import java.sql.SQLException;
 
 /**
  * Servlet implementation class Usuario
@@ -51,13 +52,13 @@ public class Usuario extends HttpServlet {
 			UsuarioDTO usuDto = new UsuarioDTO(cedula,email,nombre,clave,usuario);
 			
 			if(usuDao.Inserta_Usuario(usuDto)) { 
-				response.sendRedirect("MenuAdmin.jsp?mens=Usuario registrado exitosamente.");
+				response.sendRedirect("Usuarios.jsp?mens=Usuario registrado exitosamente.");
 			}else {
-				response.sendRedirect("MenuAdmin.jsp?=El Usuario no se registro.");
+				response.sendRedirect("Usuarios.jsp?=El Usuario no se registro.");
 				}
 			}
 		
-if(request.getParameter("consult")!=null) {
+		if(request.getParameter("consult")!=null) {
 			
 			BigInteger cedula;
 			String email,nombre,clave,usuario,identificacion;
@@ -72,10 +73,12 @@ if(request.getParameter("consult")!=null) {
 			clave=usu.getPassword();
 			usuario=usu.getUsuario();
 			identificacion=cedula.toString();
-			
-			response.sendRedirect("MenuAdmin.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);
-			
+			try {
+			response.sendRedirect("Usuarios.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);}
+			catch(NullPointerException e) {
+				response.sendRedirect("Usuarios.jsp?=El Usuario no se existe. "+e);
 			}
+		}			
 		
 		if(request.getParameter("update")!=null) {
 			
@@ -91,9 +94,9 @@ if(request.getParameter("consult")!=null) {
 			UsuarioDTO usuDto = new UsuarioDTO(cedula,email,nombre,clave,usuario);
 			
 			if(usuDao.Actualizar_Usuario(usuDto)) { 
-				response.sendRedirect("MenuAdmin.jsp?mens=Usuario actualizado exitosamente.");
+				response.sendRedirect("Usuarios.jsp?mens=Usuario actualizado exitosamente.");
 			}else {
-				response.sendRedirect("MenuAdmin.jsp?=El Usuario no se modifico.");
+				response.sendRedirect("Usuarios.jsp?=El Usuario no se modifico.");
 				}
 			}
 		
@@ -111,9 +114,9 @@ if(request.getParameter("consult")!=null) {
 			UsuarioDTO usuDto = new UsuarioDTO(cedula,email,nombre,clave,usuario);
 			
 			if(usuDao.Eliminar_Usuario(usuDto)) { 
-				response.sendRedirect("MenuAdmin.jsp?mens=Usuario eliminado exitosamente.");
+				response.sendRedirect("Usuarios.jsp?mens=Usuario eliminado exitosamente.");
 			}else {
-				response.sendRedirect("MenuAdmin.jsp?=El Usuario no se elimino.");
+				response.sendRedirect("Usuarios.jsp?=El Usuario no se elimino.");
 				}
 			}
 		

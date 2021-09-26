@@ -17,10 +17,10 @@
 		<nav class="op">
 			<ul>	
 			   <li><a href="Index.jsp" id="l">Ideal Beauty</a></li>
-			   <li><a href="MenuAdmin.jsp">Usuarios</a></li>
+			   <li><a href="Usuarios.jsp">Usuarios</a></li>
 		       <li><a href="Clientes.jsp">Clientes</a></li>
 		       <li><a href="Proveedores.jsp">Proveedores</a></li>
-		       <li><a href="#">Productos</a></li>
+		       <li><a href="Productos.jsp">Productos</a></li>
 		       <li><a href="#">Ventas</a></li>
 		       <li><a href="#">Reportes</a></li>
 			</ul>

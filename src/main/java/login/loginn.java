@@ -36,7 +36,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 				
 				/*JOptionPane.showMessageDialog(null, "Bienvenido Administrador");*/
 				mensaje="Bienvenido Administrador";
-				response.sendRedirect("MenuAdmin.jsp?mens="+mensaje);
+				response.sendRedirect("Usuarios.jsp?mens="+mensaje);
 			}else {
 				/*JOptionPane.showMessageDialog(null, "datos incorrectos");*/
 				mensaje="Datos incorrectos";
