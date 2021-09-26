@@ -51,14 +51,14 @@ if(request.getParameter("men")!=null){
 			   <li><a href="MenuAdmin.jsp">Usuarios</a></li>
 		       <li><a href="Clientes.jsp">Clientes</a></li>
 		       <li><a href="Proveedores.jsp">Proveedores</a></li>
-		       <li><a href="#">Productos</a></li>
+		       <li><a href="Productos.jsp">Productos</a></li>
 		       <li><a href="#">Ventas</a></li>
 		       <li><a href="#">Reportes</a></li>
 			</ul>
 		</nav>
 </header>
 
-
+<!-- 
 <form action="Proveedor" method = "post" class=formul>
     <fieldset>
       <legend><h2>Proveedores</h2></legend>
@@ -97,16 +97,17 @@ if(request.getParameter("men")!=null){
         
     </fieldset>
  </form>
-
+-->
 
  
 <form action="Proveedor" method="post">
 <fieldset>
-<legend><h2>Consultar</h2></legend>
-<div><label class="l1">NIT: </label><input type="number" name="nitproveedor2" required></div>
-<div><input type="submit" name="consultar" value="Consultar" class="btn"></div>
+<legend><h2>Cargar Productos</h2></legend>
+<div><label class="l1">Archivo: </label><input type="text" name="nombreArchivo"></div><div><input type="file" name="archivo" value="Examinar" required></div>
+<div><input type="submit" name="cargar" value="Cargar Archivo" class="btn"></div>
 </fieldset>
 </form>
+
    
   <h2><%=mensaje %></h2> 
   
