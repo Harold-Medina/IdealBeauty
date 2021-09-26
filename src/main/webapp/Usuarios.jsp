@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="Clientes.css">
+<link rel="stylesheet" type="text/css" href="Admin.css">
  <head>
 	<meta charset="ISO-8859-1">
 	

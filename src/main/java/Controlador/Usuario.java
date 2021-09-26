@@ -54,7 +54,7 @@ public class Usuario extends HttpServlet {
 			if(usuDao.Inserta_Usuario(usuDto)) { 
 				response.sendRedirect("Usuarios.jsp?mens=Usuario registrado exitosamente.");
 			}else {
-				response.sendRedirect("Usuarios.jsp?=El Usuario no se registro.");
+				response.sendRedirect("Usuarios.jsp?mens=El Usuario no se registro.");
 				}
 			}
 		
@@ -76,7 +76,7 @@ public class Usuario extends HttpServlet {
 			try {
 			response.sendRedirect("Usuarios.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);}
 			catch(NullPointerException e) {
-				response.sendRedirect("Usuarios.jsp?=El Usuario no se existe. "+e);
+				response.sendRedirect("Usuarios.jsp?mens=El Usuario no se existe. "+e);
 			}
 		}			
 		
@@ -96,7 +96,7 @@ public class Usuario extends HttpServlet {
 			if(usuDao.Actualizar_Usuario(usuDto)) { 
 				response.sendRedirect("Usuarios.jsp?mens=Usuario actualizado exitosamente.");
 			}else {
-				response.sendRedirect("Usuarios.jsp?=El Usuario no se modifico.");
+				response.sendRedirect("Usuarios.jsp?mens=El Usuario no se modifico.");
 				}
 			}
 		
@@ -116,7 +116,7 @@ public class Usuario extends HttpServlet {
 			if(usuDao.Eliminar_Usuario(usuDto)) { 
 				response.sendRedirect("Usuarios.jsp?mens=Usuario eliminado exitosamente.");
 			}else {
-				response.sendRedirect("Usuarios.jsp?=El Usuario no se elimino.");
+				response.sendRedirect("Usuarios.jsp?mens=El Usuario no se elimino.");
 				}
 			}
 		

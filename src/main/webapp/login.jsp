@@ -11,7 +11,7 @@
 </head>
 <!-- ULTIMO COMENTARIO-->
 <body>
-<%! String msg=""; %>
+<%! String msgg=""; %>
 	<div class="log">
 		<div class="log1">
 			<form action="loginn" method="post" id="formul">
@@ -34,10 +34,10 @@
 					<h2 style="color: white; text-align: center; font-style: oblique;"><%
 					if(request.getParameter("mens")!=null)
 					{
-					msg=request.getParameter("mens");
+					msgg=request.getParameter("mens");
 					}
 					%>
-					<%=msg %></h2>
+					<%=msgg %></h2>
 				</div>
 				
 			</form>
