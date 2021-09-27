@@ -83,6 +83,20 @@ public class Usuario extends HttpServlet {
 				}
 			}
 		
+		if(request.getParameter("limpiar")!=null) {
+			
+			String email,nombre,clave,usuario,identificacion;
+			
+			email=null;
+			nombre=null;
+			clave=null;
+			usuario=null;
+			identificacion=null;
+
+			/*response.sendRedirect("Usuarios.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);*/
+			response.sendRedirect("Usuarios.jsp?rest=limpio");
+			}
+		
 		
 		if(request.getParameter("update")!=null) {
 			

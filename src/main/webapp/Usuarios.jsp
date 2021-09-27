@@ -1,9 +1,8 @@
-<%@page import="Controlador.Conexion"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-
 <!DOCTYPE html>
+
 <html>
 <link rel="stylesheet" type="text/css" href="Admin.css">
  <head>
@@ -46,12 +45,27 @@ estado="disabled";
 %>
 
 <%
+if (request.getParameter("reset")!=null){
+estado="enabled";
+}
+%>
+	
+<%
 if(request.getParameter("mens")!=null)
 {
 	cedula="";
 	email="";nombre="";clave="";usuario="";estado="";
 	mensaje=request.getParameter("mens");
 	out.print("<script>alert('"+mensaje+"')</script>");
+}
+%>
+
+<%
+if(request.getParameter("rest")!=null)
+{
+	cedula="";
+	email="";nombre="";clave="";usuario="";estado="";
+	mensaje=request.getParameter("mens");
 }
 %>
 
@@ -62,6 +76,7 @@ if(request.getParameter("mens")!=null)
 		<div>
 			<label class="l1"> Cédula   </label>
 			<input type="number" placeholder="ingrese su número Cédula" name="cedula" value="<%=cedula%>" required <%=estado%>>
+			</div>
 		</div>
 		<input type="hidden" name="cedulaH" value="<%=cedula%>"> 
 		<div>
@@ -75,15 +90,18 @@ if(request.getParameter("mens")!=null)
 		<div>
 			<label>Contraseña </label>
 			<input type="password" placeholder="ingrese su clave" name="clave" value="<%=clave%>" required>
+			
 		</div>
 		<div>
 			<label class="l1">Correo electronico </label>
-			<input type="email" placeholder="ingrese su email" name="email" value="<%=email%>">
+			<input type="email" placeholder="ingrese su email" name="email" value="<%=email%>" required>
 		</div>
 		<div>
 			<input type="submit" value="Registrar" name="CrearU" class="btn">
 			<input type="submit" onclick="return confiupdate();" value="Actualizar" name="update" id="update" class="btn">
 			<input type="submit" onclick="return confiborrar();" value="Eliminar" name="delete" id="delete" class="btn"> 
+			<!-- TAREA DE ARREGLAR LA FUNCION DE ESTE BOTON <input type="reset"  value="reset" name="reset" class="btn">-->
+			<input type="submit" value="Limpiar" name="limpiar" class="btn">
 			
 		</div>
 	</fieldset>
@@ -93,7 +111,8 @@ if(request.getParameter("mens")!=null)
 <fieldset>
 <legend><h2>Consultar</h2></legend>
 <div><label class="l1">Cedula </label><input type="number" placeholder="ingrese su número Cédula" name="cedulaC" required></div>
-<div><input type="submit" value="Consultar" name="consult" class="btn"></div>
+<div><input type="submit" value="Consultar" name="consult" class="btn">
+
 </fieldset>
 </form>
 <script type="text/javascript">
