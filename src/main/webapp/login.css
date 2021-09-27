@@ -5,10 +5,12 @@ margin: 0px;
 padding: 0px;
 }
 body {
-	background-color: #b63821;
+	background-color: #444444;
 	text-align: center;
 }
-
+#ideal,h5{
+	color:white;
+}
 .log{
 	 
 	 margin-top: 0px;
@@ -27,13 +29,13 @@ body {
 .log1{	 
 	border-radius: 20px;
 	 width: 22%;
-	 background-color: white;
+	 background-color: #444444;
 	 margin: auto;
 	 padding: 20px 30px;
 }
 .log1:hover{
-	 border-top: 6px solid #b63821;
-	 border-bottom: 6px solid #b63821;
+	 border-top: 6px solid white;
+	 border-bottom: 6px solid white;
 	 border-radius: 40px;
 }
 
@@ -61,8 +63,8 @@ body {
 	
 }
 #ideal:hover{
-	border-left: 4px solid #b63821;
-	border-right: 4px solid #b63821;
+	border-left: 4px solid white;
+	border-right: 4px solid white;
 	font-size: 35px;
 }
 .boton:hover{

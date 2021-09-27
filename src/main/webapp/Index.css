@@ -1,62 +1,97 @@
 @charset "ISO-8859-1";
-<!-- ULTIMO COMENTARIO-->
-* {
-	margin: 0;
-	padding: 0;
-}
-#fondo{
-	margin-top: auto;
-	 width: 100%;
-	 background-image: url(images/background_.jpg);
-	 background-size: 100% 100%;
-	 align-items: center;
-	 display: flex;
-	 height: 100vh;
-	 padding: auto;
-}
-.content{
-	width: 100%;
-	height:100%;
-}
-body {
-	text-align: center;
-}
-.wrapper {
-	width: 1170px;
-	margin: 0 auto;
-}
-header {
-	height: 100px;
-	background: #262626;
-	width: 100%;
-	z-index: 10;
-	position: fixed;
-}
-.logo {
-	width: 30%;
-	float: left;
-	line-height: 80px;
-}
-.logo a {
-	text-decoration: none;
-	font-size: 35px;
-	font-family: poppins;
-	color: #fff;
-	letter-spacing: 5px;
-}
-nav {
-	float: right;
-	line-height: 100px;
-}
-nav a {
-	text-decoration: none;
-	font-family: poppins;
-	letter-spacing: 4px;
-	font-size: 17px;
-	margin: 0 10px;
-	color: #fff;
+
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	animation-name: inicio;
+	animation-duration: 3s;
 }
 
-nav a:hover{
-	background: #ef8354;
+@keyframes inicio{
+	0%{width: 0%;background-color: black;  }
+	75%{width: 100%;background-color: white; }
+} 
+
+#l:hover{
+	transition: 2s;
+	transform: rotate3d(0,1,0,360deg);
+	background-color: white;
+	border-radius: 60px;
 }
+html{height: 100%;}
+body{height: 100%;}
+	
+nav.op{
+	margin: 0;
+	padding: 5px;
+	width: 100%;
+	text-align: center;
+	background-color:black;
+}
+ul{
+	list-style-type: none;
+	
+}
+li{
+    display: inline-block;
+	width: 13%;
+}
+li a{
+	margin: 10px;
+	color: #ffffff;
+	display: block;
+	padding: 6px 6px;
+	text-decoration: none;
+	text-align: center;
+}
+li a:hover {
+	background-color: white;
+	color: black;
+	border-radius: 10px;
+}
+#l{
+	border-radius: 20px;
+	background-color: #b63821;
+}
+
+
+
+.bk2{
+	background-image: url("images/logfondo.gif");
+	min-height: 50%;
+	position: relative;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.cont2{
+	background-color: black;
+	color: black;
+	opacity: .80;
+	width: 45%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+article.b{
+	width: 100%;
+	padding:50px;
+	text-align: center;
+}
+.cont2, article.b{
+	
+	position: absolute;
+}
+h1.b, p.b{
+	color:white;
+	opacity: 1;
+	margin: 10px;
+	
+}
+

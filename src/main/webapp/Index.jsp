@@ -7,22 +7,30 @@
 <title>Ideal Beauty</title>
 <link rel="stylesheet" type="text/css" href="Index.css">
 </head>
-<!-- ULTIMO COMENTARIO-->
+
 <body id="fondo">
-<div class="content">
-   <div class="box-area">
-		<header>
-			<div class="wrapper">
-				<div class="logo">
-					<a href="Index.jsp">Ideal Beauty</a>
-				</div>
-				<nav>
-				    <a href="login.jsp">Login</a>
-					
-				</nav>
-			</div>
-		</header>
-	</div>
+
+
+
+<header>
+		<nav class="op">
+			<ul>	
+			   <li><a href="Index.jsp" id="l">Ideal Beauty</a></li>
+		       <li><a href="login.jsp">Login</a></li>
+			</ul>
+		</nav>
+</header>
+
+<div class="bk2">
+    <div class="cont2"><article class="b"> 
+	    <h1 class="b"> ¿Quiénes somos?</h1>
+	    <p class="b"> aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa
+	    aaaaaaaaaaaa aaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaa
+	    aaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa
+	    aaaaadcacscaccacac 
+	    acscavdddddddddddd</p></article> 
+    </div> 
+
 </div>
 </body>
 </html>
