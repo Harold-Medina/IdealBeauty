@@ -33,6 +33,7 @@ String cedula="";
 String email="",nombre="",clave="",usuario="",estado="";
 String mensaje="";
 %>
+
 <%
 if (request.getParameter("cedula")!=null){
 cedula= request.getParameter("cedula");
@@ -43,25 +44,26 @@ usuario=request.getParameter("usuario");
 estado="disabled";
 }
 %>
+
 <%
 if(request.getParameter("mens")!=null)
 {
 	cedula="";
 	email="";nombre="";clave="";usuario="";estado="";
 	mensaje=request.getParameter("mens");
+	out.print("<script>alert('"+mensaje+"')</script>");
 }
 %>
 
-
-
 <form action="Usuario" method="post">
+
 	<fieldset>
 		<legend><h2>Usuarios</h2></legend>
 		<div>
 			<label class="l1"> Cédula   </label>
 			<input type="number" placeholder="ingrese su número Cédula" name="cedula" value="<%=cedula%>" required <%=estado%>>
 		</div>
-		<input type="hidden" name="cedula" value="<%=cedula%>"> <!--- que diablos hace esta linea? --->
+		<input type="hidden" name="cedulaH" value="<%=cedula%>"> 
 		<div>
 			<label class="l1">Usuario </label>
 			<input type="text" placeholder="ingrese su Nombre de usuario" name="usuario" value="<%=usuario%>" required>
@@ -80,8 +82,9 @@ if(request.getParameter("mens")!=null)
 		</div>
 		<div>
 			<input type="submit" value="Registrar" name="CrearU" class="btn">
-			<input type="submit" value="Actualizar" name="update" class="btn">
-			<input type="submit" value="Eliminar" name="delete" class="btn">
+			<input type="submit" onclick="return confiupdate();" value="Actualizar" name="update" id="update" class="btn">
+			<input type="submit" onclick="return confiborrar();" value="Eliminar" name="delete" id="delete" class="btn"> 
+			
 		</div>
 	</fieldset>
 </form>
@@ -89,11 +92,41 @@ if(request.getParameter("mens")!=null)
 <form action="Usuario" method="post">
 <fieldset>
 <legend><h2>Consultar</h2></legend>
-<div><label class="l1">Cedula </label><input type="number" placeholder="ingrese su número Cédula" name="cedula" required></div>
+<div><label class="l1">Cedula </label><input type="number" placeholder="ingrese su número Cédula" name="cedulaC" required></div>
 <div><input type="submit" value="Consultar" name="consult" class="btn"></div>
 </fieldset>
 </form>
+<script type="text/javascript">
+	function confiborrar()
+	{
+		var respuesta = confirm("¿Seguro de eliminar este usuario?");
+		
+		document.getElementById("delete").value=respuesta;
 
+		if (respuesta == True)
+			{
+				return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	function confiupdate()
+	{
+		var respuesta = confirm("¿Seguro de actualizar este usuario?");
+		
+		document.getElementById("update").value=respuesta;
+
+		if (respuesta == True)
+			{
+				return true;
+		}
+		else{
+			return false;
+		}
+	}
+</script>
 <h2><%=mensaje %></h2>
 
 </body>

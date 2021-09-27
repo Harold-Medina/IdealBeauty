@@ -76,13 +76,13 @@ public class UsuarioDAO {
 		return resul;
 	}
 	
-	public boolean Eliminar_Usuario(UsuarioDTO usu) {
+	public boolean Eliminar_Usuario(String usur) {
 		boolean resul=false;
 		try {
 			String sql="delete from usuarios where cedula_usuario=?";
 			ps=con.prepareStatement(sql);
 			
-			ps.setObject(1, usu.getCedula_usuario(), java.sql.Types.BIGINT);
+			ps.setString(1, usur);
 			
 			resul=ps.executeUpdate()>0;
 		} catch(SQLException ex) {

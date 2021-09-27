@@ -63,9 +63,11 @@ public class Usuario extends HttpServlet {
 			BigInteger cedula;
 			String email,nombre,clave,usuario,identificacion;
 			
-			identificacion=request.getParameter("cedula");
+			identificacion=request.getParameter("cedulaC");
 			
 			UsuarioDTO usu=usuDao.Buscar_Usuario(identificacion);
+			
+			if(usu!=null) {
 			
 			cedula=usu.getCedula_usuario();
 			email=usu.getEmail_usuario();
@@ -73,19 +75,21 @@ public class Usuario extends HttpServlet {
 			clave=usu.getPassword();
 			usuario=usu.getUsuario();
 			identificacion=cedula.toString();
-			try {
-			response.sendRedirect("Usuarios.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);}
-			catch(NullPointerException e) {
-				response.sendRedirect("Usuarios.jsp?mens=El Usuario no se existe. "+e);
+
+			response.sendRedirect("Usuarios.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);
+
+			}else {
+				response.sendRedirect("Usuarios.jsp?mens=El Usuario no existe.");
+				}
 			}
-		}			
+		
 		
 		if(request.getParameter("update")!=null) {
 			
 			BigInteger cedula;
 			String email,nombre,clave,usuario;
 
-			cedula= new BigInteger(request.getParameter("cedula"));
+			cedula= new BigInteger(request.getParameter("cedulaH"));
 			email=request.getParameter("email");
 			nombre=request.getParameter("nombre");
 			clave=request.getParameter("clave");
@@ -93,30 +97,36 @@ public class Usuario extends HttpServlet {
 			
 			UsuarioDTO usuDto = new UsuarioDTO(cedula,email,nombre,clave,usuario);
 			
+			String op=request.getParameter("update");
+			
+			if(op.equals("true")) {
 			if(usuDao.Actualizar_Usuario(usuDto)) { 
 				response.sendRedirect("Usuarios.jsp?mens=Usuario actualizado exitosamente.");
 			}else {
-				response.sendRedirect("Usuarios.jsp?mens=El Usuario no se modifico.");
+				response.sendRedirect("Usuarios.jsp?mens=Error al intentar modificar el usuario.");
+					}
+				}
+			else {
+				response.sendRedirect("Usuarios.jsp?mens=Usted ha cancelado la accion: Actualizar");
 				}
 			}
 		
 			if(request.getParameter("delete")!=null) {
 			
-			BigInteger cedula;
-			String email,nombre,clave,usuario;
+			String cedula;
 
-			cedula= new BigInteger(request.getParameter("cedula"));
-			email=request.getParameter("email");
-			nombre=request.getParameter("nombre");
-			clave=request.getParameter("clave");
-			usuario=request.getParameter("usuario");
+			cedula=request.getParameter("cedulaH");
+
+			String op=request.getParameter("delete");
 			
-			UsuarioDTO usuDto = new UsuarioDTO(cedula,email,nombre,clave,usuario);
-			
-			if(usuDao.Eliminar_Usuario(usuDto)) { 
+			if(op.equals("true")) {
+			if(usuDao.Eliminar_Usuario(cedula)) { 
 				response.sendRedirect("Usuarios.jsp?mens=Usuario eliminado exitosamente.");
 			}else {
-				response.sendRedirect("Usuarios.jsp?mens=El Usuario no se elimino.");
+				response.sendRedirect("Usuarios.jsp?mens=Error al intentar eliminar el usuario.");
+				}
+			}else {
+				response.sendRedirect("Usuarios.jsp?mens=Usted ha cancelado la accion: Eliminar");
 				}
 			}
 		
