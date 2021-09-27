@@ -55,7 +55,11 @@ li a:hover {
 	background-color: #b63821;
 }
 
-
+img.i{
+	width: 100%;
+    animation-name: inicio;
+    animation-duration: 2s;
+}
 
 .bk2{
 	background-image: url("images/logfondo.gif");
@@ -91,7 +95,14 @@ article.b{
 h1.b, p.b{
 	color:white;
 	opacity: 1;
-	margin: 10px;
-	
+	margin: 10px;	
+}
+
+footer{
+	color:white;
+	background-color: black;
+	text-align: center;
+	margin: 0px;
+	padding: 15px;
 }
 
