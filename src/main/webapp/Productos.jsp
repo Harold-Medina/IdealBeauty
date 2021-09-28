@@ -15,7 +15,7 @@
 	Conexion con=new Conexion();
 %>
 
-<%!String mensaje="",ciudad="",direccion="",nombre="",telefono="",  estado="";
+<%!String mensaje="",ciudad="",direccion="",nombre="",telefono="",  estado="",usuario="";
 long nit=0L;
 %>
 
@@ -39,9 +39,14 @@ if(request.getParameter("men")!=null){
 	nombre="";
 	telefono="";
 	estado="";
-	mensaje = request.getParameter("men");}
+	mensaje = request.getParameter("men");
+	//usuario=System.getenv("USERNAME");
+	//usuario = System.getProperty("user.name");	
+	
+}
     //codigo javascript, mensaje con alert de javascript
-    //out.print("<script>alert('"+mensaje+"');</script>");
+    //out.print("<script>alert('"+usuario+"');</script>");
+
 %>
 
 <header id="o">
@@ -58,49 +63,10 @@ if(request.getParameter("men")!=null){
 		</nav>
 </header>
 
-<!-- 
-<form action="Proveedor" method = "post" class=formul>
-    <fieldset>
-      <legend><h2>Proveedores</h2></legend>
-       <div>
-          <label class="l1"> NIT   </label>
-            <input type="number" name="nitproveedor" value="<%=nit%>" <%=estado%> required>
-			
-		</div>
-        <input type="hidden" name="nitprov" value="<%=nit%>">
-        <div>
-           <label class="l1">Teléfono </label>
-           <input type="text"  name="telefono_proveedor" value="<%=telefono%>" required>
-			
-		</div>
-        <div>
-			<label>Nombre Proveedor </label>
-			<input type="text"  name="nombre_proveedor" value="<%=nombre%>" required>
-			
-		</div>
-        <div>
-			<label>Ciudad</label>
-			<input type="text" name="ciudad_proveedor" value="<%=ciudad%>" required>
-	    </div>
-        <div>
-			<label class="l1">Dirección </label>
-			<input type="text" name="direccion_proveedor" value="<%=direccion%>" required>
-			
-		</div>	  
-		
-		<div>
-			<input type="submit" name="registrar" value="Registrar" class="btn">
-			<input type="submit" name="actualizar" value="Actualizar" class="btn">
-			<input type="submit" name="eliminar" value="Eliminar" class="btn">
-		</div>   		
-    
-        
-    </fieldset>
- </form>
--->
+
 
  
-<form action="Proveedor" method="post">
+<form action="Producto" method="post" enctype="multipart/form-data">
 <fieldset>
 <legend><h2>Cargar Productos</h2></legend>
 <div><label class="l1">Archivo: </label><input type="text" name="nombreArchivo"></div><div><input type="file" name="archivo" value="Examinar" required></div>
@@ -108,10 +74,9 @@ if(request.getParameter("men")!=null){
 </fieldset>
 </form>
 
-   
   <h2><%=mensaje %></h2> 
   
 
-</div>
+
 </body>
 </html>
