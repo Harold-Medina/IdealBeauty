@@ -103,6 +103,53 @@ label{
 	padding: 5px 8px;
 }
 
+.btn1{
+	color: white;
+	background-color:#b63821;
+	margin-right: 1px;
+	padding: 5px 8px;
+	border-radius: 5px;
+}
+
+
+label {
+	width: auto;
+	color: white;
+}
+
+/*div th, td, table {
+	border: solid;
+	border-color: white; 
+}*/
+
+.izq {
+	float: left;
+}
+
+.der {
+	float: right;
+}
+
+.centr {
+	margin: 0 20%;
+	/* border: 1px solid;*/
+	text-align: center;
+}
+
+.btnV {
+	height: 60px;
+	width: 120px;
+}
+
+#tablaV {
+	margin: 20px;
+}
+
+.peq{
+	width: 55px;
+	margin-left: 20px;
+}
+
 .btn:hover {
 	background-color:#ffe6e6;
 	color: black;
@@ -110,3 +157,4 @@ label{
 .l1{
 	padding: 0px;
 }
+
