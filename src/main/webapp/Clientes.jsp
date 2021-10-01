@@ -16,6 +16,7 @@
 
 <%
 	Conexion con=new Conexion();
+    String mensaje="";
 %>
 <%!String mensaje="";
 	long cedula=0L;
@@ -132,7 +133,7 @@ if(request.getParameter("rest")!=null)
 <script type="text/javascript">
 	function confiborrar()
 	{
-		var respuesta = confirm("¿Seguro de eliminar este usuario?");
+		var respuesta = confirm("¿Seguro de eliminar este cliente?");
 		
 		document.getElementById("delete").value=respuesta;
 
@@ -147,7 +148,7 @@ if(request.getParameter("rest")!=null)
 	
 	function confiupdate()
 	{
-		var respuesta = confirm("¿Seguro de actualizar este usuario?");
+		var respuesta = confirm("¿Seguro de actualizar este cliente?");
 		
 		document.getElementById("update").value=respuesta;
 
