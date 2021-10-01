@@ -33,17 +33,17 @@ public class Proveedor extends HttpServlet {
 		if(request.getParameter("registrar")!=null) {
 			String ciudad,direccion,nombre,telefono;
 			long nit;
-			nit = Long.parseLong(request.getParameter("nit_proveedor"));
+			nit = Long.parseLong(request.getParameter("nitproveedor"));
 			ciudad = request.getParameter("ciudad_proveedor");
 			direccion = request.getParameter("direccion_proveedor");
 			nombre = request.getParameter("nombre_proveedor");
 			telefono= request.getParameter("telefono_proveedor");
 			ProveedorDTO proveedorDto = new ProveedorDTO(nit,ciudad,direccion,nombre,telefono);
 		    if(proveedorDao.Insertarproveedor(proveedorDto)) {
-		      JOptionPane.showMessageDialog(null, "Proveedor Registrado Exitosamente!");	
+		      //JOptionPane.showMessageDialog(null, "Proveedor Registrado Exitosamente!");	
               response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente!");  		    
 		    }else {
-		      JOptionPane.showMessageDialog(null, "El Proveedor no se Registro");	
+		      //JOptionPane.showMessageDialog(null, "El Proveedor no se Registro");	
 	          response.sendRedirect("Proveedores.jsp?men=El Proveedor no se Registro");
 		    }
 		
@@ -65,9 +65,9 @@ public class Proveedor extends HttpServlet {
 				//ahora enviar por la url con el response a Proveedores.jsp o la vista jsp
 				response.sendRedirect("Proveedores.jsp?nit="+nit+"&&ciudad="+ciudad+"&&direccion="
 						+direccion+"&&nombre="+nombre+"&&telefono="+telefono);
-				JOptionPane.showMessageDialog(null, "El Proveedor se consulto");
+				
 			}else {
-				JOptionPane.showMessageDialog(null, "El Proveedor NOOOO se consulto");
+				//JOptionPane.showMessageDialog(null, "El Proveedor NOOOO se consulto");
 				response.sendRedirect("Proveedores.jsp?men=El Proveedor no Existe");
 	     	}
          }
@@ -81,26 +81,30 @@ public class Proveedor extends HttpServlet {
 			direccion = request.getParameter("direccion_proveedor");
 			nombre = request.getParameter("nombre_proveedor");
 			telefono = request.getParameter("telefono_proveedor");
+			
 			ProveedorDTO provDto_Act = new ProveedorDTO(nit,ciudad,direccion,nombre,telefono);
-		    if(proveedorDao.ActualizarProveedor(provDto_Act)) {
-		      JOptionPane.showMessageDialog(null, "El Proveedor se Actualizo Exitosamente!");	
-              response.sendRedirect("Proveedores.jsp?men=El Proveedor se Actualizo Exitosamente!");  		    
-		    }else {
-		      JOptionPane.showMessageDialog(null, "El Proveedor no se Actualizo");	
-	          response.sendRedirect("Proveedores.jsp?men=El Proveedor no se Actualizo");
-		    }
+			
+			String op=request.getParameter("actualizar");
+			
+			if(op.equals("true")) {			
+				if(proveedorDao.ActualizarProveedor(provDto_Act)) {
+			      //JOptionPane.showMessageDialog(null, "El Proveedor se Actualizo Exitosamente!");	
+	              response.sendRedirect("Proveedores.jsp?men=El Proveedor se Actualizo Exitosamente!");  		    
+			    }else {
+			      //JOptionPane.showMessageDialog(null, "El Proveedor no se Actualizo");	
+		          response.sendRedirect("Proveedores.jsp?men=El Proveedor no se Actualizo");
+			    }
+		   }
 		}
 		
 		
 		if(request.getParameter("eliminar")!=null) {
-			long codnit;
-			/*long otronit;
-			otronit=Long.parseLong(request.getParameter("nitprov"));
-			JOptionPane.showMessageDialog(null, otronit);
-			*/
+			long codnit;			
 			codnit = Long.parseLong(request.getParameter("nitprov"));
-			int op = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el Proveedor "+codnit);
-			if(op==0) {
+									
+			String op =request.getParameter("eliminar");
+			
+			if(op.equals("true")) {
 				if(proveedorDao.EliminarProveedor(codnit)) {
 					response.sendRedirect("Proveedores.jsp?men=El Proveedor fue Eliminado");
 				}else {
@@ -109,7 +113,22 @@ public class Proveedor extends HttpServlet {
 			}else {
 				response.sendRedirect("Proveedores.jsp");
 			}
-		}		
+		}	
+		
+		if(request.getParameter("limpiar")!=null) {
+			long nit;
+        	String ciudad,direccion,nombre,telefono;
+        	
+        	
+        	nit=0L;
+        	ciudad=null;
+        	direccion=null;
+        	nombre=null;
+        	telefono=null;               	      	
+			
+			response.sendRedirect("Proveedores.jsp?rest=limpio");
+			}
+		
 		
     }
 }

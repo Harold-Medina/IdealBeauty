@@ -44,10 +44,10 @@ public class Cliente extends HttpServlet {
 			telefono = request.getParameter("telefono_cliente");
 			ClienteDTO clientedto = new ClienteDTO(cedula,direccion,email,nombre,telefono);
 			if(clientedao.InsertarCliente(clientedto)) {
-		      JOptionPane.showMessageDialog(null, "Cliente Registrado Exitosamente!");	
+		      //JOptionPane.showMessageDialog(null, "Cliente Registrado Exitosamente!");	
               response.sendRedirect("Clientes.jsp?men=Cliente Registrado Exitosamente!");  		    
 		    }else {
-		      JOptionPane.showMessageDialog(null, "El Cliente no se Registro");	
+		      //JOptionPane.showMessageDialog(null, "El Cliente no se Registro");	
 	          response.sendRedirect("Clientes.jsp?men=El Cliente no se Registro");
 		    }
 		}
@@ -82,22 +82,32 @@ public class Cliente extends HttpServlet {
 			email = request.getParameter("email_cliente");
 			nombre = request.getParameter("nombre_cliente");
 			telefono = request.getParameter("telefono_cliente");
+			
 			ClienteDTO clidto_Act = new ClienteDTO(cedula,direccion,email,nombre,telefono);
-		    if(clientedao.ActualizarCliente(clidto_Act)) {
-		      JOptionPane.showMessageDialog(null, "El Cliente se Actualizo Exitosamente!");	
-              response.sendRedirect("Clientes.jsp?men=El Cliente se Actualizo Exitosamente!");  		    
-		    }else {
-		      JOptionPane.showMessageDialog(null, "El Cliente no se Actualizo");	
-	          response.sendRedirect("Clientes.jsp?men=El Cliente no se Actualizo");
-		    }
+		    
+			String op=request.getParameter("actualizar");
+			if(op.equals("true")) {
+				if(clientedao.ActualizarCliente(clidto_Act)) {
+			      	
+	              response.sendRedirect("Clientes.jsp?men=El Cliente se Actualizo Exitosamente!");  		    
+			    }else {
+			      
+		          response.sendRedirect("Clientes.jsp?men=El Cliente no se Actualizo");
+			    }
+			}else {
+				response.sendRedirect("Clientes.jsp?men=Usted ha cancelado la accion: Actualizar");
+			}
+				
 		}
 		
 		
 		if(request.getParameter("eliminar")!=null) {
 			long num_cedula;
 			num_cedula = Long.parseLong(request.getParameter("ced"));
-			int op = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar el Cliente "+num_cedula);
-			if(op==0) {
+			
+			String op=request.getParameter("eliminar");
+			
+			if(op.equals("true")) {
 				if(clientedao.EliminarCliente(num_cedula)) {
 					response.sendRedirect("Clientes.jsp?men=El Cliente fue Eliminado");
 				}else {
@@ -108,6 +118,17 @@ public class Cliente extends HttpServlet {
 			}
 		}
 		
+        if(request.getParameter("limpiar")!=null) {
+			long cedula;
+        	String telefono,nombre,email,direccion;
+        	cedula=0L;
+        	telefono=null;
+        	nombre=null;
+        	email=null;
+        	direccion=null;        	
+			
+			response.sendRedirect("Clientes.jsp?rest=limpio");
+			}
 		
 	}
 

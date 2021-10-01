@@ -13,10 +13,17 @@
 
 <%
 	Conexion con=new Conexion();
+    String mensaje="";
 %>
 
-<%!String mensaje="",ciudad="",direccion="",nombre="",telefono="",  estado="",usuario="";
-long nit=0L;
+<%!String mensaje="";
+   long nit=0L;
+   String ciudad="";
+   String direccion="";
+   String nombre="";
+   String telefono="";
+   String usuario="";
+   String estado="";
 %>
 
 <%
@@ -40,13 +47,28 @@ if(request.getParameter("men")!=null){
 	telefono="";
 	estado="";
 	mensaje = request.getParameter("men");
-	//usuario=System.getenv("USERNAME");
-	//usuario = System.getProperty("user.name");	
-	
+	//codigo javascript, mensaje con alert de javascript
+    out.print("<script>alert('"+mensaje+"');</script>");
 }
-    //codigo javascript, mensaje con alert de javascript
-    //out.print("<script>alert('"+usuario+"');</script>");
+%>
 
+<%
+if (request.getParameter("reset")!=null){
+estado="enabled";
+}
+%>
+
+<%
+if(request.getParameter("rest")!=null)
+{
+	nit=0L;
+	ciudad="";
+	direccion="";
+	nombre="";
+	telefono="";
+	estado="";
+	mensaje = request.getParameter("men");
+}
 %>
 
 <header id="o">
@@ -62,9 +84,6 @@ if(request.getParameter("men")!=null){
 			</ul>
 		</nav>
 </header>
-
-
-
  
 <form action="Producto" method="post" enctype="multipart/form-data">
 <fieldset>

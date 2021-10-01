@@ -15,8 +15,13 @@
 	Conexion con=new Conexion();
 %>
 
-<%!String mensaje="",ciudad="",direccion="",nombre="",telefono="",  estado="";
-long nit=0L;
+<%!String mensaje="";
+   String ciudad="";
+   String direccion="";
+   String nombre="";
+   String telefono="";
+   String estado="";
+   long nit=0L;
 %>
 
 <%
@@ -32,6 +37,27 @@ if (request.getParameter("nit")!=null){
 %>
 
 <%
+if (request.getParameter("reset")!=null){
+estado="enabled";
+}
+%>
+
+<%
+if(request.getParameter("rest")!=null)
+{
+	nit=0L;
+	ciudad="";
+	direccion="";
+	nombre="";
+	telefono="";
+	estado="";
+	mensaje=request.getParameter("men");
+}
+%>
+
+
+
+<%
 if(request.getParameter("men")!=null){
 	nit=0L;
 	ciudad="";
@@ -39,9 +65,10 @@ if(request.getParameter("men")!=null){
 	nombre="";
 	telefono="";
 	estado="";
-	mensaje = request.getParameter("men");}
+	mensaje = request.getParameter("men");
     //codigo javascript, mensaje con alert de javascript
-    //out.print("<script>alert('"+mensaje+"');</script>");
+    out.print("<script>alert('"+mensaje+"');</script>");
+}
 %>
 
 <header id="o">
@@ -63,18 +90,18 @@ if(request.getParameter("men")!=null){
     <fieldset>
       <legend><h2>Proveedores</h2></legend>
        <div>
-          <label class="l1"> NIT   </label>
+          <label class="l1"> NIT</label>
             <input type="number" name="nitproveedor" value="<%=nit%>" <%=estado%> required>
 			
 		</div>
         <input type="hidden" name="nitprov" value="<%=nit%>">
         <div>
-           <label class="l1">Teléfono </label>
+           <label class="l1">Teléfono</label>
            <input type="text"  name="telefono_proveedor" value="<%=telefono%>" required>
 			
 		</div>
         <div>
-			<label>Nombre Proveedor </label>
+			<label>Nombre Proveedor</label>
 			<input type="text"  name="nombre_proveedor" value="<%=nombre%>" required>
 			
 		</div>
@@ -83,15 +110,17 @@ if(request.getParameter("men")!=null){
 			<input type="text" name="ciudad_proveedor" value="<%=ciudad%>" required>
 	    </div>
         <div>
-			<label class="l1">Dirección </label>
+			<label class="l1">Dirección</label>
 			<input type="text" name="direccion_proveedor" value="<%=direccion%>" required>
 			
 		</div>	  
 		
 		<div>
 			<input type="submit" name="registrar" value="Registrar" class="btn">
-			<input type="submit" name="actualizar" value="Actualizar" class="btn">
-			<input type="submit" name="eliminar" value="Eliminar" class="btn">
+			<input type="submit" onclick="return confiupdate();" name="actualizar" value="Actualizar" id="update"class="btn">
+			<input type="submit" onclick="return confiborrar();" name="eliminar" value="Eliminar" id="delete" class="btn">
+			<input type="submit" value="Limpiar" name="limpiar" class="btn">
+			
 		</div>   		
     
         
@@ -107,6 +136,38 @@ if(request.getParameter("men")!=null){
 <div><input type="submit" name="consultar" value="Consultar" class="btn"></div>
 </fieldset>
 </form>
+
+<script type="text/javascript">
+	function confiborrar()
+	{
+		var respuesta = confirm("¿Seguro de eliminar este usuario?");
+		
+		document.getElementById("delete").value=respuesta;
+
+		if (respuesta == True)
+			{
+				return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	function confiupdate()
+	{
+		var respuesta = confirm("¿Seguro de actualizar este usuario?");
+		
+		document.getElementById("update").value=respuesta;
+
+		if (respuesta == True)
+			{
+				return true;
+		}
+		else{
+			return false;
+		}
+	}
+</script>
    
   <h2><%=mensaje %></h2> 
   

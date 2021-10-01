@@ -43,9 +43,9 @@ public class Producto extends HttpServlet {
 				String nombre = request.getParameter("nombreArchivo");
 				//copiamos en una ruta de mi proyecto, el archivo que seleccion en la interfaz
 				//Ruta para los que usan mysql 
-				//String Url = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/";  
+				String Url = "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/";  
 				//Ruta para los que usan xampp
-				String Url="C:\\Users\\Cristian\\eclipse-workspace\\Prestamos\\src\\main\\webapp\\Doc\\";
+				//String Url="C:\\Users\\Cristian\\git\\IdealBeauty\\src\\main\\webapp\\Doc\\";
 				
 				//Verificamos si el tipo de archivo a cargar es csv
 				if (archivo.getContentType().equals("application/vnd.ms-excel")) {
@@ -64,24 +64,36 @@ public class Producto extends HttpServlet {
 			        }
 				    escribir.close();
 				    file.close();
-				    JOptionPane.showMessageDialog(null, "Archivo cargado Correctamente");
-				    
+				    JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
+				    //response.sendRedirect("Productos.jsp?men=Archivo Cargado Correctamente");
 			        if(proDao.CargarProductos(Url+nombre+".csv")) {
-			        	JOptionPane.showMessageDialog(null, "Productos Registrados correctamente");
-			        	response.sendRedirect("Productos.jsp");
+			        	//JOptionPane.showMessageDialog(null, "Productos Registrados Correctamente");
+			        	response.sendRedirect("Productos.jsp?men=Productos Registrados Correctamente");
 			        }else {
-			        	JOptionPane.showMessageDialog(null, "Productos no se Registraron");
-			        	response.sendRedirect("Productos.jsp");
+			        	//JOptionPane.showMessageDialog(null, "Productos no se Registraron");
+			        	response.sendRedirect("Productos.jsp?men=Productos no se Registraron");
 			        }
 				}catch(Exception e) {
-					JOptionPane.showMessageDialog(null, "Error al cargar el Archivo"+e);
-					response.sendRedirect("Productos.jsp");
+					//JOptionPane.showMessageDialog(null, "Error al cargar el Archivo"+e);
+					response.sendRedirect("Productos.jsp?men=Error al Cargar el Archivo");
 				}
 			}else {
-				JOptionPane.showMessageDialog(null, "Formato de Archivo no permitido");
-				response.sendRedirect("Productos.jsp");
+				//JOptionPane.showMessageDialog(null, "Formato de Archivo no Permitido");
+				response.sendRedirect("Productos.jsp?men=Formato de Archivo no Permitido");
 			}
 		}
+		
+		if(request.getParameter("limpiar")!=null) {
+			long nit;
+        	String ciudad,direccion,nombre,telefono;
+        	nit=0L;
+        	ciudad=null;
+        	direccion=null;
+        	nombre=null;
+        	telefono=null;        	
+			
+			response.sendRedirect("Productos.jsp?rest=limpio");
+			}
 		
 	}
 
