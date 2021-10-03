@@ -81,7 +81,7 @@ if(request.getParameter("men")!=null){
 		       <li><a href="Proveedores.jsp">Proveedores</a></li>
 		       <li><a href="Productos.jsp">Productos</a></li>
 		       <li><a href="Ventas.jsp">Ventas</a></li>
-		       <li><a href="#">Reportes</a></li>
+		       <li><a href="Reportes.jsp">Reportes</a></li>
 			</ul>
 		</nav>
 </header>
@@ -90,6 +90,7 @@ if(request.getParameter("men")!=null){
 <form action="Proveedor" method = "post" class=formul>
     <fieldset>
       <legend><h2>Proveedores</h2></legend>
+      <table>
        <div>
           <label class="l1"> NIT</label>
             <input type="number" name="nitproveedor" value="<%=nit%>" <%=estado%> required>
@@ -114,15 +115,31 @@ if(request.getParameter("men")!=null){
 			<label class="l1">Dirección</label>
 			<input type="text" name="direccion_proveedor" value="<%=direccion%>" required>
 			
-		</div>	  
+		</div>			
+	  </table>
+	  
+	  <!--  tabla para los botones-->
 		
-		<div>
-			<input type="submit" name="registrar" value="Registrar" class="btn">
-			<input type="submit" onclick="return confiupdate();" name="actualizar" value="Actualizar" id="update"class="btn">
-			<input type="submit" onclick="return confiborrar();" name="eliminar" value="Eliminar" id="delete" class="btn">
-			<input type="submit" value="Limpiar" name="limpiar" class="btn">
+		 <table style="margin: 0 auto;" >
+		  <tr>
+		     <td>
+			  <label></label>
+			 </td>
 			
-		</div>   		
+			 <td>
+			  <input type="submit" name="registrar" value="Registrar" class="btn">
+			 </td>
+			 <td> 
+		      <input type="submit" onclick="return confiupdate();" name="actualizar" value="Actualizar" id="update"class="btn">
+			 </td>
+			 <td>
+			  <input type="submit" onclick="return confiborrar();" name="eliminar" value="Eliminar" id="delete" class="btn">
+		     </td>
+		     <td>
+			  <input type="submit" value="Limpiar" name="limpiar" class="btn">
+		     </td>		    
+		  </tr>   		 
+	   </table>				
     
         
     </fieldset>

@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
+import Modelo.ClienteDTO;
 import Modelo.ProductoDAO;
+import Modelo.ProductoDTO;
 
 /**
  * Servlet implementation class Producto
@@ -83,16 +85,124 @@ public class Producto extends HttpServlet {
 			}
 		}
 		
-		if(request.getParameter("limpiar")!=null) {
-			long nit;
-        	String ciudad,direccion,nombre,telefono;
-        	nit=0L;
-        	ciudad=null;
-        	direccion=null;
-        	nombre=null;
-        	telefono=null;        	
+		if(request.getParameter("registrar")!=null) {
+			String nombre;
+			long codigo,nit;			
+			double ivacom,preciocom,precioven;
 			
-			response.sendRedirect("Productos.jsp?rest=limpio");
+			codigo = Long.parseLong(request.getParameter("codigo_producto"));
+			ivacom =Double.parseDouble(request.getParameter("iva_compra"));
+			nit = Long.parseLong(request.getParameter("nitproveedor"));
+			nombre = request.getParameter("nombre_producto");
+			preciocom =Double.parseDouble(request.getParameter("precio_compra"));
+			precioven =Double.parseDouble(request.getParameter("precio_venta"));
+			ProductoDTO prodto = new ProductoDTO(codigo,ivacom,nit,nombre,preciocom,precioven);
+			if(proDao.InsertarProducto(prodto)) {
+		      response.sendRedirect("ProductosActualizar.jsp?men=Producto Registrado Exitosamente!");  		    
+		    }else {
+		      	
+	          response.sendRedirect("ProductosActualizar.jsp?men=El Producto no se Registro");
+		    }
+		}
+		
+		
+		if(request.getParameter("consultar")!=null){
+			String nombre;
+			long codigo,nit;
+			double ivacom,preciocom,precioven;
+			codigo = Long.parseLong(request.getParameter("codigo_producto2"));			
+			
+			ProductoDTO prod = proDao.ConsultarProducto(codigo);
+			if(prod!=null) {
+				codigo= prod.getCodigo_producto();
+				ivacom = prod.getIvacompra();
+				nit = prod.getNitproveedor() ;
+				nombre = prod.getNombre_producto() ;
+				preciocom = prod.getPrecio_compra();
+				precioven = prod.getPrecio_venta();
+				
+				//ahora enviar por la url con el response a Libros.jsp o la vista jsp
+				response.sendRedirect("ProductosActualizar.jsp?codigo="+codigo+"&&iva="+ivacom+"&&nit="
+				+nit+"&&nombre="+nombre+"&&preciocompra="+preciocom+"&&precioventa="+precioven);
+				
+			}else {
+				response.sendRedirect("ProductosActualizar.jsp?men=El Producto no Existe");
+	     	}
+         }
+		
+		
+		if(request.getParameter("actualizar")!=null) {
+			String nombre;
+			long codigo,nit;			
+			double ivacom,preciocom,precioven;
+			
+			codigo = Long.parseLong(request.getParameter("cod"));
+			ivacom =Double.parseDouble(request.getParameter("ivaoculto"));
+			nit = Long.parseLong(request.getParameter("nitoculto"));
+			nombre = request.getParameter("nombre_producto");
+			preciocom =Double.parseDouble(request.getParameter("preciocomoculto"));
+			precioven =Double.parseDouble(request.getParameter("precio_venta"));
+			
+			ProductoDTO proddto_Act = new ProductoDTO(codigo,ivacom,nit,nombre,preciocom,precioven);
+					    
+			String op=request.getParameter("actualizar");
+			if(op.equals("true")) {
+				if(proDao.ActualizarProducto(proddto_Act)) {
+			      	
+	              response.sendRedirect("ProductosActualizar.jsp?men=El Producto se Actualizo Exitosamente!");  		    
+			    }else {
+			      
+		          response.sendRedirect("ProductosActualizar.jsp?men=El Producto no se Actualizo");
+			    }
+			}else {
+				response.sendRedirect("ProductosActualizar.jsp?men=Usted ha cancelado la accion: Actualizar");
+			}
+				
+		}
+		
+		
+		if(request.getParameter("eliminar")!=null) {
+			long num_codigo;
+			num_codigo = Long.parseLong(request.getParameter("cod"));
+			
+			String op=request.getParameter("eliminar");
+			
+			if(op.equals("true")) {
+				if(proDao.EliminarProducto(num_codigo)) {
+					response.sendRedirect("ProductosActualizar.jsp?men=El Producto fue Eliminado Exitosamente");
+				}else {
+					response.sendRedirect("ProductosActualizar.jsp?men=El Producto no se Elimino");
+				}
+			}else {
+				response.sendRedirect("ProductosActualizar.jsp");
+			}
+		}
+		
+		//llamar la pagina para cargar productos por archivo csv
+		if(request.getParameter("cargararchivo")!=null) {
+			       	
+			response.sendRedirect("ProductosArchivo.jsp?");
+			}
+		//llamar la pagina para hacer crud al modulo de productos
+		if(request.getParameter("cargarmanualmente")!=null) {
+	       	
+			response.sendRedirect("ProductosActualizar.jsp?");
+			}
+		
+		
+		if(request.getParameter("limpiar")!=null) {
+			String nombre;
+			long codigo,nit;			
+			double ivacompra,preciocompra,precioventa;
+			
+			codigo=0L;
+			ivacompra=0;
+			nit=0L;
+			nombre=null;
+			preciocompra=0;
+			precioventa=0;		
+        	
+			response.sendRedirect("ProductosActualizar.jsp?rest=limpio");
 			}
 		
 	}

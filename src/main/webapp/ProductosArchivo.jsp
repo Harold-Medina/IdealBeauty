@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="Admin.css">
 <head>
 <meta charset="ISO-8859-1">
-<title>Registro Proveedores</title>
+<title>Cargar Productos por Archivo</title>
 
 </head>
 <body>
@@ -85,30 +85,11 @@ if(request.getParameter("rest")!=null)
 		</nav>
 </header>
  
-<form action="Producto" method="post" >
+<form action="Producto" method="post" enctype="multipart/form-data">
 <fieldset>
-<legend><h2>Productos</h2></legend>
-      <div>
-		<table style="margin: 0 auto;" >
-		  
-			  <tr>
-			  
-			     <td>
-			      <label></label>
-			     </td>			     				
-				 <td>
-				  <div><input type="submit" name="cargararchivo" value="Cargar Productos por Archivo" class="btn"></div>			  
-				 </td>
-				   
-				 <td> 
-				  <div><input type="submit" name="cargarmanualmente" value="Cargar Productos Manualmente" class="btn"></div>	
-				 </td>	    			 		    
-			  </tr>       	  		 
-			   
-	    </table>
-     </div>	
-
-
+<legend><h2>Cargar Productos por Archivo</h2></legend>
+<div><label class="l1">Archivo: </label><input type="text" name="nombreArchivo"></div><div><input type="file" name="archivo" value="Examinar" required></div>
+<div><input type="submit" name="cargar" value="Cargar Archivo" class="btn"></div>
 </fieldset>
 </form>
 

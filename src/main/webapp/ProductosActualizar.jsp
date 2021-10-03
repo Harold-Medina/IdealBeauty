@@ -9,7 +9,7 @@
  <head>
 	<meta charset="ISO-8859-1">
 	
-	<title>Registro Clientes</title>
+	<title>Registro de Productos</title>
 	
 </head>
 <body>
@@ -19,21 +19,23 @@
     String mensaje="";
 %>
 <%!String mensaje="";
-	long cedula;
-	String telefono="";
+	long codigo;
+	double ivacompra;
+	long nit;
 	String nombre="";
-	String email="";
-	String direccion="";
+	double preciocompra;
+	double precioventa;	
 	String estado="";
 %>
 
 <%
-	if(request.getParameter("cedula")!=null){
-		cedula=Long.parseLong(request.getParameter("cedula"));
-		telefono= request.getParameter("telefono");
+	if(request.getParameter("codigo")!=null){
+		codigo=Long.parseLong(request.getParameter("codigo"));
+		ivacompra=Double.parseDouble(request.getParameter("iva"));
+		nit=Long.parseLong(request.getParameter("nit"));
 		nombre=request.getParameter("nombre");
-		email=request.getParameter("email");
-		direccion=request.getParameter("direccion");
+		preciocompra=Double.parseDouble(request.getParameter("preciocompra"));
+		precioventa=Double.parseDouble(request.getParameter("precioventa"));		
 		estado="disabled";
 	}
 %>
@@ -47,27 +49,31 @@ estado="enabled";
 <%
 if(request.getParameter("rest")!=null)
 {
-	cedula=0L;
-	telefono="";
+	codigo=0L;
+	ivacompra=0;
+	nit=0L;
 	nombre="";
-	email="";
-	direccion="";
+	preciocompra=0;
+	precioventa=0;
 	estado="";
+		
 	mensaje=request.getParameter("men");
 }
 %>
 
 <%
 	if(request.getParameter("men")!=null){
-		cedula=0L;
-		telefono="";
+		
+		codigo=0L;
+		ivacompra=0;
+		nit=0L;
 		nombre="";
-		email="";
-		direccion="";
+		preciocompra=0;
+		precioventa=0;	
 		estado="";
 		mensaje=request.getParameter("men");
-		//codigo javascript, mensaje con alert de javascript		
-	    out.print("<script>alert('"+mensaje+"');</script>");
+		//codigo javascript, mensaje con alert de javascript
+		out.print("<script>alert('"+mensaje+"');</script>");
 }
 %>
 
@@ -85,44 +91,44 @@ if(request.getParameter("rest")!=null)
 		</nav>
 </header>
 
-
-<!-- en action llamamos al servlet Cliente y usamos el metodo post la logica del negocio -->
-<form action="Cliente" method="post">
+<form action="Producto" method="post">
 	<fieldset>
-		<legend><h2>Clientes</h2></legend>
-		<table>
+		<legend><h2>Productos</h2></legend>
 		<div>
-			<label class="l1"> Cedula</label>
-			<input type="number" name="cedula_cliente" value="<%=cedula%>" required <%=estado%>>
+			<label class="l1">Codigo Producto</label>
+			<input type="number" name="codigo_producto" placeholder="Ingrese codigo producto" value="<%=codigo%>" required <%=estado%>>
 		</div>
-		<input type="hidden" name="ced" value="<%=cedula%>">
+		<input type="hidden" name="cod" value="<%=codigo%>">
 		<div>
-			<label class="l1">Teléfono</label>
-			<input type="text" name="telefono_cliente" value="<%=telefono%>" required>
-		</div>
-		<div>
-			<label>Nombre Completo</label>
-			<input type="text" name="nombre_cliente" value="<%=nombre%>" required>
+			<label class="l1">Nombre</label>
+			<input type="text" name="nombre_producto" placeholder="Ingrese nombre producto" value="<%=nombre%>" required>
 		</div>
 		<div>
-			<label>Correo Electronico</label>
-			<input type="text" name="email_cliente" value="<%=email%>" required>
+			<label class="l1">Nit Proveedor</label>
+			<input type="number" name="nitproveedor" value="<%=nit%>" required <%=estado%>>
 		</div>
+		<input type="hidden" name="nitoculto" value="<%=nit%>">
 		<div>
-			<label class="l1">Dirección</label>
-			<input type="text" name="direccion_cliente" value="<%=direccion%>">
-		</div>		
+			<label class="l1">Iva de Compra</label>
+			<input type="number" name="iva_compra" value="<%=ivacompra%>" required <%=estado%>>
+		</div>
+		<input type="hidden" name="ivaoculto" value="<%=ivacompra%>">
+		<div>
+			<label class="l1">Precio Compra</label>
+			<input type="numbrer" name="precio_compra" value="<%=preciocompra%>" <%=estado%>>
+		</div>
+		<input type="hidden" name="preciocomoculto" value="<%=preciocompra%>">
+		<div>
+			<label class="l1">Precio Venta</label>
+			<input type="number" name="precio_venta" value="<%=precioventa%>">
+		</div>
 		
 		
-		</table>
-		
-		<!--  tabla para los botones-->
-		<table style="margin: 0 auto;" >
+		  <table style="margin: 0 auto;">
 		  <tr>
 		     <td>
 			  <label></label>
 			 </td>
-		     
 			
 			 <td>
 			  <input type="submit" name="registrar" value="Registrar" class="btn">
@@ -142,21 +148,16 @@ if(request.getParameter("rest")!=null)
 		   
 		  </table>
 		
-		<!-- 
-		<div>
-			<input type="submit" name="registrar" value="Registrar" class="btn">
-			<input type="submit" onclick="return confiupdate();" name="actualizar" value="Actualizar" id="update"class="btn">
-			<input type="submit" onclick="return confiborrar();" name="eliminar" value="Eliminar" id="delete" class="btn">
-			<input type="submit" value="Limpiar" name="limpiar" class="btn">
-		</div> -->
+		
 	</fieldset>
 </form>
 
-<form action="Cliente" method="post">
+
+<form action="Producto" method="post">
 <fieldset>
 <legend><h2>Consultar</h2></legend>
 
-<div><label class="l1">Cedula: </label><input type="number" name="cedula_cliente2" required></div>
+<div><label class="l1">Codigo Producto: </label><input type="number" name="codigo_producto2" required></div>
 <div><input type="submit"  name="consultar" value="Consultar" class="btn"></div>
 </fieldset>
 </form>

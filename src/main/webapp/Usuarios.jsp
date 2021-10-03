@@ -21,7 +21,7 @@
 		       <li><a href="Proveedores.jsp">Proveedores</a></li>
 		       <li><a href="Productos.jsp">Productos</a></li>
 		       <li><a href="Ventas.jsp">Ventas</a></li>
-		       <li><a href="#">Reportes</a></li>
+		       <li><a href="Reportes.jsp">Reportes</a></li>
 			</ul>
 		</nav>
 </header>
@@ -73,6 +73,7 @@ if(request.getParameter("rest")!=null)
 
 	<fieldset>
 		<legend><h2>Usuarios</h2></legend>
+		<table>
 		<div>
 			<label class="l1"> Cédula   </label>
 			<input type="number" placeholder="ingrese su número Cédula" name="cedula" value="<%=cedula%>" required <%=estado%>>
@@ -96,14 +97,44 @@ if(request.getParameter("rest")!=null)
 			<label class="l1">Correo electronico </label>
 			<input type="email" placeholder="ingrese su email" name="email" value="<%=email%>" required>
 		</div>
+		</table>
+		
+		
+		<!--  tabla para los botones-->
+		<table style="margin: 0 auto;" >
+		  <tr>
+		     <td>
+			  <label></label>
+			 </td>
+			
+			 <td>
+			  <input type="submit" name="registrar" value="Registrar" class="btn">
+			 </td>
+			 <td> 
+		      <input type="submit" onclick="return confiupdate();" name="actualizar" value="Actualizar" id="update"class="btn">
+			 </td>
+			 <td>
+			  <input type="submit" onclick="return confiborrar();" name="eliminar" value="Eliminar" id="delete" class="btn">
+		     </td>
+		     <td>
+			  <input type="submit" value="Limpiar" name="limpiar" class="btn">
+		     </td>
+		    
+		  </tr> 
+		  		 
+		   
+		  </table>
+		</div>
+		
+		<!-- 
 		<div>
 			<input type="submit" value="Registrar" name="CrearU" class="btn">
 			<input type="submit" onclick="return confiupdate();" value="Actualizar" name="update" id="update" class="btn">
 			<input type="submit" onclick="return confiborrar();" value="Eliminar" name="delete" id="delete" class="btn"> 
-			<!-- TAREA DE ARREGLAR LA FUNCION DE ESTE BOTON <input type="reset"  value="reset" name="reset" class="btn">-->
+			 TAREA DE ARREGLAR LA FUNCION DE ESTE BOTON <input type="reset"  value="reset" name="reset" class="btn">
 			<input type="submit" value="Limpiar" name="limpiar" class="btn">
 			
-		</div>
+		</div> -->
 	</fieldset>
 </form>
 
