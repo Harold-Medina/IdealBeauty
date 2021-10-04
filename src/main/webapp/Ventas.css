@@ -117,10 +117,10 @@ label {
 	color: white;
 }
 
-div th, td, table {
+/*div th, td, table {
 	border: solid;
 	border-color: white; 
-}
+}*/
 
 .izq {
 	float: left;
