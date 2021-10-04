@@ -1,0 +1,126 @@
+package Modelo;
+
+import java.math.BigInteger;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import Controlador.Conexion;
+
+public class VentasDAO {
+
+	Conexion cnn= new Conexion();
+	Connection con= cnn.Conectar();
+	PreparedStatement ps= null;
+	ResultSet res = null;
+	
+	/*public boolean Insertar_Venta(VentasDTO v) {
+		
+		boolean resul=false;
+		try {
+			String sql="insert into ventas(cedula_cliente, cedula_usuario) values(?,?)";
+			ps=con.prepareStatement(sql);
+			
+			ps.setLong(1, v.getCedula_cliente());
+			ps.setLong(2, v.getCedula_usuario());
+			
+			resul=ps.executeUpdate()>0;
+			
+			if (resul) {
+				sql="select codigo_venta from ventas order by codigo_venta desc limit 1;";
+				ps = con.prepareStatement(sql);
+				res=ps.executeQuery();
+				Long codigo=null;
+				while(res.next()) {
+					ESTE ES EL CODIGO DE LA FACTURA ACTUAL, esta variable "codigo"
+					codigo=res.getLong(1);
+					queda pendiente de enviar este codigo al input "consecutivo" en ventas.jsp
+				}
+				
+				
+				/*Ejecuto el update de la venta en el codigo que es el actual*/
+				/*sql="update ventas set ivaventa=? where codigo_venta=? ";	/*VOY AQUIIIIIIIIIII 20:1:27:11
+				ps= con.prepareStatement(sql);
+				ps.setDouble(1, 0.1);
+				ps.setLong(2, codigo);
+				resul=ps.executeUpdate()>0; 
+			}			
+		} catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "error al insertar: "+ex);
+		}
+		return resul;
+		
+	} 
+	*/
+	
+	
+	public boolean Insertar_Venta(Long Ccedul,Long Ucedul) {
+		boolean resul=false;
+		boolean bandera = true;
+		boolean bandera2 = false;
+		boolean bandera3 = false;
+		Long cedulaUsuario=null;
+		Long cedulaCliente=null;
+		
+			/*String sql="insert into ventas(cedula_cliente, cedula_usuario) values(?,?)";
+			ps=con.prepareStatement(sql);
+			
+			ps.setLong(1, cedulaCliente);
+			ps.setLong(2, cedulaUsuario);
+			
+			resul=ps.executeUpdate()>0; */
+		
+		
+			if (bandera=true) {
+				try {		
+					String sql2="select * from usuarios where cedula_usuario=?";
+					ps=con.prepareStatement(sql2);
+					
+					ps.setLong(1, Ucedul);
+					res=ps.executeQuery();
+					while(res.next()) {
+						bandera2=true;
+						cedulaUsuario= res.getLong(1); 
+						}
+					}
+						
+				 catch(SQLException e) {
+				    	JOptionPane.showMessageDialog(null,"error al consultar"+ e);
+				 }
+				}
+			
+			if (bandera2=true) {
+					 
+					  try {
+						  String sql3="SELECT * FROM clientes WHERE cedula_cliente=?";
+						  ps = con.prepareStatement(sql3);
+						  ps.setLong(1, Ccedul);  
+						  res = ps.executeQuery();
+						  while(res.next()) {
+							  bandera3=true;
+							  cedulaCliente= res.getLong(1);
+						  }
+						  
+					  }catch(Exception e) {
+						  JOptionPane.showMessageDialog(null,"Error al Consultar el Cliente "+e);  
+					  }
+			}
+			
+			if (bandera3=true) {
+				try {String sql="insert into ventas(cedula_cliente, cedula_usuario) values(?,?)";
+				ps=con.prepareStatement(sql);
+				
+				ps.setLong(1, cedulaCliente);
+				ps.setLong(2, cedulaUsuario);
+				
+				resul=ps.executeUpdate()>0;}
+				
+				catch(SQLException ex){JOptionPane.showMessageDialog(null, "error al inicializar la factura: "+ex);}
+				return resul;					
+			}
+		}	
+	}
+
