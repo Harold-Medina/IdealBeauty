@@ -2,7 +2,7 @@
 <!-- ULTIMO COMENTARIO-->
 body{
 	text-align: center;
-	background-color:white;
+	background-color: white;
 	
 }
 
@@ -96,13 +96,6 @@ label{
 	
 }
 
-.btn{
-	color: white;
-	background-color:#b63821;
-	margin-right: 20px;
-	padding: 5px 8px;
-}
-
 .btn1{
 	color: white;
 	background-color:#b63821;
@@ -110,24 +103,24 @@ label{
 	padding: 5px 8px;
 	border-radius: 5px;
 }
-
+.btn1:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
 
 label {
 	width: auto;
 	color: white;
 }
 
-/*div th, td, table {
-	border: solid;
-	border-color: white; 
-}*/
-
-.izq {
-	float: left;
+div, th, td, table {
+    padding: 10px;
+    /* border: 1px solid;*/
 }
 
-.der {
-	float: right;
+table{
+	color:white;
+	
 }
 
 .centr {
@@ -138,18 +131,27 @@ label {
 
 .btnV {
 	height: 60px;
-	width: 110px;
+	width: 120px;
 }
 
 #tablaV {
-	margin: 20px;
-	padding-left:10%;
-	padding-right:10%;
+	margin-top:25px;
+	margin-bottom:50px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
+#productos{
+	width: 100%;
+}
+#resultados{
+	float:right;
+}
+.codpr{
+	width: 100px;
+}
 .peq{
 	width: 55px;
-	margin-left: 20px;
 }
 
 .btn:hover {
@@ -159,4 +161,9 @@ label {
 .l1{
 	padding: 0px;
 }
-
+.inptransp{
+	color:white;
+	width: 75px;
+	background: transparent;
+    border: none;
+}

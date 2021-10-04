@@ -7,7 +7,8 @@
 <link rel="stylesheet" type="text/css" href="Ventas.css">
  <head>
 	<meta charset="ISO-8859-1">
-	
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/Ventas.js"></script>
 	<title>Registro Usuarios</title>
 	
 </head>
@@ -33,88 +34,81 @@ String mensaje="";
 		</nav>
 </header>
 
-<form action="Venta" method="post">
+
 
 	<fieldset>
 		<legend><h2>ventas</h2></legend>
-			<!--  <section>
-			<label>Cédula</label>
-			<input type="number" placeholder="ingrese su número Cédula" name="cedula" value="<%=cedula%>" required <%=estado%>>
-			<input type="submit" name="consultar" value="Consultar" class="btn">
-			<label>Cédula</label>
-			<input type="number" placeholder="ingrese su número Cédula" name="cedula" value="<%=cedula%>" required <%=estado%>>
-			<label>Cédula</label>
-			<input type="number" placeholder="ingrese su número Cédula" name="cedula" value="<%=cedula%>" required <%=estado%>>
-			</section> -->
-			
 			<table id=tablaV>
 			<tr>
 			 <th>
-			  <label class=izq >Cédula Usuario</label>
-			  <input type="number" class="der" placeholder="ingrese Cédula" name="cedulaUsu" value="<%=cedula%>" required <%=estado%>>
-			  <br>
-			  <label class=izq >Cédula Cliente</label>
-			  <input type="number" class="der" placeholder="ingrese Cédula" name="cedulaCli" value="<%=cedula%>" required <%=estado%>>
+			  <label>Usuario</label>
+			  <input type="number" placeholder="ingrese Cédula" name="cedulaUsu" value="<%=cedula%>" required <%=estado%>>
+			 
+			 </th>
+			 <th>
+			  <label>_________________</label>
+			 <!-- <input type="number" placeholder="ingrese Cédula" name="cedula" value="<%=cedula%>" required <%=estado%>></th>-->
+			 <th>
+			  <label>Consecutivo</label>
+			  <input type="number" name="Consecutivo" value="<%=cedula%>" required disabled>
+			 </th>
+			</tr>
+			<tr>
+			 <th>
+			  <label>Cliente</label>
+			  <input type="number" placeholder="ingrese Cédula" name="cedulaUsu" value="<%=cedula%>" required <%=estado%>>
 			  
 			 </th>
 			 <th>
-			  <label>Usuario</label>
-			  <input type="number" class="der" placeholder="Presione en validar" name="nombreUsu" value="<%=cedula%>" disabled<%=estado%>>
-			  <br>
-			  <label>Cliente</label>
-			  <input type="number" class="der" placeholder="Presione en validar" name="nombreCli" value="<%=cedula%>" disabled<%=estado%>>
+			  <label>_________________</label>
 			 </th>
 			 <th>
-			  <label>Consecutivo</label>
-			  <input type="number" placeholder="Presione en validar" name="Consecutivo" value="<%=cedula%>" disabled>
-			  <br>
-			  <input type="submit" name="validar" value="validar" class="btn1 centr">
-			 </th>
-			</tr>
-			
+			 	<input type="submit" name="consultar" value="Validar" class="btn1" > 
+			 
+			</th> 
 			<tr>
-			 <td>
-			  <label>Código del producto</label> <br>
-			  <input> <input type="submit" name="consultar" value="Consultar" class="btn1"><br>
-			  <input> <input type="submit" name="consultar" value="Consultar" class="btn1"><br>
-			  <input> <input type="submit" name="consultar" value="Consultar" class="btn1"><br>
-			 </td>
-			 <td>
-			  <label class=izq>nombre producto</label><label class=der> Cantidad</label> <br>
-			  <input class=izq disabled> <input class="der peq" ><br>
-			  <input class=izq disabled> <input class="der peq" ><br>
-			  <input class=izq disabled> <input class="der peq" ><br>
-			 </td>
-			 <td>
-			  <label style="margin: 0 30%;">Valor Total</label> <br>
-			  <input class="centr" disabled> <br>
-			  <input class="centr" disabled> <br>
-			  <input class="centr" disabled> <br>
-			 </td>
-			</tr>
+			 <td colspan="3" colspan="2">
+			<button id="mas" class="btn1" >Agregar producto</button>
+			 	<table id="productos">
+			  		<thead>
+			  			<tr>
+			 				<th>Código del producto</th>
+			 				<th>nombre producto</th>
+			 				<th>costo unitario</th>
+			 				<th>cantidad</th>
+			 				<th>valor tot</th>
+			 				
+			 			</tr>
+			 		</thead>
+			 		
+			 	</table>
 			<tr>
 			 <td></td>
-			 <td>
-			  <input type="submit" name="calcular" value="Calcular" class="btn1 izq "> <br>  <label class=der> Total venta</label> <br>
-			  <input type="submit" name="consultar" value="Confirmar" class="btn1 izq btnV"> <label class=der> Total IVA</label> <br>
-			  <label class=der> Total con IVA</label> <br>
+			 <td colspan="3">
+			 		<table id="resultados">
+			 			<tr>
+			 				<td><input type="submit" name="consultar" value="Calcular" class="btn1" id="mult"></td>
+			 				<td><label> Total venta</label></td>
+			 				<td id="totv"></td>
+			 			</tr>
+			 			<tr>
+			 				<td><input type="submit" name="consultar" value="Confirmar" class="btn1"></td>
+			 				<td><label> Total IVA</label></td>
+			 				<td id="totiva"></td>
+			 			</tr>
+			 			<tr>
+			 				<td></td>
+			 				<td><label> Total con IVA</label></td>
+			 				<td id="totveiva"></td>
+			 			</tr>
+			 		</table>
 			 </td>
-			 <td>
-			  <input class="centr" disabled> <br>
-			  <input class="centr" disabled> <br>
-			  <input class="centr" disabled> <br>
-			 </td>
-			</tr>
-			
+			 </tr>
+			  
 			</table>
 			
-		<!--  <div>
-			<input type="submit" value="Registrar" name="CrearU" class="btn">
-			<input type="submit" onclick="return confiupdate();" value="Actualizar" name="update" id="update" class="btn">
-			<input type="submit" onclick="return confiborrar();" value="Eliminar" name="delete" id="delete" class="btn">  
-			 </div> -->
 	</fieldset>
-</form>
+
 
 </body>
 </html>
