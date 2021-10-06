@@ -8,8 +8,8 @@ function linea(){
 	tabla.innerHTML+=`
 						<tr>
 			 				<th><input id="prod${i}"  class="codpr"></input> <input type="submit" value="Consultar" class="btn1" ></th>
-			 				<th><input id="nompro${i}" class="inptransp" disabled></input></th>
-			 				<th><input class="inptransp" id="a${i}" ></input></th>
+			 				<th><input id="nompro${i}" class="inptranspp" disabled></input></th>
+			 				<th><input class="inptranspp" id="a${i}" ></input></th>
 			 				<th><input id="b${i}" class="peq"></input></th>
 			 				<th id="tot${i}">_____________</th>
 			 			</tr>`
@@ -34,15 +34,19 @@ function mul(){
 		tot.innerHTML=mult;
 	}
 	var totvjs=document.querySelector("#totv")
-	totvjs.innerHTML=totven;
+	//totvjs.innerHTML=totven;
+	document.getElementById("totv").value=totven.toFixed();
 	
 	var totiva=totven*0.19
 	var totivajs=document.querySelector("#totiva")
-	totivajs.innerHTML=totiva;
+	//totivajs.innerHTML=totiva;
+	document.getElementById("totiva").value=totiva.toFixed();
 	
 	var totveiva= totiva+totven
 	var totveivajs=document.querySelector("#totveiva")
-	totveivajs.innerHTML=totveiva
+	//totveivajs.innerHTML=totveiva
+	document.getElementById("totveiva").value=totveiva.toFixed();
+	
 	 	
 }
 

@@ -35,7 +35,6 @@ public class Usuario extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		UsuarioDAO usuDao = new UsuarioDAO();
 		
 		if(request.getParameter("CrearU")!=null) {

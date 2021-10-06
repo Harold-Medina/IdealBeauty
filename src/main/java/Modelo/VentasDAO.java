@@ -56,8 +56,52 @@ public class VentasDAO {
 	} 
 	*/
 	
+	public Long Buscar_Venta() {
+		Long consecutivo=null;
+		
+		try {
+			String sql="select codigo_venta from ventas order by codigo_venta desc limit 1;";
+		
+			ps = con.prepareStatement(sql);
+			res=ps.executeQuery();
+			
+			while(res.next()) {
+				consecutivo=res.getLong(1);
+			}
+		} catch(SQLException e) {
+			JOptionPane.showMessageDialog(null,"error al consultar"+ e);
+		}
+		return consecutivo;
+	}
 	
-	public boolean Insertar_Venta(Long Ccedul,Long Ucedul) {
+	public boolean Insertar_Venta(VentasDTO venta) {
+		boolean resul=false;
+		try {
+			String sql="insert into ventas(cedula_usuario,cedula_cliente,ivaventa,total_venta,valor_venta) values(?,?,?,?,?)";
+			ps=con.prepareStatement(sql);
+			
+			ps.setLong(1, venta.getCedula_cliente());
+			ps.setLong(2, venta.getCedula_usuario());
+			ps.setDouble(3, venta.getIvaventa());
+			ps.setDouble(4, venta.getTotal_venta());
+			ps.setDouble(5, venta.getValor_venta());
+			
+			JOptionPane.showMessageDialog(null, venta.getCedula_cliente());
+			JOptionPane.showMessageDialog(null, venta.getCedula_usuario());
+			JOptionPane.showMessageDialog(null, venta.getIvaventa());
+			JOptionPane.showMessageDialog(null, venta.getTotal_venta());
+			JOptionPane.showMessageDialog(null, venta.getValor_venta());
+			
+			
+			resul=ps.executeUpdate()>0;
+		} catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "error al insertar: "+ex);
+		}
+		return resul;
+	}
+	
+	
+	public boolean Confirmar_cedula(Long Ccedul,Long Ucedul) {
 		boolean resul=false;
 		boolean bandera = true;
 		boolean bandera2 = false;
@@ -118,9 +162,15 @@ public class VentasDAO {
 				
 				resul=ps.executeUpdate()>0;}
 				
-				catch(SQLException ex){JOptionPane.showMessageDialog(null, "error al inicializar la factura: "+ex);}
-				return resul;					
+				catch(SQLException ex){JOptionPane.showMessageDialog(null, "error al inicializar la factura: "+ex);}					
 			}
-		}	
+			return resul;
+		}
+	
+	 
+	
+	
+	
+	
 	}
 

@@ -1,6 +1,7 @@
 package Modelo;
 
 public class VentasDTO {
+	
 	private long codigo_venta;
 	private long cedula_cliente;
 	private long cedula_usuario;
@@ -9,10 +10,13 @@ public class VentasDTO {
 	private double valor_venta;
 	
 	
-	public VentasDTO(long cedula_cliente, long cedula_usuario) {
+	public VentasDTO(long cedula_cliente, long cedula_usuario, double ivaventa, double total_venta, double valor_venta) {
 		super();
 		this.cedula_cliente = cedula_cliente;
 		this.cedula_usuario = cedula_usuario;
+		this.ivaventa = ivaventa;
+		this.total_venta = total_venta;
+		this.valor_venta = valor_venta;
 	}
 	
 	
