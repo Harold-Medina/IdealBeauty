@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+   pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="Admin.css">
+<link rel="stylesheet" type="text/css" href="Reportes.css">
 <head>
 <meta charset="ISO-8859-1">
-<title>Reportes</title>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/reportes.js"></script>
+<title> Reportes </title>
 </head>
 <body>
-
-<%!String mensaje="";
-%>
 
 <header id="o">
 		<nav class="op">
@@ -26,34 +26,46 @@
 		</nav>
 </header>
 
-<form action="" method="post">
+
 	<fieldset>
 		<legend><h2>Reportes</h2></legend>
 	
-		<div>
+		
 		  <table style="margin: 0 auto;">
 		  <tr>
+		     
+		     <label></label>			
+			 <td>
+			  <div><input class="listaUsuario" type="submit" name="listadoUsuarios" value="Listado de Usuarios" ></div>
+			 </td>
+			 <td> 	
+			  <div><input class="listaCliente" type="submit" name="listadoClientes" value="Listado de Clientes" ></div> 
+			 </td>
+			 <td>
+			  <div><input class="ventaCliente" type="submit" name="ventaCliente" value="Ventas por Cliente" ></div> 
+			 </td>
 		     <td>
-			  <label></label>
+			  <div><input class="listaProducto" type="submit" name="listaProductos" value="Listado de Productos" ></div> 
 			 </td>
-			
-			 <td>
-			  <div><input type="submit" name="listadoUsuarios" value="Listado de Usuarios" class="btn"></div>
+             <td>
+			  <div><input class="listaProveedor" type="submit" name="listaProveedores" value="Listado de Proveedores" ></div> 
 			 </td>
-			 <td> 
-		      <div><input type="submit" name="listadoCliente" value="Listado de Cliente" id="update"class="btn"></div>
-			 </td>
-			 <td>
-			  <div><input type="submit" name="ventaCliente" value="Ventas por Cliente" id="delete" class="btn"></div>
-		    </td>
-		  </tr> 
-		  		 
+		    		    
+		  </tr>  	
 		   
 		  </table>
-		</div>
-	</fieldset>
-</form>
-
+		  <label></label>
+		
+		
+	</fieldset>	
+	
+<h3 id="titulo-reporte"></h3>
+<div></div>	
+ <table id="tabla" style="margin: 0 auto;" >     
+	   
+	
+	</table>
+<div> </div>
 
 </body>
 </html>

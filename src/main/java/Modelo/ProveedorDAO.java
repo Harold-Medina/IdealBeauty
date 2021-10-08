@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -105,6 +106,24 @@ public class ProveedorDAO {
 		}
 		return resultado;
       }
+	
+   public ArrayList<ProveedorDTO> Cargar_select(){
+		
+		ProveedorDTO prov=null;
+		ArrayList<ProveedorDTO> lista= new ArrayList<>();
+		try {
+		String sql="SELECT * FROM proveedores";
+		ps= con.prepareStatement(sql);
+		res=ps.executeQuery();
+		while(res.next()) {			
+			prov= new ProveedorDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+		    lista.add(prov);
+		}
+		}catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error"+ex);	}
+		
+		return lista;
+	}
 	
 	
 }

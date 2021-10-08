@@ -1,6 +1,8 @@
 package Modelo;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 import Controlador.Conexion;
 
@@ -130,6 +132,24 @@ public class ProductoDAO {
 	}
 
 	
+    public ArrayList<ProductoDTO> Cargar_select(){
+		
+		ProductoDTO prod=null;
+		ArrayList<ProductoDTO> lista= new ArrayList<>();
+		try {
+		String sql="SELECT * FROM productos";
+		ps= con.prepareStatement(sql);
+		res=ps.executeQuery();
+		while(res.next()) {
+			
+			prod= new ProductoDTO(res.getLong(1),res.getDouble(2),res.getLong(3),res.getString(4),res.getDouble(5),res.getDouble(6));
+		    lista.add(prod);
+		}
+		}catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error"+ex);	}
+		
+		return lista;
+	}
 	
 
 }

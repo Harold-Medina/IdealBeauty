@@ -1,0 +1,235 @@
+@charset "ISO-8859-1";
+
+
+body{
+	text-align: center;
+	background-color: white;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+nav.op{
+	margin: 0;
+	padding: 5px;
+	width: 100%;
+	text-align: center;
+	background-color:black;
+}
+ul{
+	list-style-type: none;
+	
+}
+li{
+    display: inline-block;
+	width: 13%;
+}
+li a{
+	margin: 10px;
+	color: #ffffff;
+	display: block;
+	padding: 6px 6px;
+	text-decoration: none;
+	text-align: center;
+}
+li a:hover {
+	background-color: white;
+	color: black;
+	border-radius: 10px;
+}
+#l{
+	border-radius: 20px;
+	background-color: #b63821;
+}
+
+
+h1{
+	color:white;
+}
+
+h2{
+	padding: 3px;
+	border-radius:5px;
+	background-color: #b63821;
+	color:white;
+	text-align: center;
+}
+h3{
+	
+	color:#303030;
+	text-align: center;
+}
+
+
+fieldset{
+	margin-top: 60px;
+	margin-bottom: 80px;
+	margin-left: auto;
+	margin-right:auto;
+	width: 88%;
+	border-bottom-color: #b63821;
+	background-color: #303030;
+	border-radius:10px;
+}
+
+legend {
+     display: table; 
+     min-width: 0px;
+     max-width: 70%;
+     position: relative;
+     margin: auto;
+     padding: 5px 20px;
+     color: white;
+     font-size: 20px;
+     text-align: center;
+}
+
+div{
+	width: 40%;
+	margin: 10px;
+	color: #ffffff;
+	display: inline-block;
+	padding: 6px 6px;
+	text-decoration: none;
+	text-align: justify;
+}
+
+label{
+	
+	display: inline-block;
+	width:150px;
+	
+}
+
+.btn{
+	color: white;
+	background-color:#b63821;
+	margin-right: 20px;
+	padding: 5px 8px;
+}
+
+.btn:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
+
+
+.listaCliente{
+	color: white;
+	background-color:#b63821;
+	margin-right: 20px;
+	padding: 5px 8px;
+}
+
+.listaCliente:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
+
+.listaUsuario{
+	color: white;
+	background-color:#b63821;
+	margin-right: 20px;
+	padding: 5px 8px;
+}
+
+.listaUsuario:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
+
+.listaCliente:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
+
+
+.ventaCliente{
+	color: white;
+	background-color:#b63821;
+	margin-right: 20px;
+	padding: 5px 8px;
+}
+
+
+.listaProveedor:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
+
+.listaProveedor{
+	color: white;
+	background-color:#b63821;
+	margin-right: 20px;
+	padding: 5px 8px;
+}
+
+.listaProveedor:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
+
+.listaProducto{
+	color: white;
+	background-color:#b63821;
+	margin-right: 20px;
+	padding: 5px 8px;
+}
+
+.ventaCliente:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
+
+/*css de la tabla resultado clientes*/
+
+#tabla {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  
+  #tabla thead tr {
+    background-color:#b63821;
+    color: #ffffff;    
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  #tabla th,
+  #tabla td {
+    padding: 12px 15px;
+  }
+  
+  #tabla tbody tr {
+    border-bottom: 1px solid #b63821 ;
+  }
+  
+  #tabla tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  #tabla tbody tr:last-of-type {
+    border-bottom: 1px solid #b63821;
+  }
+  
+  
+  #tabla tbody tr.active-row {
+    font-weight: bold;
+    color: #b63821;
+  }
+  
+  
+  
+  
+  #tabla tr:hover td{
+	background-color: #303030;
+	color: white;
+}

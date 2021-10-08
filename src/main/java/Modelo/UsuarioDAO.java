@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -89,6 +90,26 @@ public class UsuarioDAO {
 			JOptionPane.showMessageDialog(null, "error al Eliminar: "+ex);
 		}
 		return resul;
+	}
+	
+	
+    public ArrayList<UsuarioDTO> Cargar_select(){
+		
+		UsuarioDTO usu=null;
+		ArrayList<UsuarioDTO> lista= new ArrayList<>();
+		try {
+		String sql="SELECT * FROM usuarios";
+		ps= con.prepareStatement(sql);
+		res=ps.executeQuery();
+		while(res.next()) {
+			
+			usu = new UsuarioDTO(res.getObject(1, BigInteger.class),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+		    lista.add(usu);
+		}
+		}catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error"+ex);	}
+		
+		return lista;
 	}
 	
 	
