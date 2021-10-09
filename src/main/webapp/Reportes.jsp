@@ -8,6 +8,11 @@
 <meta charset="ISO-8859-1">
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="js/reportes.js"></script>
+
+<script src="js/xlsx.full.min.js"></script>
+<script src="js/FileSaver.min.js"></script>
+<script src="js/tableexport.min.js"></script> 
+
 <title> Reportes </title>
 </head>
 <body>
@@ -60,12 +65,15 @@
 	</fieldset>	
 	
 <h3 id="titulo-reporte"></h3>
-<div></div>	
+<div></div>
+<button id="btnExportar" style="display: none; margin: 0 auto;"></button>
+<div></div>
+<label></label>
  <table id="tabla" style="margin: 0 auto;" >     
 	   
 	
 	</table>
 <div> </div>
-
+<script src="js/exportardatosexcel.js" ></script>
 </body>
 </html>

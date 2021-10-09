@@ -19,6 +19,8 @@ import Modelo.ProductoDAO;
 import Modelo.ProductoDTO;
 import Modelo.ProveedorDAO;
 import Modelo.ProveedorDTO;
+import Modelo.ReporteVentaClienteDAO;
+import Modelo.ReporteVentaClienteDTO;
 import Modelo.UsuarioDAO;
 import Modelo.UsuarioDTO;
 
@@ -85,6 +87,16 @@ public class Reportes extends HttpServlet {
 						//ya tenemos la lista lo convertimos a json
 						salida.println(datos.toJson(lista));			
 					 	}
+				 //procedimiento para seleccionar el total de ventas por cliente		
+				 		if (op.equals("ventascliente")) {	
+							//llamo DAO Reportes Venta Cliente
+							ReporteVentaClienteDAO vencliDao = new ReporteVentaClienteDAO();
+							ArrayList<ReporteVentaClienteDTO> lista = new ArrayList<>();
+							lista = vencliDao.Cargar_select();
+							//ya tenemos la lista lo convertimos a json
+							salida.println(datos.toJson(lista));			
+							
+						}
 						
 			
 		
