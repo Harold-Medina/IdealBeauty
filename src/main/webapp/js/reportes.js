@@ -14,7 +14,7 @@ function listarClientes(){
 		var tabla=document.querySelector("#tabla")
 		 
 	     h3.innerHTML=`<h3>Listado de Clientes</h3>`
-         btnExportar.innerHTML=`<button style="display: inline" margin: 0 auto>Exportar Datos a Excel</button>`         
+         btnExportar.innerHTML=`<button style="display: inline">Exportar Datos a Excel</button>`         
          tabla.innerHTML=''      
          tabla.innerHTML+=`<thead>
         <tr>
@@ -56,7 +56,7 @@ function listarUsuarios(){
 		var tabla=document.querySelector("#tabla")
 		 
 	     h3.innerHTML=`<h3>Listado de Usuarios</h3>`
-         btnExportar.innerHTML=`<button style="display: inline" margin: 0 auto>Exportar Datos a Excel</button>`         
+         btnExportar.innerHTML=`<button style="display: inline">Exportar Datos a Excel</button>` 
          tabla.innerHTML=''      
          tabla.innerHTML+=`<thead>
         <tr>
@@ -98,7 +98,7 @@ function listarProductos(){
 		var tabla=document.querySelector("#tabla")
 		 
 	     h3.innerHTML=`<h3>Listado de Productos</h3>`
-         btnExportar.innerHTML=`<button style="display: inline" margin: 0 auto>Exportar Datos a Excel</button>` 
+         btnExportar.innerHTML=`<button style="display: inline">Exportar Datos a Excel</button>` 
          tabla.innerHTML=''      
          tabla.innerHTML+=`<thead>
         <tr>
@@ -141,7 +141,7 @@ function listarProveedores(){
 		var tabla=document.querySelector("#tabla")
 		 
 	     h3.innerHTML=`<h3>Listado de Proveedores</h3>`
-         btnExportar.innerHTML=`<button style="display: inline" margin: 0 auto>Exportar Datos a Excel</button>` 
+         btnExportar.innerHTML=`<button style="display: inline">Exportar Datos a Excel</button>` 
          tabla.innerHTML=''      
          tabla.innerHTML+=`<thead>
         <tr>
@@ -182,10 +182,11 @@ function ventasClientes(){
 		var  btnExportar = document.querySelector("#btnExportar");
 		var h3 = document.querySelector("#titulo-reporte")
 		var tabla=document.querySelector("#tabla")
+		
 		h3.innerHTML=`<h3>Total de Ventas por Cliente</h3>`  
-		btnExportar.innerHTML=`<button style="display: inline" margin: 0 auto>Exportar Datos a Excel</button>`        
-	    tabla.innerHTML=''      
-         tabla.innerHTML+=`<thead>
+		btnExportar.innerHTML=`<button style="display: inline">Exportar Datos a Excel</button>` 
+		tabla.innerHTML=''      
+        tabla.innerHTML+=`<thead>
         <tr>
 		<th align="center">Cedula</th>
 		<th align="center">Nombre</th>

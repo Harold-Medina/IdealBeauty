@@ -140,10 +140,6 @@ label{
 	color: black;
 }
 
-.listaCliente:hover {
-	background-color:#ffe6e6;
-	color: black;
-}
 
 
 .ventaCliente{
@@ -153,8 +149,7 @@ label{
 	padding: 5px 8px;
 }
 
-
-.listaProveedor:hover {
+.ventaCliente:hover {
 	background-color:#ffe6e6;
 	color: black;
 }
@@ -178,26 +173,27 @@ label{
 	padding: 5px 8px;
 }
 
+.listaProducto:hover {
+	background-color:#ffe6e6;
+	color: black;
+}
+
 #btnExportar:hover {
 	background-color:#ffe6e6;
 	color: black;
 }
 
-#btnExportar{
+/*#btnExportar{
 	color: white;
-	background-color:#b63821;
+	background-color:#303030;
 	margin-right: 20px;
 	padding: 5px 8px;
 	width:200px;
 	margin-left:auto;
 	margin-right:auto;
-}
+	
+}*/
 
-
-.ventaCliente:hover {
-	background-color:#ffe6e6;
-	color: black;
-}
 
 /*css de la tabla resultado clientes*/
 
@@ -241,9 +237,7 @@ label{
     font-weight: bold;
     color: #b63821;
   }
-  
-  
-  
+   
   
   #tabla tr:hover td{
 	background-color: #303030;

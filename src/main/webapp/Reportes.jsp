@@ -72,7 +72,7 @@
  <table id="tabla" style="margin: 0 auto;" >     
 	   
 	
-	</table>
+ </table>
 <div> </div>
 <script src="js/exportardatosexcel.js" ></script>
 </body>
