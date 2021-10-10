@@ -25,6 +25,10 @@ if (request.getParameter("cedulaUsu")!=null){
 cedulaUsuario= request.getParameter("cedulaUsu");
 nombreUsuario=request.getParameter("nombreUsu");
 }
+if (request.getParameter("cedula-user")!=null){
+	cedulaUsuario=request.getParameter("cedula-user");
+	nombreUsuario=request.getParameter("nombre-user");
+}
 if (request.getParameter("cedulaCli")!=null){
 cedulaCliente= request.getParameter("cedulaCli");
 nombreCliente=request.getParameter("nombreCli");
@@ -34,6 +38,13 @@ consecutivo=request.getParameter("consecutivo");
 }
 %>
 
+<%
+if(request.getParameter("welcome")!=null)
+{
+	mensaje=request.getParameter("welcome");
+	out.print("<script>alert('"+mensaje+"')</script>");
+}
+%>
 <%
 if(request.getParameter("mens")!=null)
 {
@@ -58,13 +69,13 @@ if(request.getParameter("mens")!=null)
 <header id="o">
 		<nav class="op">
 			<ul>	
-			   <li><a href="Index.jsp" id="l">Ideal Beauty</a></li>
-			   <li><a href="Usuarios.jsp">Usuarios</a></li>
+			   <li class="izq"><a href="Index.jsp" id="l">Ideal Beauty</a></li>
+			   <!--  <li><a href="Usuarios.jsp">Usuarios</a></li>
 		       <li><a href="Clientes.jsp">Clientes</a></li>
 		       <li><a href="Proveedores.jsp">Proveedores</a></li>
-		       <li><a href="Productos.jsp">Productos</a></li>
-		       <li><a href="Ventas.jsp">Ventas</a></li>
-		       <li><a href="Reportes.jsp">Reportes</a></li>
+		       <li><a href="Productos.jsp">Productos</a></li> -->
+		       <li><a href="Ventas.jsp">Caja</a></li>
+		       <!--  <li><a href="Reportes.jsp">Reportes</a></li> -->
 			</ul>
 		</nav>
 </header>
@@ -76,7 +87,7 @@ if(request.getParameter("mens")!=null)
 			<tr>
 			 <th>
 			  <label>Usuario</label>
-			  <input type="number" placeholder="ingrese Cédula" name="cedulaUsu1" value="<%=cedulaUsuario%>"  <%=estado%>>
+			  <input type="number" placeholder="ingrese Cédula" name="cedulaUsu1" value="<%=cedulaUsuario%>" class="inptransp" <%=estado%>>
 			  <input placeholder="ingrese Cédula" name="cedulaUsu" value="<%=cedulaUsuario%>"  type="hidden">
 			 </th>
 			 <th>

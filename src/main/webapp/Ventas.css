@@ -96,6 +96,10 @@ label{
 	
 }
 
+.izq {
+	float: left;
+}
+
 .btn1{
 	color: white;
 	background-color:#b63821;

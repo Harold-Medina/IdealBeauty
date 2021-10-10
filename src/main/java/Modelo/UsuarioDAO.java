@@ -58,6 +58,26 @@ public class UsuarioDAO {
 		return usu;
 	}
 	
+	public UsuarioDTO Login_Usuario(String Username) {
+		
+		UsuarioDTO usu=null;
+		
+		try {
+			String sql="select * from usuarios where usuario=?";
+			ps=con.prepareStatement(sql);
+			
+			ps.setString(1, Username);
+			res=ps.executeQuery();
+			while(res.next()) {
+				usu = new UsuarioDTO(res.getObject(1, BigInteger.class),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+			}
+		} catch(SQLException e) {
+			JOptionPane.showMessageDialog(null,"error al consultar"+ e);
+		}
+		
+		return usu;
+	}
+	
 	public boolean Actualizar_Usuario(UsuarioDTO usu) {
 		boolean resul=false;
 		try {
