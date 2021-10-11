@@ -86,12 +86,12 @@ public class VentasDAO {
 			ps.setDouble(4, venta.getTotal_venta());
 			ps.setDouble(5, venta.getValor_venta());
 			
-			JOptionPane.showMessageDialog(null, venta.getCedula_cliente());
+			/*JOptionPane.showMessageDialog(null, venta.getCedula_cliente());
 			JOptionPane.showMessageDialog(null, venta.getCedula_usuario());
 			JOptionPane.showMessageDialog(null, venta.getIvaventa());
 			JOptionPane.showMessageDialog(null, venta.getTotal_venta());
 			JOptionPane.showMessageDialog(null, venta.getValor_venta());
-			
+			*/
 			
 			resul=ps.executeUpdate()>0;
 		} catch(SQLException ex) {

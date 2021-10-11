@@ -245,6 +245,7 @@ public class Venta extends HttpServlet {
 				}
 				
 				if(request.getParameter("prod2")!=null) {
+					JOptionPane.showMessageDialog(null, request.getParameter("prod2"));
 					int cantidad_producto= Integer.parseInt(request.getParameter("cant2"));
 					long codigo_producto= Long.parseLong(request.getParameter("prod2"));
 					long codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;

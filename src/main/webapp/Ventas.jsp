@@ -142,12 +142,12 @@ if(request.getParameter("prod3")!=null){
 		<nav class="op">
 			<ul>	
 			   <li class="izq"><a href="Index.jsp" id="l">Ideal Beauty</a></li>
-			   <!--  <li><a href="Usuarios.jsp">Usuarios</a></li>
+			     <li><a href="Usuarios.jsp">Usuarios</a></li> 
 		       <li><a href="Clientes.jsp">Clientes</a></li>
-		       <li><a href="Proveedores.jsp">Proveedores</a></li>
-		       <li><a href="Productos.jsp">Productos</a></li> -->
+		        <li><a href="Proveedores.jsp">Proveedores</a></li>
+		       <li><a href="Productos.jsp">Productos</a></li>  
 		       <li><a href="Ventas.jsp">Caja</a></li>
-		       <!--  <li><a href="Reportes.jsp">Reportes</a></li> -->
+		         <li><a href="Reportes.jsp">Reportes</a></li> 
 			</ul>
 		</nav>
 </header>
@@ -159,7 +159,7 @@ if(request.getParameter("prod3")!=null){
 			<tr>
 			 <th>
 			  <label>Usuario</label>
-			  <input type="number" placeholder="ingrese Cédula" name="cedulaUsu1" value="<%=cedulaUsuario%>" class="inptransp" <%=estado%>>
+			  <input type="text" placeholder="ingrese Cédula" name="cedulaUsu1" value="<%=cedulaUsuario%>" class="inptransp" <%=estado%>>
 			  <input placeholder="ingrese Cédula" name="cedulaUsu" value="<%=cedulaUsuario%>"  type="hidden">
 			 </th>
 			 <th>
@@ -212,7 +212,7 @@ if(request.getParameter("prod3")!=null){
 			 			</tr>
 			 			<tr>
 			 				<th>
-								<input id="prod2" name="prod2" value="<%=prod2%>" class="codpr" type="number"></input>
+								<input id="prod2" name="prod2" value="<%=prod2%>" class="codpr blue" type="number"></input>
 								<input id="cons2" type="submit" name="Consultar2" value="Ok" class="btn1"></th>
 			 				<th><input id="nompro2" name="nompro2" value="<%=nompro2%>" class="inptranspp" ></input></th><!-- disabled -->
 			 				<th><input id="a2" name="costu2" value="<%=costu2%>" class="inptranspp" ></input></th><!-- disabled -->
