@@ -265,7 +265,7 @@ if(request.getParameter("prod3")!=null){
 			</table>
 	</Form>
 	<div>
-		<button id="mas" class="btn1" >Agregar producto</button>
+		<!--  <button id="mas" class="btn1" >Agregar producto</button> -->
 		<input type="submit" name="calcular" value="Calcular" class="btn1" id="mult">
 	</div>	
 	<!-- 
