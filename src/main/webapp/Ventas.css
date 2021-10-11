@@ -117,10 +117,10 @@ label {
 	color: white;
 }
 
- div, th, td, table {
+ /*div, th, td, table {
     padding: 10px;
     border: 1px solid;
-}
+}*/
 
 
 table{
@@ -166,9 +166,18 @@ table{
 .l1{
 	padding: 0px;
 }
+/*DANIEL NUEVO*/
 .inptransp{
 	color:white;
 	width: 75px;
 	background: transparent;
     border: none;
+}
+.inptranspp{
+	color:white;
+	width: 50px;
+	background: transparent;
+    border: none;
+       
+    border-bottom: white 2px solid;
 }

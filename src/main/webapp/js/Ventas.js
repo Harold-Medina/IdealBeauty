@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-let i=0
+let i=3
 function linea(){
 	i=i+1
 	var tabla=document.querySelector("#productos")
@@ -19,34 +19,52 @@ function linea(){
 function mul(){
 	
 	let totven=0
-	for(let mul=1; mul<=i; mul++){
+	let ivatotalfinal=0
+	let mult=null
+	
+	for(let mul=1; mul<=3; mul++){
 		
 		var n1=parseInt(document.getElementById("a"+mul).value);
-		/*alert(n1);*/
+		//alert(n1);
 		var n2=parseInt(document.getElementById("b"+mul).value);
-		var mult=n1*n2
+		//alert(n2);
+		var n3=parseInt(document.getElementById("iva"+mul).value);
+		
+		if(isNaN(n1)+isNaN(n2)){}else{
+		 mult=n1*n2
+		var totiva=n3/100*mult
+		var prodtot=mult+totiva
 		
 		totven=totven+mult
-		console.log("tot es "+mult)
-		/*alert(mult);*/
+		ivatotalfinal=ivatotalfinal+totiva
 		
-		var tot=document.querySelector("#tot"+mul)
-		tot.innerHTML=mult;
+		
+		console.log("tot es "+mult)
+		//alert(mult);
+		
+		//var tot=document.querySelector("#tot"+mul)
+		//tot.innerHTML=mult;
+		document.getElementById("valven"+mul).value=mult.toFixed();
+		document.getElementById("totiva"+mul).value=totiva.toFixed();
+		document.getElementById("prodtot"+mul).value=prodtot.toFixed();
+		}	
 	}
-	var totvjs=document.querySelector("#totv")
+	if(mult=null){}else{
+			
+	//var totvjs=document.querySelector("#totv")
 	//totvjs.innerHTML=totven;
 	document.getElementById("totv").value=totven.toFixed();
 	
-	var totiva=totven*0.19
-	var totivajs=document.querySelector("#totiva")
+
+	//var totivajs=document.querySelector("#totiva")
 	//totivajs.innerHTML=totiva;
-	document.getElementById("totiva").value=totiva.toFixed();
+	document.getElementById("ivatotalfinal").value=ivatotalfinal.toFixed();
 	
-	var totveiva= totiva+totven
-	var totveivajs=document.querySelector("#totveiva")
+	var totveiva= ivatotalfinal+totven
+	//var totveivajs=document.querySelector("#totveiva")
 	//totveivajs.innerHTML=totveiva
 	document.getElementById("totveiva").value=totveiva.toFixed();
-	
+	}
 	 	
 }
 

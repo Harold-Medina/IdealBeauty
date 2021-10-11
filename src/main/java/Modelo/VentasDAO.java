@@ -167,7 +167,28 @@ public class VentasDAO {
 			return resul;
 		}
 	
-	 
+	 /*NUEVO DE DANIEL*/
+	public boolean Inserta_detalle_venta(DetVenDTO detven) {
+		boolean resul=false;
+		try {
+			String sql="INSERT INTO `idealbeauty`.`detalle_ventas` (`cantidad_producto`, `codigo_producto`, `codigo_venta`, `valor_total`, `valor_venta`, `valorIva`) VALUES (?,?,?,?,?,?)";
+			ps=con.prepareStatement(sql);
+			
+			ps.setObject(1, detven.getCantidad_producto());
+			ps.setLong(2, detven.getCodigo_producto());
+			ps.setLong(3, detven.getCodigo_venta());
+			/*Cambiado a Double*/
+			ps.setDouble(4, detven.getValor_total());
+			ps.setDouble(5, detven.getValor_venta());
+			ps.setDouble(6, detven.getValoriva());
+			
+			
+			resul=ps.executeUpdate()>0;
+		} catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "error al insertar: "+ex);
+		}
+		return resul;
+	}
 	
 	
 	
