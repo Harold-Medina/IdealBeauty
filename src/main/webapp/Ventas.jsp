@@ -55,8 +55,8 @@ if(request.getParameter("welcome")!=null)
 <%
 if(request.getParameter("mens")!=null)
 {
-	cedulaUsuario="";cedulaCliente="";
-	nombreUsuario="";nombreCliente="";
+	/*cedulaUsuario=""*/;cedulaCliente="";
+	/*nombreUsuario=""*/;nombreCliente="";
 	consecutivo="";
 	mensaje=request.getParameter("mens");
 	/*NUEVO DANIEL*/

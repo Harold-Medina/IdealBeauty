@@ -67,6 +67,9 @@ public class Venta extends HttpServlet {
 				}
 			}
 			*/
+		
+		boolean detalleV=false;
+		
 		/*NUEVA DANIEL*/
 		if(request.getParameter("Confirmar")!=null) {			
 			
@@ -84,52 +87,10 @@ public class Venta extends HttpServlet {
 			
 			VentasDTO ventaDto = new VentasDTO(cedulaUsuario,cedulaCliente,ivaventa,total_venta,valor_venta);
 			
-		if(request.getParameter("prod1")!=null) {
-			int cantidad_producto= Integer.parseInt(request.getParameter("cant1"));
-			long codigo_producto= Long.parseLong(request.getParameter("prod1"));
-			long codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
-			/*
-			float valor_total = Float.parseFloat(request.getParameter("prodtot1") );
-			float valor_ventaprod= Float.parseFloat(request.getParameter("valven1") );
-			float valoriva= Float.parseFloat(request.getParameter("totiva1") );
-			*/
-			double valor_total = Double.parseDouble(request.getParameter("prodtot1") );
-			double valor_ventaprod= Double.parseDouble(request.getParameter("valven1") );
-			double valoriva= Double.parseDouble(request.getParameter("totiva1") );
-			
-			DetVenDTO detvendto=new DetVenDTO(cantidad_producto,codigo_producto,codigo_venta,valor_total,valor_ventaprod, valoriva);
-			detventaDao.Inserta_detalle_venta(detvendto);
-		}
+		/*codigo antes*/
 		
-		if(request.getParameter("prod2")!=null) {
-			int cantidad_producto= Integer.parseInt(request.getParameter("cant2"));
-			long codigo_producto= Long.parseLong(request.getParameter("prod2"));
-			long codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
-			double valor_total = Double.parseDouble(request.getParameter("prodtot2") );
-			double valor_ventaprod= Double.parseDouble(request.getParameter("valven2") );
-			double valoriva= Double.parseDouble(request.getParameter("totiva2") );
-			
-			
-			DetVenDTO detvendto=new DetVenDTO(cantidad_producto,codigo_producto,codigo_venta,valor_total,valor_ventaprod, valoriva);
-			detventaDao.Inserta_detalle_venta(detvendto);
-		}	
-		
-		if(request.getParameter("prod3")!=null) {
-			int cantidad_producto= Integer.parseInt(request.getParameter("cant3"));
-			long codigo_producto= Long.parseLong(request.getParameter("prod3"));
-			long codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
-			double valor_total = Double.parseDouble(request.getParameter("prodtot3") );
-			double valor_ventaprod= Double.parseDouble(request.getParameter("valven3") );
-			double valoriva= Double.parseDouble(request.getParameter("totiva3") );
-			
-			
-			DetVenDTO detvendto=new DetVenDTO(cantidad_producto,codigo_producto,codigo_venta,valor_total,valor_ventaprod, valoriva);
-			detventaDao.Inserta_detalle_venta(detvendto);
-		}
-
-		
-		
-			if(ventaDao.Insertar_Venta(ventaDto)) { 
+			if(ventaDao.Insertar_Venta(ventaDto)) {
+				detalleV=true;
 				response.sendRedirect("Ventas.jsp?mens=Venta registrada exitosamente.");
 			}else {
 				response.sendRedirect("Ventas.jsp?mens=La Venta no se registro.");
@@ -264,6 +225,51 @@ public class Venta extends HttpServlet {
 				
 			}
 		/*daniel*/
+			
+			if(detalleV==true) {
+				if(request.getParameter("prod1")!=null) {
+					int cantidad_producto= Integer.parseInt(request.getParameter("cant1"));
+					long codigo_producto= Long.parseLong(request.getParameter("prod1"));
+					long codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
+					/*
+					float valor_total = Float.parseFloat(request.getParameter("prodtot1") );
+					float valor_ventaprod= Float.parseFloat(request.getParameter("valven1") );
+					float valoriva= Float.parseFloat(request.getParameter("totiva1") );
+					*/
+					double valor_total = Double.parseDouble(request.getParameter("prodtot1") );
+					double valor_ventaprod= Double.parseDouble(request.getParameter("valven1") );
+					double valoriva= Double.parseDouble(request.getParameter("totiva1") );
+					
+					DetVenDTO detvendto=new DetVenDTO(cantidad_producto,codigo_producto,codigo_venta,valor_total,valor_ventaprod, valoriva);
+					detventaDao.Inserta_detalle_venta(detvendto);
+				}
+				
+				if(request.getParameter("prod2")!=null) {
+					int cantidad_producto= Integer.parseInt(request.getParameter("cant2"));
+					long codigo_producto= Long.parseLong(request.getParameter("prod2"));
+					long codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
+					double valor_total = Double.parseDouble(request.getParameter("prodtot2") );
+					double valor_ventaprod= Double.parseDouble(request.getParameter("valven2") );
+					double valoriva= Double.parseDouble(request.getParameter("totiva2") );
+					
+					
+					DetVenDTO detvendto=new DetVenDTO(cantidad_producto,codigo_producto,codigo_venta,valor_total,valor_ventaprod, valoriva);
+					detventaDao.Inserta_detalle_venta(detvendto);
+				}	
+				
+				if(request.getParameter("prod3")!=null) {
+					int cantidad_producto= Integer.parseInt(request.getParameter("cant3"));
+					long codigo_producto= Long.parseLong(request.getParameter("prod3"));
+					long codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
+					double valor_total = Double.parseDouble(request.getParameter("prodtot3") );
+					double valor_ventaprod= Double.parseDouble(request.getParameter("valven3") );
+					double valoriva= Double.parseDouble(request.getParameter("totiva3") );
+					
+					
+					DetVenDTO detvendto=new DetVenDTO(cantidad_producto,codigo_producto,codigo_venta,valor_total,valor_ventaprod, valoriva);
+					detventaDao.Inserta_detalle_venta(detvendto);
+				}
+			}
 		
 		
 		
