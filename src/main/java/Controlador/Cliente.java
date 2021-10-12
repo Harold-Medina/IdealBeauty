@@ -74,7 +74,7 @@ public class Cliente extends HttpServlet {
 	     	}
          }
 		
-		if(request.getParameter("actualizar")!=null) {
+		if(request.getParameter("update")!=null) {
 			String email,nombre,direccion,telefono;
 			long cedula;
 			cedula = Long.parseLong(request.getParameter("ced"));
@@ -85,7 +85,7 @@ public class Cliente extends HttpServlet {
 			
 			ClienteDTO clidto_Act = new ClienteDTO(cedula,direccion,email,nombre,telefono);
 		    
-			String op=request.getParameter("actualizar");
+			String op=request.getParameter("update");
 			if(op.equals("true")) {
 				if(clientedao.ActualizarCliente(clidto_Act)) {
 			      	
@@ -101,11 +101,11 @@ public class Cliente extends HttpServlet {
 		}
 		
 		
-		if(request.getParameter("eliminar")!=null) {
+		if(request.getParameter("delete")!=null) {
 			long num_cedula;
 			num_cedula = Long.parseLong(request.getParameter("ced"));
 			
-			String op=request.getParameter("eliminar");
+			String op=request.getParameter("delete");
 			
 			if(op.equals("true")) {
 				if(clientedao.EliminarCliente(num_cedula)) {
@@ -114,7 +114,7 @@ public class Cliente extends HttpServlet {
 					response.sendRedirect("Clientes.jsp?men=El Cliente no se Elimino");
 				}
 			}else {
-				response.sendRedirect("Clientes.jsp");
+				response.sendRedirect("Clientes.jsp?men=Usted ha cancelado la accion: Eliminar");
 			}
 		}
 		

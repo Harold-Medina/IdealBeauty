@@ -131,10 +131,10 @@ if(request.getParameter("men")!=null){
 			  <input type="submit" name="registrar" value="Registrar" class="btn">
 			 </td>
 			 <td> 
-		      <input type="submit" onclick="return confiupdate();" name="actualizar" value="Actualizar" id="update"class="btn">
+		      <input type="submit" onclick="return confiupdate();" value="Actualizar" name="update"  id="update" class="btn">
 			 </td>
 			 <td>
-			  <input type="submit" onclick="return confiborrar();" name="eliminar" value="Eliminar" id="delete" class="btn">
+			  <input type="submit" onclick="return confiborrar();" value="Eliminar" name="delete"  id="delete" class="btn">
 		     </td>
 		     <td>
 			  <input type="submit" value="Limpiar" name="limpiar" class="btn">

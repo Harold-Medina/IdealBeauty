@@ -73,7 +73,7 @@ public class Proveedor extends HttpServlet {
          }
 		
 		
-		if(request.getParameter("actualizar")!=null) {
+		if(request.getParameter("update")!=null) {
 			String ciudad,direccion,nombre,telefono;
 			long nit;
 			nit = Long.parseLong(request.getParameter("nitprov"));
@@ -84,7 +84,7 @@ public class Proveedor extends HttpServlet {
 			
 			ProveedorDTO provDto_Act = new ProveedorDTO(nit,ciudad,direccion,nombre,telefono);
 			
-			String op=request.getParameter("actualizar");
+			String op=request.getParameter("update");
 			
 			if(op.equals("true")) {			
 				if(proveedorDao.ActualizarProveedor(provDto_Act)) {
@@ -94,15 +94,17 @@ public class Proveedor extends HttpServlet {
 			      //JOptionPane.showMessageDialog(null, "El Proveedor no se Actualizo");	
 		          response.sendRedirect("Proveedores.jsp?men=El Proveedor no se Actualizo");
 			    }
-		   }
+		   }else {
+				response.sendRedirect("Proveedores.jsp?men=Usted ha cancelado la accion: Actualizar");
+			}
 		}
 		
 		
-		if(request.getParameter("eliminar")!=null) {
+		if(request.getParameter("delete")!=null) {
 			long codnit;			
 			codnit = Long.parseLong(request.getParameter("nitprov"));
 									
-			String op =request.getParameter("eliminar");
+			String op =request.getParameter("delete");
 			
 			if(op.equals("true")) {
 				if(proveedorDao.EliminarProveedor(codnit)) {
@@ -111,7 +113,7 @@ public class Proveedor extends HttpServlet {
 					response.sendRedirect("Proveedores.jsp?men=El Proveedor no se Elimino");
 				}
 			}else {
-				response.sendRedirect("Proveedores.jsp");
+				response.sendRedirect("Proveedores.jsp?men=Usted ha cancelado la accion: Eliminar");
 			}
 		}	
 		

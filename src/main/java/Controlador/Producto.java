@@ -70,18 +70,18 @@ public class Producto extends HttpServlet {
 				    //response.sendRedirect("Productos.jsp?men=Archivo Cargado Correctamente");
 			        if(proDao.CargarProductos(Url+nombre+".csv")) {
 			        	//JOptionPane.showMessageDialog(null, "Productos Registrados Correctamente");
-			        	response.sendRedirect("Productos.jsp?men=Productos Registrados Correctamente");
+			        	response.sendRedirect("ProductosArchivo.jsp?men=Productos Registrados Correctamente");
 			        }else {
 			        	//JOptionPane.showMessageDialog(null, "Productos no se Registraron");
-			        	response.sendRedirect("Productos.jsp?men=Productos no se Registraron");
+			        	response.sendRedirect("ProductosArchivo.jsp?men=Productos no se Registraron");
 			        }
 				}catch(Exception e) {
 					//JOptionPane.showMessageDialog(null, "Error al cargar el Archivo"+e);
-					response.sendRedirect("Productos.jsp?men=Error al Cargar el Archivo");
+					response.sendRedirect("ProductosArchivo.jsp?men=Error al Cargar el Archivo");
 				}
 			}else {
 				//JOptionPane.showMessageDialog(null, "Formato de Archivo no Permitido");
-				response.sendRedirect("Productos.jsp?men=Formato de Archivo no Permitido");
+				response.sendRedirect("ProductosArchivo.jsp?men=Formato de Archivo no Permitido");
 			}
 		}
 		
@@ -131,7 +131,7 @@ public class Producto extends HttpServlet {
          }
 		
 		
-		if(request.getParameter("actualizar")!=null) {
+		if(request.getParameter("update")!=null) {
 			String nombre;
 			long codigo,nit;			
 			double ivacom,preciocom,precioven;
@@ -145,7 +145,7 @@ public class Producto extends HttpServlet {
 			
 			ProductoDTO proddto_Act = new ProductoDTO(codigo,ivacom,nit,nombre,preciocom,precioven);
 					    
-			String op=request.getParameter("actualizar");
+			String op=request.getParameter("update");
 			if(op.equals("true")) {
 				if(proDao.ActualizarProducto(proddto_Act)) {
 			      	
@@ -161,11 +161,11 @@ public class Producto extends HttpServlet {
 		}
 		
 		
-		if(request.getParameter("eliminar")!=null) {
+		if(request.getParameter("delete")!=null) {
 			long num_codigo;
 			num_codigo = Long.parseLong(request.getParameter("cod"));
 			
-			String op=request.getParameter("eliminar");
+			String op=request.getParameter("delete");
 			
 			if(op.equals("true")) {
 				if(proDao.EliminarProducto(num_codigo)) {
@@ -174,7 +174,7 @@ public class Producto extends HttpServlet {
 					response.sendRedirect("ProductosActualizar.jsp?men=El Producto no se Elimino");
 				}
 			}else {
-				response.sendRedirect("ProductosActualizar.jsp");
+				response.sendRedirect("ProductosActualizar.jsp?men=Usted ha cancelado la accion: Eliminar");
 			}
 		}
 		
