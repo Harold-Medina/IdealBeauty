@@ -55,12 +55,12 @@ if(request.getParameter("mens")!=null)
 	nombreUsuario="";nombreCliente="";
 	consecutivo="";
 	mensaje=request.getParameter("mens");
-	/*NUEVO DANIEL*/
+
 	prod1="";prod2="";prod3="";
 	nompro1="";nompro2="";nompro3="";
 	costu1="";costu2="";costu3="";
 	iva1="";iva2="";iva3="";
-	/**/
+
 	
 	out.print("<script>alert('"+mensaje+"')</script>");
 }
@@ -143,8 +143,6 @@ if(request.getParameter("prod3")!=null){
 
 %>
 
-<!-- daniel -->
-
 <body>
 <header id="o">
 		<nav class="op">
@@ -220,7 +218,7 @@ if(request.getParameter("prod3")!=null){
 			 			</tr>
 			 			<tr>
 			 				<th>
-								<input id="prod2" name="prod2" value="<%=prod2%>" class="codpr blue" type="number">
+								<input id="prod2" name="prod2" value="<%=prod2%>" class="codpr" type="number">
 								<input id="cons2" type="submit" name="Consultar2" value="Ok" class="btn1"></th>
 			 				<th><input id="nompro2" name="nompro2" value="<%=nompro2%>" class="inptransp" ></th><!-- disabled -->
 			 				<th><input id="a2" name="costu2" value="<%=costu2%>" class="inptransp" ></th><!-- disabled -->
