@@ -128,6 +128,18 @@ table{
 	
 }
 
+.izq {
+	float: left;
+}
+
+.der {
+	float: right;
+}
+
+.pad {
+	margin: 20px;
+}
+
 .centr {
 	margin: 0 20%;
 	/* border: 1px solid;*/

@@ -32,10 +32,6 @@ if (request.getParameter("cedulaUsu")!=null){
 cedulaUsuario= request.getParameter("cedulaUsu");
 nombreUsuario=request.getParameter("nombreUsu");
 }
-if (request.getParameter("cedula-user")!=null){
-	cedulaUsuario=request.getParameter("cedula-user");
-	nombreUsuario=request.getParameter("nombre-user");
-}
 if (request.getParameter("cedulaCli")!=null){
 cedulaCliente= request.getParameter("cedulaCli");
 nombreCliente=request.getParameter("nombreCli");
@@ -55,8 +51,8 @@ if(request.getParameter("welcome")!=null)
 <%
 if(request.getParameter("mens")!=null)
 {
-	/*cedulaUsuario=""*/;cedulaCliente="";
-	/*nombreUsuario=""*/;nombreCliente="";
+	cedulaUsuario="";cedulaCliente="";
+	nombreUsuario="";nombreCliente="";
 	consecutivo="";
 	mensaje=request.getParameter("mens");
 	/*NUEVO DANIEL*/
@@ -79,7 +75,19 @@ if(request.getParameter("mens")!=null)
 }
 %>
 
-<!-- NUEVO DANIEL -->
+<%
+if (request.getParameter("limpiar")!=null)
+	{cedulaUsuario="";cedulaCliente="";
+	nombreUsuario="";nombreCliente="";
+	consecutivo="";
+	prod1="";prod2="";prod3="";
+	nompro1="";nompro2="";nompro3="";
+	costu1="";costu2="";costu3="";
+	iva1="";iva2="";iva3="";
+	estado="enabled";
+	}
+%>
+
 <%
 if(request.getParameter("nompro1")!=null){
 	nompro1=request.getParameter("nompro1");
@@ -146,7 +154,7 @@ if(request.getParameter("prod3")!=null){
 		       <li><a href="Clientes.jsp">Clientes</a></li>
 		        <li><a href="Proveedores.jsp">Proveedores</a></li>
 		       <li><a href="Productos.jsp">Productos</a></li>  
-		       <li><a href="Ventas.jsp">Caja</a></li>
+		       <li><a href="Ventas.jsp">Ventas</a></li>
 		         <li><a href="Reportes.jsp">Reportes</a></li> 
 			</ul>
 		</nav>
@@ -159,11 +167,11 @@ if(request.getParameter("prod3")!=null){
 			<tr>
 			 <th>
 			  <label>Usuario</label>
-			  <input type="text" placeholder="ingrese Cédula" name="cedulaUsu1" value="<%=cedulaUsuario%>" class="inptransp" <%=estado%>>
+			  <input type="number" placeholder="ingrese Cédula" name="cedulaUsu1" value="<%=cedulaUsuario%>" <%=estado%> required>
 			  <input placeholder="ingrese Cédula" name="cedulaUsu" value="<%=cedulaUsuario%>"  type="hidden">
 			 </th>
 			 <th>
-			  <input type="text" placeholder="nombre usuario" name="nombreUsu" value="<%=nombreUsuario%>" class="inptransp" <%=estado%>>
+			  <input type="text" placeholder="nombre usuario" name="nombreUsu" value="<%=nombreUsuario%>" class="inptransp nombre" <%=estado%>>
 			  </th>
 			 <th>
 			  <label>Consecutivo</label>
@@ -173,7 +181,7 @@ if(request.getParameter("prod3")!=null){
 			<tr>
 			 <th>
 			  <label>Cliente</label>
-			  <input type="number" placeholder="ingrese Cédula" name="cedulaCli1" value="<%=cedulaCliente%>" <%=estado%>>
+			  <input type="number" placeholder="ingrese Cédula" name="cedulaCli1" value="<%=cedulaCliente%>" <%=estado%> required>
 			  <input placeholder="ingrese Cédula" name="cedulaCli" value="<%=cedulaCliente%>" type="hidden">
 			 </th>
 			 <th>
@@ -200,39 +208,39 @@ if(request.getParameter("prod3")!=null){
 			 		<tbody>
 				 		<tr>
 			 				<th>
-								<input id="prod2" name="prod1" value="<%=prod1%>" class="codpr" type="number"></input>
+								<input id="prod1" name="prod1" value="<%=prod1%>" class="codpr" type="number">
 								<input id="cons1" type="submit" name="Consultar1" value="Ok" class="btn1"></th>
-			 				<th><input id="nompro" name="nompro1" value="<%=nompro1%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="a1" name="costu1" value="<%=costu1%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="b1" name="cant1" class="peq"></input></th>
-							<th><input id="iva1" name="iva1" value="<%=iva1%>" class="inptranspp" >%</input></th><!-- disabled -->
-			 				<th><input id="valven1" name="valven1" value="<%=valven1%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="totiva1" name="totiva1" value="<%=totiva1%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="prodtot1" name="prodtot1" value="<%=prodtot1%>" class="inptranspp"  ></input></th> <!-- disabled -->
+			 				<th><input id="nompro" name="nompro1" value="<%=nompro1%>" class="inptransp" ></th><!-- disabled -->
+			 				<th><input id="a1" name="costu1" value="<%=costu1%>" class="inptransp" ></th><!-- disabled -->
+			 				<th><input id="b1" name="cant1" class="peq" type="number"></th>
+			 				<th><input id="prodtot1" name="prodtot1" value="<%=prodtot1%>" class="inptransp"  ></th> <!-- disabled -->
+							<th><input type="hidden" id="iva1" name="iva1" value="<%=iva1%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th><input type="hidden" id="valven1" name="valven1" value="<%=valven1%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th><input type="hidden" id="totiva1" name="totiva1" value="<%=totiva1%>" class="inptranspp" ></th><!-- disabled -->
 			 			</tr>
 			 			<tr>
 			 				<th>
-								<input id="prod2" name="prod2" value="<%=prod2%>" class="codpr blue" type="number"></input>
+								<input id="prod2" name="prod2" value="<%=prod2%>" class="codpr blue" type="number">
 								<input id="cons2" type="submit" name="Consultar2" value="Ok" class="btn1"></th>
-			 				<th><input id="nompro2" name="nompro2" value="<%=nompro2%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="a2" name="costu2" value="<%=costu2%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="b2" name="cant2" class="peq"></input></th>
-							<th><input id="iva2" name="iva2" value="<%=iva2%>" class="inptranspp" >%</input></th><!-- disabled -->
-			 				<th><input id="valven2" name="valven2" value="<%=valven2%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="totiva2" name="totiva2" value="<%=totiva2%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="prodtot2" name="prodtot2" value="<%=prodtot2%>" class="inptranspp"  ></input></th><!-- disabled -->
+			 				<th><input id="nompro2" name="nompro2" value="<%=nompro2%>" class="inptransp" ></th><!-- disabled -->
+			 				<th><input id="a2" name="costu2" value="<%=costu2%>" class="inptransp" ></th><!-- disabled -->
+			 				<th><input id="b2" name="cant2" class="peq" type="number"></th>
+			 				<th><input id="prodtot2" name="prodtot2" value="<%=prodtot2%>" class="inptransp"  ></th><!-- disabled -->
+							<th><input type="hidden" id="iva2" name="iva2" value="<%=iva2%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th><input type="hidden" id="valven2" name="valven2" value="<%=valven2%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th><input type="hidden" id="totiva2" name="totiva2" value="<%=totiva2%>" class="inptranspp" ></th><!-- disabled -->
 			 			</tr>
 			 			<tr>
 			 				<th>
 								<input id="prod3" name="prod3" value="<%=prod3%>" class="codpr" type="number"></input>
 								<input id="cons3" type="submit" name="Consultar3" value="Ok" class="btn1"></th>
-			 				<th><input id="nompro3" name="nompro3" value="<%=nompro3%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="a3" name="costu3" value="<%=costu3%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="b3" name="cant3" class="peq"></input></th>
-							<th><input id="iva3" name="iva3" value="<%=iva3%>" class="inptranspp" >%</input></th>
-			 				<th><input id="valven3" name="valven3" value="<%=valven3%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="totiva3" name="totiva3" value="<%=totiva3%>" class="inptranspp" ></input></th><!-- disabled -->
-			 				<th><input id="prodtot3" name="prodtot3" value="<%=prodtot3%>" class="inptranspp"  ></input></th><!-- disabled -->
+			 				<th><input id="nompro3" name="nompro3" value="<%=nompro3%>" class="inptransp" ></th><!-- disabled -->
+			 				<th><input id="a3" name="costu3" value="<%=costu3%>" class="inptransp" ></th><!-- disabled -->
+			 				<th><input id="b3" name="cant3" class="peq" type="number"></th>
+			 				<th><input id="prodtot3" name="prodtot3" value="<%=prodtot3%>" class="inptransp"  ></th><!-- disabled -->
+							<th><input type="hidden" id="iva3" name="iva3" value="<%=iva3%>" class="inptranspp" ></th>
+			 				<th><input type="hidden" id="valven3" name="valven3" value="<%=valven3%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th><input type="hidden" id="totiva3" name="totiva3" value="<%=totiva3%>" class="inptranspp" ></th><!-- disabled -->
 			 			</tr>
 				 	</tbody>
 			 		<!-- daniel -->
@@ -245,12 +253,12 @@ if(request.getParameter("prod3")!=null){
 			 		<table id="resultados">
 			 			<tr>
 			 				<!-- <td><input type="submit" name="calcular" value="Calcular" class="btn1" id="mult"></td> -->
-			 				<td></td>
+			 				<td><input type="button" name="calcular" value="Calcular" class="btn1" id="mult"></td>
 			 				<td><label> Total venta</label></td>
 			 				<td ><input  id="totv" name="valorventa" type="text" class="inptransp"></td>
 			 			</tr>
 			 			<tr>
-			 				<td><input type="submit" name="Confirmar" value="Confirmar" class="btn1"></td>
+			 				<td><input type="submit" name="Confirmar" value="Confirmar" class="btn1 btnV"></td>
 			 				<td><label> Total IVA</label></td>
 			 				<td ><input  id="ivatotalfinal" name="ivatotal" type="text" class="inptransp"></td><!--  -->
 			 			</tr>
@@ -263,11 +271,8 @@ if(request.getParameter("prod3")!=null){
 			 </td>
 			 </tr>
 			</table>
+		<input type="submit" name="limpiar" value="limpiar" class="btn1">
 	</Form>
-	<div>
-		<!--  <button id="mas" class="btn1" >Agregar producto</button> -->
-		<input type="submit" name="calcular" value="Calcular" class="btn1" id="mult">
-	</div>	
 	<!-- 
 	<div>
 		<button id="mas" class="btn1" >Agregar producto</button>

@@ -5,11 +5,6 @@ public class DetVenDTO {
 	private int cantidad_producto;
 	private long codigo_producto;
 	private long codigo_venta;
-	/*
-	private float valor_total;
-	private float valor_venta;
-	private float valoriva;
-	*/
 	private double valor_total;
 	private double valor_venta;
 	private double valoriva;

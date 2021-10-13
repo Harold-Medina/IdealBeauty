@@ -185,7 +185,7 @@ public class VentasDAO {
 			
 			resul=ps.executeUpdate()>0;
 		} catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "error al insertar: "+ex);
+			JOptionPane.showMessageDialog(null, "error al insertar detalle de venta: "+ex);
 		}
 		return resul;
 	}

@@ -31,26 +31,6 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 	
 		UsuarioDAO usuDao = new UsuarioDAO();
 		
-		if(request.getParameter("send")!=null) {
-			
-			String usuario,clave;
-			String mensaje;
-			
-			usuario=request.getParameter("user");
-			clave=request.getParameter("key");
-			
-			if(usuario.equals("admininicial") && clave.equals("admin123456")) {
-				/*JOptionPane.showMessageDialog(null, "Bienvenido Administrador");*/
-				mensaje="Bienvenido Administrador";
-				response.sendRedirect("Usuarios.jsp?mens="+mensaje);
-			}else {
-				/*JOptionPane.showMessageDialog(null, "datos incorrectos");*/
-				mensaje="Datos incorrectos";
-				response.sendRedirect("login.jsp?mens="+mensaje);
-			}	
-		}
-		
-		
 		if(request.getParameter("enviar")!=null) {
 			
 			String usuario,clave,usuariodb="",clavedb="",nombredb="";
@@ -82,7 +62,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 				/*JOptionPane.showMessageDialog(null, "Bienvenido Administrador");*/
 				mensaje=("Bienvenido "+nombredb);
 				/*response.sendRedirect("Ventas.jsp?mens="+mensaje+"&&cedulaUsu="+ceduladb+"&&nombreUsu"+nombredb);*/
-				response.sendRedirect("Ventas.jsp?cedula-user="+ceduladb+"&&nombre-user="+nombredb+"&&welcome="+mensaje);
+				response.sendRedirect("Ventas.jsp?welcome="+mensaje);
 			}else {
 				/*JOptionPane.showMessageDialog(null, "datos incorrectos");*/
 				mensaje="Datos incorrectos";

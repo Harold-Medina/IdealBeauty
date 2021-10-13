@@ -14,42 +14,12 @@
 
 <%! String msgg=""; %>
 	<div class="log">
+			
 		<div class="log1">
 			<form action="loginn" method="post" id="formul">
 			    <div class="input">
 			    	<h1 id="ideal"><a href="Index.jsp" id="principal">Ideal Beauty</a></h1>
 			    </div>
-			    <h3 class="leyenda">Ingresa como Administrador</h3>
-			    <hr>			
-			    <div > 
-			        <input type="text" placeholder="Ingrese su Usuario" name="user" class="input1" required>
-			    </div>
-			    <div>
-			        <input type="password" placeholder="Ingrese su Contraseña" name="key" class="input1" id="inp2" required>
-			    </div>			    
-			   <div id=status>
-					<h5 style=" text-align: right; margin:0px;"><%
-					if(request.getParameter("mens")!=null)
-					{
-					msgg=request.getParameter("mens");
-					}
-					%>
-					<%=msgg %></h5>
-				</div>
-			    <div>
-			        <div><input type="submit" value="Aceptar" name="send"  class="boton"></div>
-			        <div><a href="Index.jsp"><input type="button" value="Cancelar" class="boton"></a></div>
-			   </div>
-			   <hr>
-			</form>
-		</div>
-		
-		<div class="log1">
-			<form action="loginn" method="post" id="formul">
-			    <div class="input">
-			    	<h1 id="ideal"><a href="Index.jsp" id="principal">Ideal Beauty</a></h1>
-			    </div>
-			    <h3 class="leyenda">Ingresa como Usuario</h3>
 			    <hr>			
 			    <div > 
 			        <input type="text" placeholder="Ingrese su usuario" name="usuario-user" class="input1" required>
