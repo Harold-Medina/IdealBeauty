@@ -171,7 +171,7 @@ public class VentasDAO {
 	public boolean Inserta_detalle_venta(DetVenDTO detven) {
 		boolean resul=false;
 		try {
-			String sql="INSERT INTO `idealbeauty`.`detalle_ventas` (`cantidad_producto`, `codigo_producto`, `codigo_venta`, `valor_total`, `valor_venta`, `valorIva`) VALUES (?,?,?,?,?,?)";
+			String sql="INSERT INTO `Grupo31_Equipo_2`.`detalle_ventas` (`cantidad_producto`, `codigo_producto`, `codigo_venta`, `valor_total`, `valor_venta`, `valorIva`) VALUES (?,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			
 			ps.setObject(1, detven.getCantidad_producto());

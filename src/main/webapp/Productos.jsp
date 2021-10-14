@@ -3,6 +3,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="botones.css">
 <link rel="stylesheet" type="text/css" href="Admin.css">
 <head>
 <meta charset="ISO-8859-1">
@@ -112,7 +113,7 @@ if(request.getParameter("rest")!=null)
 </fieldset>
 </form>
 
-  <h2><%=mensaje %></h2> 
+ <!--   <h2><%=mensaje %></h2> -->
   
 
 

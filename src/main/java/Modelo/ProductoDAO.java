@@ -124,7 +124,7 @@ public class ProductoDAO {
 		    //ps.setString(1, Url);
 		    resultado=ps.executeUpdate()>0;
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al Insertar Libros "+ex);
+			JOptionPane.showMessageDialog(null, "Error al Insertar Productos "+ex);
 			
 		}	
 		

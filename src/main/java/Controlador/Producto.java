@@ -189,6 +189,12 @@ public class Producto extends HttpServlet {
 			response.sendRedirect("ProductosActualizar.jsp?");
 			}
 		
+		//llamar la pagina para cargar productos por archivo csv
+		if(request.getParameter("regresar")!=null) {
+					       	
+			response.sendRedirect("Productos.jsp?");
+		    }
+		
 		
 		if(request.getParameter("limpiar")!=null) {
 			String nombre;

@@ -140,8 +140,7 @@ public class Venta extends HttpServlet {
 			
 			if(cli!=null) {
 				cedulaC= cli.getCedula_cliente();
-				nombreC =  cli.getNombre_cliente();
-				
+				nombreC =  cli.getNombre_cliente();				
 				Consecutivo=ventaDao.Buscar_Venta();
 				estimado=Consecutivo+1;
 			
