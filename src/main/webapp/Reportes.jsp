@@ -15,7 +15,7 @@
 
 <title> Reportes </title>
 </head>
-<body background="images/fondomodulos14.jpg">
+<body background="images/fondomodulos4.jpg">
 
 <header id="o">
 		<nav class="op">
