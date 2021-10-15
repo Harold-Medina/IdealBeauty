@@ -144,5 +144,7 @@ footer{
 	padding: 15px;
 	text-decoration: none;
 }
-
+.footer__contact{
+	font-size: 1.5rem;
+}
 
