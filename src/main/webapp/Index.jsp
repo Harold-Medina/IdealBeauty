@@ -13,6 +13,13 @@
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="Index.css">
+
+<!-- sophia -->
+<link rel="shortcut icon" href="images/favicon-96x96.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
+
 </head>
 
 <body id="fondo">
@@ -24,10 +31,16 @@
 		       <li><a href="login.jsp">Login</a></li>
 			</ul>
 		</nav>
+	<section class="container">
+     <h1 class="title"> </h1>
+     <h2 class="subtitle"> </h2>
+   </section>
+<div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-0.27,31.08 C149.99,150.00 378.38,-55.75 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+ 
 </header>
 
 <div >
-<img class="i" src="images/girl2.jpg" width="500" height="500">
+<img class="i" src="images/brochas.gif" width="500" height="500">
 </div>
 <label></label>
 
@@ -133,8 +146,13 @@ Por otro lado, también contamos con productos de maquillaje para que pueda demos
 
 <footer>
 	<div>
-	    <h3>SOMOS UNA EMPRESA EMPRENDEDORA</h3> <P1>llámanos o escríbenos para cualquier inquietud de nuestros servicios </P1> <p>-3211234567-</p><h><a href="mailto:idealbeauty@gmail.com">email</a></h>	
-</div>
+	<div class="footer__contact">
+   <h3>Contactanos para cualquier inquietud de nuestros servicios</h3>
+   <h3> telefono </h3>
+   <p> 3211234567 </p>
+   <h3 class="email"><a href="mailto:idealbeauty@gmail.com">idealbeauty@gmail.com</a></h3> 
+   </div></div> 
+   <h2 class="final_title">&copy; Ideal Beauty | D&M corporation</h2>
 </footer>
 </body>
 </html>
