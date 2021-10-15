@@ -69,7 +69,7 @@ public class Venta extends HttpServlet {
 				if(request.getParameter("cant1")!="") {
 				cantidad_producto= Integer.parseInt(request.getParameter("cant1"));
 				codigo_producto= Long.parseLong(request.getParameter("prod1"));
-				codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
+				codigo_venta = ventaDao.Buscar_Venta() ;
 				valor_detalle_total = Double.parseDouble(request.getParameter("prodtot1") );
 				valor_detalle_venta= Double.parseDouble(request.getParameter("valven1") );
 				valor_detalle_iva= Double.parseDouble(request.getParameter("totiva1") );
@@ -83,7 +83,7 @@ public class Venta extends HttpServlet {
 				if(request.getParameter("cant2")!="") {
 					cantidad_producto= Integer.parseInt(request.getParameter("cant2"));
 					codigo_producto= Long.parseLong(request.getParameter("prod2"));
-					codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
+					codigo_venta = ventaDao.Buscar_Venta() ;
 					valor_detalle_total = Double.parseDouble(request.getParameter("prodtot2") );
 					valor_detalle_venta= Double.parseDouble(request.getParameter("valven2") );
 					valor_detalle_iva= Double.parseDouble(request.getParameter("totiva2") );
@@ -97,7 +97,7 @@ public class Venta extends HttpServlet {
 				if(request.getParameter("cant3")!="") {
 					cantidad_producto= Integer.parseInt(request.getParameter("cant3"));
 					codigo_producto= Long.parseLong(request.getParameter("prod3"));
-					codigo_venta = Long.parseLong(request.getParameter("Consecutivo")) ;
+					codigo_venta = ventaDao.Buscar_Venta() ;
 					valor_detalle_total = Double.parseDouble(request.getParameter("prodtot3") );
 					valor_detalle_venta= Double.parseDouble(request.getParameter("valven3") );
 					valor_detalle_iva= Double.parseDouble(request.getParameter("totiva3") );
@@ -140,10 +140,16 @@ public class Venta extends HttpServlet {
 			
 			if(cli!=null) {
 				cedulaC= cli.getCedula_cliente();
-				nombreC =  cli.getNombre_cliente();				
-				Consecutivo=ventaDao.Buscar_Venta();
-				estimado=Consecutivo+1;
-			
+				nombreC =  cli.getNombre_cliente();
+				Consecutivo=0;
+				estimado=0;
+				try{
+					Consecutivo=ventaDao.Buscar_Venta();
+					estimado=Consecutivo+1;
+				}catch(Exception e){
+					Consecutivo=1;
+					estimado=1;
+				};
 				response.sendRedirect("Ventas.jsp?cedulaUsu="+identificacion+"&&nombreUsu="+nombreU+"&&cedulaCli="+cedulaC+"&&nombreCli="+nombreC+"&&consecutivo="+estimado);
 
 			}else{

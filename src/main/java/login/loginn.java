@@ -35,7 +35,6 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			
 			String usuario,clave,usuariodb="",clavedb="",nombredb="";
 			String mensaje;
-			BigInteger ceduladb=null;
 			
 			usuario=request.getParameter("usuario-user");
 			clave=request.getParameter("clave-user");
@@ -48,26 +47,17 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 				
 			clavedb=usu.getPassword();
 			nombredb=usu.getNombre_usuario();
-			ceduladb=usu.getCedula_usuario();
 			usuariodb=usu.getUsuario();
-
-			/*response.sendRedirect("Usuarios.jsp?cedula="+identificacion+"&&email="+email+"&&nombre="+nombre+"&&clave="+clave+"&&usuario="+usuario);*/
-
-			}else {
-				response.sendRedirect("Usuarios.jsp?mens=El Usuario no existe.");
-				}
 			
 			/*LOGIN USER*/
 			if(usuario.equals(usuariodb) && clave.equals(clavedb)) {
-				/*JOptionPane.showMessageDialog(null, "Bienvenido Administrador");*/
 				mensaje=("Bienvenido "+nombredb);
-				/*response.sendRedirect("Ventas.jsp?mens="+mensaje+"&&cedulaUsu="+ceduladb+"&&nombreUsu"+nombredb);*/
 				response.sendRedirect("Usuarios.jsp?welcome="+mensaje);
-			}else {
-				/*JOptionPane.showMessageDialog(null, "datos incorrectos");*/
-				mensaje="Datos incorrectos";
-				response.sendRedirect("login.jsp?mens="+mensaje);
 			}
+
+			}else {
+				response.sendRedirect("login.jsp?mens=La clave o el usuario es incorrecto.");
+				}
 		}
 		
 
