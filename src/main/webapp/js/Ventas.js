@@ -47,23 +47,22 @@ function mul(){
 		document.getElementById("valven"+mul).value=mult.toFixed();
 		document.getElementById("totiva"+mul).value=totiva.toFixed();
 		document.getElementById("prodtot"+mul).value=prodtot.toFixed();
+		document.getElementById("copiaprodtot"+mul).value=prodtot.toFixed();
 		}	
 	}
 	if(mult=null){}else{
 			
-	//var totvjs=document.querySelector("#totv")
-	//totvjs.innerHTML=totven;
+	document.getElementById("copiatotv").value=totven.toFixed();
 	document.getElementById("totv").value=totven.toFixed();
 	
-
-	//var totivajs=document.querySelector("#totiva")
-	//totivajs.innerHTML=totiva;
+	document.getElementById("copiaivatotalfinal").value=ivatotalfinal.toFixed();
 	document.getElementById("ivatotalfinal").value=ivatotalfinal.toFixed();
 	
 	var totveiva= ivatotalfinal+totven
-	//var totveivajs=document.querySelector("#totveiva")
-	//totveivajs.innerHTML=totveiva
+
+	document.getElementById("copiatotveiva").value=totveiva.toFixed();
 	document.getElementById("totveiva").value=totveiva.toFixed();
+	
 	}
 	 	
 }
