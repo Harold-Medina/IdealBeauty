@@ -53,7 +53,9 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			if(usuario.equals(usuariodb) && clave.equals(clavedb)) {
 				mensaje=("Bienvenido "+nombredb);
 				response.sendRedirect("Usuarios.jsp?welcome="+mensaje);
-			}
+			}else {
+				response.sendRedirect("login.jsp?mens=La clave o el usuario es incorrecto.");
+				}
 
 			}else {
 				response.sendRedirect("login.jsp?mens=La clave o el usuario es incorrecto.");
