@@ -39,9 +39,6 @@
  
 </header>
 
-<div >
-<img class="i" src="images/brochas.gif" width="500" height="500">
-</div>
 <label></label>
 
 
