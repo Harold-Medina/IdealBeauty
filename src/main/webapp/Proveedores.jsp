@@ -11,7 +11,7 @@
 <title>Registro Proveedores</title>
 
 </head>
-<body>
+<body background="images/fondomodulos8.jpg">
 
 <%
 	Conexion con=new Conexion();

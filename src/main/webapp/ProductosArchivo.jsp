@@ -10,7 +10,7 @@
 <title>Cargar Productos por Archivo</title>
 
 </head>
-<body>
+<body background="images/fondomodulos12.jpg">
 
 <%
 	Conexion con=new Conexion();

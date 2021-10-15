@@ -13,7 +13,7 @@
 	<title>Registro Clientes</title>
 	
 </head>
-<body>
+<body background="images/fondomodulos7.jpg">
 
 <%
 	Conexion con=new Conexion();

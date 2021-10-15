@@ -62,7 +62,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 				/*JOptionPane.showMessageDialog(null, "Bienvenido Administrador");*/
 				mensaje=("Bienvenido "+nombredb);
 				/*response.sendRedirect("Ventas.jsp?mens="+mensaje+"&&cedulaUsu="+ceduladb+"&&nombreUsu"+nombredb);*/
-				response.sendRedirect("Ventas.jsp?welcome="+mensaje);
+				response.sendRedirect("Usuarios.jsp?welcome="+mensaje);
 			}else {
 				/*JOptionPane.showMessageDialog(null, "datos incorrectos");*/
 				mensaje="Datos incorrectos";

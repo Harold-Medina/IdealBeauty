@@ -12,7 +12,7 @@
 	<title>Registro Usuarios</title>
 	
 </head>
-<body>
+<body background="images/fondomodulos2.jpg">
 <header id="o">
 		<nav class="op">
 			<ul>	

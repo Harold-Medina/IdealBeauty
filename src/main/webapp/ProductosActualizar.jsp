@@ -13,7 +13,7 @@
 	<title>Registro de Productos</title>
 	
 </head>
-<body>
+<body background="images/fondomodulos10.jpg">
 
 <%
 	Conexion con=new Conexion();

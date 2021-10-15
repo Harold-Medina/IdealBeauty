@@ -143,7 +143,7 @@ if(request.getParameter("prod3")!=null){
 
 %>
 
-<body>
+<body background="images/fondomodulos9.jpg">
 <header id="o">
 		<nav class="op">
 			<ul>	
