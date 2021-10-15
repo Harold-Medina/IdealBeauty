@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;*/
 
 import Modelo.ClienteDTO;
 import Modelo.ProductoDAO;
@@ -66,7 +66,7 @@ public class Producto extends HttpServlet {
 			        }
 				    escribir.close();
 				    file.close();
-				    JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
+				    /*JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");*/
 				    //response.sendRedirect("Productos.jsp?men=Archivo Cargado Correctamente");
 			        if(proDao.CargarProductos(Url+nombre+".csv")) {
 			        	//JOptionPane.showMessageDialog(null, "Productos Registrados Correctamente");

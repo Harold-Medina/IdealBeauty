@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;*/
 
 import Controlador.Conexion;
 
@@ -69,7 +69,7 @@ public class VentasDAO {
 				consecutivo=res.getLong(1);
 			}
 		} catch(SQLException e) {
-			JOptionPane.showMessageDialog(null,"error al consultar"+ e);
+			/*JOptionPane.showMessageDialog(null,"error al consultar"+ e);*/
 		}
 		return consecutivo;
 	}
@@ -95,7 +95,7 @@ public class VentasDAO {
 			
 			resul=ps.executeUpdate()>0;
 		} catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "error al insertar: "+ex);
+			/*JOptionPane.showMessageDialog(null, "error al insertar: "+ex);*/
 		}
 		return resul;
 	}
@@ -132,7 +132,7 @@ public class VentasDAO {
 					}
 						
 				 catch(SQLException e) {
-				    	JOptionPane.showMessageDialog(null,"error al consultar"+ e);
+				    	/*JOptionPane.showMessageDialog(null,"error al consultar"+ e);*/
 				 }
 				}
 			
@@ -149,7 +149,7 @@ public class VentasDAO {
 						  }
 						  
 					  }catch(Exception e) {
-						  JOptionPane.showMessageDialog(null,"Error al Consultar el Cliente "+e);  
+						  /*JOptionPane.showMessageDialog(null,"Error al Consultar el Cliente "+e);*/  
 					  }
 			}
 			
@@ -162,7 +162,7 @@ public class VentasDAO {
 				
 				resul=ps.executeUpdate()>0;}
 				
-				catch(SQLException ex){JOptionPane.showMessageDialog(null, "error al inicializar la factura: "+ex);}					
+				catch(SQLException ex){/*JOptionPane.showMessageDialog(null, "error al inicializar la factura: "+ex)*/;}					
 			}
 			return resul;
 		}
@@ -185,7 +185,7 @@ public class VentasDAO {
 			
 			resul=ps.executeUpdate()>0;
 		} catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "error al insertar detalle de venta: "+ex);
+			/*JOptionPane.showMessageDialog(null, "error al insertar detalle de venta: "+ex);*/
 		}
 		return resul;
 	}

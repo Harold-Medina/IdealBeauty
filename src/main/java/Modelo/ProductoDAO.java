@@ -3,7 +3,7 @@ package Modelo;
 import java.sql.*;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;*/
 import Controlador.Conexion;
 
 public class ProductoDAO {
@@ -33,7 +33,7 @@ public class ProductoDAO {
 		   resultado = ps.executeUpdate()>0;
 		   
 		}catch(SQLException e ) {
-			JOptionPane.showMessageDialog(null, "Error al Insertar el Producto "+e);
+			/*JOptionPane.showMessageDialog(null, "Error al Insertar el Producto "+e);*/
 		
 		}
 		return resultado;
@@ -54,7 +54,7 @@ public class ProductoDAO {
 			  }
 			  
 		  }catch(Exception e) {
-			  JOptionPane.showMessageDialog(null,"Error al Consultar el Producto "+e);
+			  /*JOptionPane.showMessageDialog(null,"Error al Consultar el Producto "+e);*/
 			  
 		  }
 		  //retornar el usuario al controlador
@@ -83,7 +83,7 @@ public class ProductoDAO {
 		   resultado = ps.executeUpdate()>0;
 		   
 		}catch(SQLException e ) {
-			JOptionPane.showMessageDialog(null, "Error al Actualizar el Prodcuto "+e);
+			/*JOptionPane.showMessageDialog(null, "Error al Actualizar el Prodcuto "+e);*/
 		
 		}
 		return resultado;
@@ -105,7 +105,7 @@ public class ProductoDAO {
 			   resultado = ps.executeUpdate()>0;
 			   
 			}catch(SQLException e ) {
-				JOptionPane.showMessageDialog(null, "Error al Eliminar el Producto "+e);
+				/*JOptionPane.showMessageDialog(null, "Error al Eliminar el Producto "+e);*/
 			
 			}
 			return resultado;
@@ -124,7 +124,7 @@ public class ProductoDAO {
 		    //ps.setString(1, Url);
 		    resultado=ps.executeUpdate()>0;
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al Insertar Productos "+ex);
+			/*JOptionPane.showMessageDialog(null, "Error al Insertar Productos "+ex);*/
 			
 		}	
 		
@@ -146,7 +146,7 @@ public class ProductoDAO {
 		    lista.add(prod);
 		}
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error"+ex);	}
+			/*JOptionPane.showMessageDialog(null, "Error"+ex);*/	}
 		
 		return lista;
 	}

@@ -12,7 +12,7 @@
 
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="Index.css">
+<link rel="stylesheet" type="text/css" href="index.css">
 
 <!-- sophia -->
 <link rel="shortcut icon" href="images/favicon-96x96.png">
@@ -27,7 +27,7 @@
 <header>
 		<nav class="op">
 			<ul>	
-			   <li><a href="Index.jsp" id="l">Ideal Beauty</a></li>
+			   <li><a href="index.jsp" id="l">Ideal Beauty</a></li>
 		       <li><a href="login.jsp">Login</a></li>
 			</ul>
 		</nav>

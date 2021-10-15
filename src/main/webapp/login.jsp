@@ -18,7 +18,7 @@
 		<div class="log1">
 			<form action="loginn" method="post" id="formul">
 			    <div class="input">
-			    	<h1 id="ideal"><a href="Index.jsp" id="principal">Ideal Beauty</a></h1>
+			    	<h1 id="ideal"><a href="index.jsp" id="principal">Ideal Beauty</a></h1>
 			    </div>
 			    <hr>			
 			    <div > 
@@ -38,7 +38,7 @@
 				</div>
 			    <div>
 			        <div><input type="submit" value="Aceptar" name="enviar"  class="boton"></div>
-			        <div><a href="Index.jsp"><input type="button" value="Cancelar" class="boton"></a></div>
+			        <div><a href="index.jsp"><input type="button" value="Cancelar" class="boton"></a></div>
 			   </div>
 			   <hr>
 			</form>

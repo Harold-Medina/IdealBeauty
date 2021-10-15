@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;*/
 
 import Controlador.Conexion;
 
@@ -34,7 +34,7 @@ public class ProveedorDAO {
 		   resultado = ps.executeUpdate()>0;
 		   
 		}catch(SQLException e ) {
-			JOptionPane.showMessageDialog(null, "Error al Insertar el proveedor"+e);
+			/*JOptionPane.showMessageDialog(null, "Error al Insertar el proveedor"+e);*/
 		
 		}
 		return resultado;
@@ -55,7 +55,7 @@ public class ProveedorDAO {
 			  }
 			  
 		  }catch(Exception e) {
-			  JOptionPane.showMessageDialog(null,"Error al Consultar Proveedor "+e);
+			  /*JOptionPane.showMessageDialog(null,"Error al Consultar Proveedor "+e);*/
 			  
 		  }
 		  //retornar el usuario al controlador
@@ -81,7 +81,7 @@ public class ProveedorDAO {
 		   resultado = ps.executeUpdate()>0;
 		   
 		}catch(SQLException e ) {
-			JOptionPane.showMessageDialog(null, "Error al Actualizar el Proveedor "+e);
+			/*JOptionPane.showMessageDialog(null, "Error al Actualizar el Proveedor "+e);*/
 		
 		}
 		return resultado;
@@ -101,7 +101,7 @@ public class ProveedorDAO {
 		   resultado = ps.executeUpdate()>0;
 		   
 		}catch(SQLException e ) {
-			JOptionPane.showMessageDialog(null, "Error al Eliminar el Proveedor "+e);
+			/*JOptionPane.showMessageDialog(null, "Error al Eliminar el Proveedor "+e);*/
 		
 		}
 		return resultado;
@@ -120,7 +120,7 @@ public class ProveedorDAO {
 		    lista.add(prov);
 		}
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error"+ex);	}
+			/*JOptionPane.showMessageDialog(null, "Error"+ex);*/	}
 		
 		return lista;
 	}

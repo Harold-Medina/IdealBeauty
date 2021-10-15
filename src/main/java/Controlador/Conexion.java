@@ -2,7 +2,7 @@ package Controlador;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;*/
 
 public class Conexion {
 
@@ -19,7 +19,7 @@ public class Conexion {
 			///JOptionPane.showMessageDialog(null,"Conexion ok..");
 			
 		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null,"Error en la conexion.."+e);
+			/*JOptionPane.showMessageDialog(null,"Error en la conexion.."+e);*/
 		}
 		return conec;
 	}

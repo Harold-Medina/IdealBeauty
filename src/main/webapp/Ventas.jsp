@@ -140,7 +140,7 @@ if(request.getParameter("prod3")!=null){
 <header id="o">
 		<nav class="op">
 			<ul>	
-			   <li class="izq"><a href="Index.jsp" id="l">Ideal Beauty</a></li>
+			   <li class="izq"><a href="index.jsp" id="l">Ideal Beauty</a></li>
 			     <li><a href="Usuarios.jsp">Usuarios</a></li> 
 		       <li><a href="Clientes.jsp">Clientes</a></li>
 		        <li><a href="Proveedores.jsp">Proveedores</a></li>

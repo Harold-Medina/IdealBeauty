@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;*/
 
 import Controlador.Conexion;
 
@@ -33,7 +33,7 @@ public class UsuarioDAO {
 			
 			resul=ps.executeUpdate()>0;
 		} catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "error al insertar: "+ex);
+			/*JOptionPane.showMessageDialog(null, "error al insertar: "+ex);*/
 		}
 		return resul;
 	}
@@ -52,7 +52,7 @@ public class UsuarioDAO {
 				usu = new UsuarioDTO(res.getObject(1, BigInteger.class),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 			}
 		} catch(SQLException e) {
-			JOptionPane.showMessageDialog(null,"error al consultar"+ e);
+			/*JOptionPane.showMessageDialog(null,"error al consultar"+ e);*/
 		}
 		
 		return usu;
@@ -72,7 +72,7 @@ public class UsuarioDAO {
 				usu = new UsuarioDTO(res.getObject(1, BigInteger.class),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 			}
 		} catch(SQLException e) {
-			JOptionPane.showMessageDialog(null,"error al consultar"+ e);
+			/*JOptionPane.showMessageDialog(null,"error al consultar"+ e);*/
 		}
 		
 		return usu;
@@ -92,7 +92,7 @@ public class UsuarioDAO {
 			
 			resul=ps.executeUpdate()>0;
 		} catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "error al actualizar: "+ex);
+			/*JOptionPane.showMessageDialog(null, "error al actualizar: "+ex);*/
 		}
 		return resul;
 	}
@@ -107,7 +107,7 @@ public class UsuarioDAO {
 			
 			resul=ps.executeUpdate()>0;
 		} catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "error al Eliminar: "+ex);
+			/*JOptionPane.showMessageDialog(null, "error al Eliminar: "+ex);*/
 		}
 		return resul;
 	}
@@ -127,7 +127,7 @@ public class UsuarioDAO {
 		    lista.add(usu);
 		}
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error"+ex);	}
+			/*JOptionPane.showMessageDialog(null, "Error"+ex);*/	}
 		
 		return lista;
 	}

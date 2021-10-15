@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;*/
 
 import Controlador.Conexion;
 
@@ -36,7 +36,7 @@ public class ClienteDAO {
 		   resultado = ps.executeUpdate()>0;
 		   
 		}catch(SQLException e ) {
-			JOptionPane.showMessageDialog(null, "Error al Insertar el cliente "+e);
+			/*JOptionPane.showMessageDialog(null, "Error al Insertar el cliente "+e);*/
 		
 		}
 		return resultado;
@@ -57,7 +57,7 @@ public class ClienteDAO {
 			  }
 			  
 		  }catch(Exception e) {
-			  JOptionPane.showMessageDialog(null,"Error al Consultar el Cliente "+e);
+			  /*JOptionPane.showMessageDialog(null,"Error al Consultar el Cliente "+e);*/
 			  
 		  }
 		  //retornar el usuario al controlador
@@ -86,7 +86,7 @@ public class ClienteDAO {
 		   resultado = ps.executeUpdate()>0;
 		   
 		}catch(SQLException e ) {
-			JOptionPane.showMessageDialog(null, "Error al Actualizar el cliente "+e);
+			/*JOptionPane.showMessageDialog(null, "Error al Actualizar el cliente "+e);*/
 		
 		}
 		return resultado;
@@ -107,7 +107,7 @@ public class ClienteDAO {
 		   resultado = ps.executeUpdate()>0;
 		   
 		}catch(SQLException e ) {
-			JOptionPane.showMessageDialog(null, "Error al Eliminar el Cliente "+e);
+			/*JOptionPane.showMessageDialog(null, "Error al Eliminar el Cliente "+e);*/
 		
 		}
 		return resultado;
@@ -128,7 +128,7 @@ public class ClienteDAO {
 		    lista.add(cli);
 		}
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error"+ex);	}
+			/*JOptionPane.showMessageDialog(null, "Error"+ex)*/;	}
 		
 		return lista;
 	}

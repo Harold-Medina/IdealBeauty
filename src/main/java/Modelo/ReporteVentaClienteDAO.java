@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
+/*import javax.swing.JOptionPane;*/
 
 import Controlador.Conexion;
 
@@ -32,7 +32,7 @@ public class ReporteVentaClienteDAO {
 		    lista.add(vencli);
 		}
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error"+ex);	}
+			/*JOptionPane.showMessageDialog(null, "Error"+ex);*/	}
 		
 		return lista;
 	  }
