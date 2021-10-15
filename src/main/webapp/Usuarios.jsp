@@ -70,6 +70,14 @@ if(request.getParameter("rest")!=null)
 }
 %>
 
+<%
+if(request.getParameter("welcome")!=null)
+{
+	mensaje=request.getParameter("welcome");
+	out.print("<script>alert('"+mensaje+"')</script>");
+}
+%>
+
 <form action="Usuario" method="post">
 
 	<fieldset>

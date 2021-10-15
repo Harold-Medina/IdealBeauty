@@ -42,13 +42,6 @@ consecutivo=request.getParameter("consecutivo");
 %>
 
 <%
-if(request.getParameter("welcome")!=null)
-{
-	mensaje=request.getParameter("welcome");
-	out.print("<script>alert('"+mensaje+"')</script>");
-}
-%>
-<%
 if(request.getParameter("mens")!=null)
 {
 	cedulaUsuario="";cedulaCliente="";
