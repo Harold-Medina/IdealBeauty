@@ -15,7 +15,7 @@
 
 <title> Reportes </title>
 </head>
-<body background="images/fondomodulos5.jpg">
+<body background="images/fondomodulos14.jpg">
 
 <header id="o">
 		<nav class="op">
@@ -64,12 +64,12 @@
 		
 	</fieldset>	
 	
-<h3 id="titulo-reporte"></h3>
+<h3 id="titulo-reporte" style="color:white"></h3>
 <div></div>
 <button id="btnExportar" style="display: none; margin: 0 auto;"></button>
 <div></div>
 <label></label>
- <table id="tabla" style="margin: 0 auto;" >     
+ <table id="tabla" style="margin: 0 auto; font-size: 1.1em;" >     
 	   
 	
  </table>

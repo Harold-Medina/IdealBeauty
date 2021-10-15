@@ -57,8 +57,8 @@ h2{
 	text-align: center;
 }
 h3{
-	
-	color:#303030;
+	color:white;	
+	/*color:#303030;*/
 	text-align: center;
 }
 
@@ -202,7 +202,7 @@ label{
 #tabla {
     border-collapse: collapse;
     margin: 25px 0;
-    font-size: 0.9em;
+    font-size: 1.1em;
     min-width: 400px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;

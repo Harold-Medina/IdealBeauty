@@ -13,7 +13,7 @@ function listarClientes(){
 		var h3 = document.querySelector("#titulo-reporte")
 		var tabla=document.querySelector("#tabla")
 		 
-	     h3.innerHTML=`<h3>Listado de Clientes</h3>`
+	     h3.innerHTML=`<h3>Listado de Clientes style="color:white"</h3>`
          btnExportar.innerHTML=`<button style="display: inline">Exportar Datos a Excel</button>`         
          tabla.innerHTML=''      
          tabla.innerHTML+=`<thead>
