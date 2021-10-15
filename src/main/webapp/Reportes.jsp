@@ -64,7 +64,7 @@
 		
 	</fieldset>	
 	
-<h3 id="titulo-reporte" style="color:white"></h3>
+<h3 id="titulo-reporte" style="color:#303030"></h3>
 <div></div>
 <button id="btnExportar" style="display: none; margin: 0 auto;"></button>
 <div></div>
