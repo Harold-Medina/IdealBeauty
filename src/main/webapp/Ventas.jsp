@@ -162,7 +162,7 @@ if(request.getParameter("prod3")!=null){
 			  <input placeholder="ingrese Cédula" name="cedulaUsu" value="<%=cedulaUsuario%>"  type="hidden">
 			 </th>
 			 <th>
-			  <input type="text" placeholder="nombre usuario" name="nombreUsu" value="<%=nombreUsuario%>" class="inptransp nombre" <%=estado%>>
+			  <input type="text" placeholder="nombre usuario" name="nombreUsu" value="<%=nombreUsuario%>" class="inptransp nombre" id="nompro" <%=estado%>>
 			  </th>
 			 <th>
 			  <label>Consecutivo</label>
@@ -176,7 +176,7 @@ if(request.getParameter("prod3")!=null){
 			  <input placeholder="ingrese Cédula" name="cedulaCli" value="<%=cedulaCliente%>" type="hidden">
 			 </th>
 			 <th>
-			  <input type="text" placeholder="nombre cliente" name="nombreCli" value="<%=nombreCliente%>" class="inptransp" <%=estado%>>
+			  <input type="text" placeholder="nombre cliente" name="nombreCli" value="<%=nombreCliente%>" class="inptransp" id="nompro" <%=estado%>>
 			 </th>
 			 <th>
 			 	<input type="submit" name="Validar" value="Validar" class="btn1" > 
@@ -188,47 +188,47 @@ if(request.getParameter("prod3")!=null){
 			 	<table id="productos">
 			  		<thead>
 			  			<tr>
-			 				<th>Código del producto</th>
-			 				<th>nombre producto</th>
-			 				<th>costo unitario</th>
-			 				<th>cantidad</th>
-			 				<th>valor total</th>
+			 				<th id="ln">Código del producto</th>
+			 				<th id="ln">nombre producto</th>
+			 				<th id="ln">costo unitario</th>
+			 				<th id="ln">cantidad</th>
+			 				<th id="ln">valor total</th>
 			 			</tr>
 			 		</thead>
 			 		<!-- NUEVO DANIEL --> <!-- quite los disabled -->
 			 		<tbody>
 				 		<tr>
-			 				<th>
+			 				<th id="ln">
 								<input id="prod1" name="prod1" value="<%=prod1%>" class="codpr" type="number">
 								<input id="cons1" type="submit" name="Consultar1" value="Ok" class="btn1"></th>
-			 				<th><input id="nompro" name="nompro1" value="<%=nompro1%>" class="inptransp" ></th><!-- disabled -->
-			 				<th>$<input id="a1" name="costu1" value="<%=costu1%>" class="inptransp" ></th><!-- disabled -->
-			 				<th><input id="b1" name="cant1" class="peq" type="number"></th>
-			 				<th>$<input id="prodtot1" name="prodtot1" value="<%=prodtot1%>" class="inptransp"  ></th> <!-- disabled -->
-							<th><input type="hidden" id="iva1" name="iva1" value="<%=iva1%>" class="inptranspp" ></th><!-- disabled -->
-			 				<th><input type="hidden" id="valven1" name="valven1" value="<%=valven1%>" class="inptranspp" ></th><!-- disabled -->
-			 				<th><input type="hidden" id="totiva1" name="totiva1" value="<%=totiva1%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th id="ln"><input id="nompro" name="nompro1" value="<%=nompro1%>" class="inptransp" ></th><!-- disabled -->
+			 				<th id="ln">$<input id="a1" name="costu1" value="<%=costu1%>" class="inptransp" ></th><!-- disabled -->
+			 				<th id="ln"><input id="b1" name="cant1" class="peq" type="number"></th>
+			 				<th id="ln">$<input id="prodtot1" name="prodtot1" value="<%=prodtot1%>" class="inptransp"  ></th> <!-- disabled -->
+							<th ><input type="hidden" id="iva1" name="iva1" value="<%=iva1%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th ><input type="hidden" id="valven1" name="valven1" value="<%=valven1%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th ><input type="hidden" id="totiva1" name="totiva1" value="<%=totiva1%>" class="inptranspp" ></th><!-- disabled -->
 			 			</tr>
 			 			<tr>
-			 				<th>
+			 				<th id="ln">
 								<input id="prod2" name="prod2" value="<%=prod2%>" class="codpr" type="number">
 								<input id="cons2" type="submit" name="Consultar2" value="Ok" class="btn1"></th>
-			 				<th><input id="nompro2" name="nompro2" value="<%=nompro2%>" class="inptransp" ></th><!-- disabled -->
-			 				<th>$<input id="a2" name="costu2" value="<%=costu2%>" class="inptransp" ></th><!-- disabled -->
-			 				<th><input id="b2" name="cant2" class="peq" type="number"></th>
-			 				<th>$<input id="prodtot2" name="prodtot2" value="<%=prodtot2%>" class="inptransp"  ></th><!-- disabled -->
-							<th><input type="hidden" id="iva2" name="iva2" value="<%=iva2%>" class="inptranspp" ></th><!-- disabled -->
-			 				<th><input type="hidden" id="valven2" name="valven2" value="<%=valven2%>" class="inptranspp" ></th><!-- disabled -->
-			 				<th><input type="hidden" id="totiva2" name="totiva2" value="<%=totiva2%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th id="ln"><input id="nompro" name="nompro2" value="<%=nompro2%>" class="inptransp" ></th><!-- disabled -->
+			 				<th id="ln">$<input id="a2" name="costu2" value="<%=costu2%>" class="inptransp" ></th><!-- disabled -->
+			 				<th id="ln"><input id="b2" name="cant2" class="peq" type="number"></th>
+			 				<th id="ln">$<input id="prodtot2" name="prodtot2" value="<%=prodtot2%>" class="inptransp"  ></th><!-- disabled -->
+							<th ><input type="hidden" id="iva2" name="iva2" value="<%=iva2%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th ><input type="hidden" id="valven2" name="valven2" value="<%=valven2%>" class="inptranspp" ></th><!-- disabled -->
+			 				<th ><input type="hidden" id="totiva2" name="totiva2" value="<%=totiva2%>" class="inptranspp" ></th><!-- disabled -->
 			 			</tr>
 			 			<tr>
-			 				<th>
+			 				<th id="ln">
 								<input id="prod3" name="prod3" value="<%=prod3%>" class="codpr" type="number"></input>
 								<input id="cons3" type="submit" name="Consultar3" value="Ok" class="btn1"></th>
-			 				<th><input id="nompro3" name="nompro3" value="<%=nompro3%>" class="inptransp" ></th><!-- disabled -->
-			 				<th>$<input id="a3" name="costu3" value="<%=costu3%>" class="inptransp" ></th><!-- disabled -->
-			 				<th><input id="b3" name="cant3" class="peq" type="number"></th>
-			 				<th>$<input id="prodtot3" name="prodtot3" value="<%=prodtot3%>" class="inptransp"  ></th><!-- disabled -->
+			 				<th id="ln"><input id="nompro" name="nompro3" value="<%=nompro3%>" class="inptransp" ></th><!-- disabled -->
+			 				<th id="ln">$<input id="a3" name="costu3" value="<%=costu3%>" class="inptransp" ></th><!-- disabled -->
+			 				<th id="ln"><input id="b3" name="cant3" class="peq" type="number"></th>
+			 				<th id="ln">$<input id="prodtot3" name="prodtot3" value="<%=prodtot3%>" class="inptransp"  ></th><!-- disabled -->
 							<th><input type="hidden" id="iva3" name="iva3" value="<%=iva3%>" class="inptranspp" ></th>
 			 				<th><input type="hidden" id="valven3" name="valven3" value="<%=valven3%>" class="inptranspp" ></th><!-- disabled -->
 			 				<th><input type="hidden" id="totiva3" name="totiva3" value="<%=totiva3%>" class="inptranspp" ></th><!-- disabled -->
@@ -246,7 +246,7 @@ if(request.getParameter("prod3")!=null){
 			 				<!-- <td><input type="submit" name="calcular" value="Calcular" class="btn1" id="mult"></td> -->
 			 				<td><input type="button" name="calcular" value="Calcular" class="btn1" id="mult"></td>
 			 				<td><label> Total venta</label></td>
-			 				<td >$<input  id="totv" name="valorventa" type="text" class="inptransp"></td>
+			 				<td>$<input  id="totv" name="valorventa" type="text" class="inptransp"></td>
 			 			</tr>
 			 			<tr>
 			 				<td><input type="submit" name="Confirmar" value="Confirmar" class="btn1 btnV"></td>

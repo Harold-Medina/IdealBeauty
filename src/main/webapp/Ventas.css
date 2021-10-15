@@ -159,6 +159,7 @@ table{
 }
 
 #productos{
+	margin: 15px;
 	width: 100%;
 }
 #resultados{
@@ -192,4 +193,10 @@ table{
     border: none;
        
     border-bottom: white 2px solid;
+}
+#ln{
+	border-right: white 2px solid;
+}
+#nompro{
+	width: 180px;
 }

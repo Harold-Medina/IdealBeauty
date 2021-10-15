@@ -101,7 +101,7 @@ if(request.getParameter("men")!=null){
         <input type="hidden" name="nitprov" value="<%=nit%>">
         <div>
            <label class="l1">Teléfono</label>
-           <input type="text"  name="telefono_proveedor" value="<%=telefono%>" required>
+           <input type="number"  name="telefono_proveedor" value="<%=telefono%>" required>
 			
 		</div>
         <div>

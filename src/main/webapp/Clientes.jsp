@@ -99,7 +99,7 @@ if(request.getParameter("rest")!=null)
 		<input type="hidden" name="ced" value="<%=cedula%>">
 		<div>
 			<label class="l1">Teléfono</label>
-			<input type="text" name="telefono_cliente" value="<%=telefono%>" required>
+			<input type="number" name="telefono_cliente" value="<%=telefono%>" required>
 		</div>
 		<div>
 			<label>Nombre Completo</label>
@@ -107,7 +107,7 @@ if(request.getParameter("rest")!=null)
 		</div>
 		<div>
 			<label>Correo Electronico</label>
-			<input type="text" name="email_cliente" value="<%=email%>" required>
+			<input type="email" name="email_cliente" value="<%=email%>" required>
 		</div>
 		<div>
 			<label class="l1">Dirección</label>
