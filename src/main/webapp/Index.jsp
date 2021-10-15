@@ -143,13 +143,13 @@ Por otro lado, también contamos con productos de maquillaje para que pueda demos
 
 <footer>
 	<div>
-	<div class="footer__contact">
-   <h3>Contactanos para cualquier inquietud de nuestros servicios</h3>
-   <h3> telefono </h3>
-   <p> 3211234567 </p>
-   <h3 class="email"><a href="mailto:idealbeauty@gmail.com">idealbeauty@gmail.com</a></h3> 
+	<div class="footer__contact" >
+   <h3 style="font-size: 1rem;">Contactanos para cualquier inquietud de nuestros servicios</h3>
+   <h3 style="font-size: 1rem;"> telefono </h3>
+   <p style="font-size: 1rem;"> 3211234567 </p>
+   <h3 class="email"><a href="mailto:idealbeauty@gmail.com" style="font-size: 1.5rem;">idealbeauty@gmail.com</a></h3> 
    </div></div> 
-   <h2 class="final_title">&copy; Ideal Beauty | D&M corporation</h2>
+   <h2 class="final_title" style="font-size: 1rem;">&copy; Ideal Beauty | D&M corporation</h2>
 </footer>
 </body>
 </html>
