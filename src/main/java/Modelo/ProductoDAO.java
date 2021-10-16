@@ -32,7 +32,7 @@ public class ProductoDAO {
            // se inserto el libro en la tabla, y enviarselo al controlador el
 		   //resultado, para que este a su vez lo envie a la interfaz
 		   resultado = ps.executeUpdate()>0;
-		   
+		   con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException e ) {
 			/*JOptionPane.showMessageDialog(null, "Error al Insertar el Producto "+e);*/
 		
@@ -52,7 +52,7 @@ public class ProductoDAO {
 			  while(res.next()) {
 				  //en la variable cli cargo los datos del cliente
 				  prod = new ProductoDTO(res.getLong(1),res.getDouble(2),res.getLong(3),res.getString(4),res.getDouble(5),res.getDouble(6));
-			  }
+			  }con.close(); /*SUPER IMPORTANTE*/
 			  
 		  }catch(Exception e) {
 			  /*JOptionPane.showMessageDialog(null,"Error al Consultar el Producto "+e);*/
@@ -82,7 +82,7 @@ public class ProductoDAO {
           // se inserto el cliente en la tabla, y se envia  al controlador el
 		   //resultado, para que este a su vez lo envie a la interfaz
 		   resultado = ps.executeUpdate()>0;
-		   
+		   con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException e ) {
 			/*JOptionPane.showMessageDialog(null, "Error al Actualizar el Prodcuto "+e);*/
 		
@@ -104,7 +104,7 @@ public class ProductoDAO {
 	          // se inserto el libro en la tabla, y enviarselo al controlador el
 			   //resultado, para que este a su vez lo envie a la interfaz
 			   resultado = ps.executeUpdate()>0;
-			   
+			   con.close(); /*SUPER IMPORTANTE*/
 			}catch(SQLException e ) {
 				/*JOptionPane.showMessageDialog(null, "Error al Eliminar el Producto "+e);*/
 			
@@ -124,6 +124,7 @@ public class ProductoDAO {
 		    ps = con.prepareStatement(sql);
 		    //ps.setString(1, Url);
 		    resultado=ps.executeUpdate()>0;
+		    con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "Error al Insertar Productos "+ex);*/
 			
@@ -145,7 +146,7 @@ public class ProductoDAO {
 			
 			prod= new ProductoDTO(res.getLong(1),res.getDouble(2),res.getLong(3),res.getString(4),res.getDouble(5),res.getDouble(6));
 		    lista.add(prod);
-		}
+		}con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "Error"+ex);*/	}
 		

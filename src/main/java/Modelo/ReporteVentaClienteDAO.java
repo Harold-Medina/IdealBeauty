@@ -31,7 +31,7 @@ public class ReporteVentaClienteDAO {
 		while(res.next()) {			
 			vencli= new ReporteVentaClienteDTO(res.getLong(1),res.getDouble(2),res.getString(3));
 		    lista.add(vencli);
-		}
+		}con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "Error"+ex);*/	}
 		

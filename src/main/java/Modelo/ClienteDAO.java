@@ -35,7 +35,7 @@ public class ClienteDAO {
            // se inserto el libro en la tabla, y enviarselo al controlador el
 		   //resultado, para que este a su vez lo envie a la interfaz
 		   resultado = ps.executeUpdate()>0;
-		   
+		   con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException e ) {
 			/*JOptionPane.showMessageDialog(null, "Error al Insertar el cliente "+e);*/
 		
@@ -56,7 +56,7 @@ public class ClienteDAO {
 				  //en la variable cli cargo los datos del cliente
 				  cli= new ClienteDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 			  }
-			  
+			  con.close(); /*SUPER IMPORTANTE*/
 		  }catch(Exception e) {
 			  /*JOptionPane.showMessageDialog(null,"Error al Consultar el Cliente "+e);*/
 			  
@@ -85,7 +85,7 @@ public class ClienteDAO {
           // se inserto el cliente en la tabla, y se envia  al controlador el
 		   //resultado, para que este a su vez lo envie a la interfaz
 		   resultado = ps.executeUpdate()>0;
-		   
+		   con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException e ) {
 			/*JOptionPane.showMessageDialog(null, "Error al Actualizar el cliente "+e);*/
 		
@@ -106,7 +106,7 @@ public class ClienteDAO {
           // se inserto el libro en la tabla, y enviarselo al controlador el
 		   //resultado, para que este a su vez lo envie a la interfaz
 		   resultado = ps.executeUpdate()>0;
-		   
+		   con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException e ) {
 			/*JOptionPane.showMessageDialog(null, "Error al Eliminar el Cliente "+e);*/
 		
@@ -127,7 +127,7 @@ public class ClienteDAO {
 			
 			cli= new ClienteDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 		    lista.add(cli);
-		}
+		}con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "Error"+ex)*/;	}
 		

@@ -65,10 +65,10 @@ public class VentasDAO {
 		
 			ps = con.prepareStatement(sql);
 			res=ps.executeQuery();
-			
 			while(res.next()) {
 				consecutivo=res.getLong(1);
-			}
+				
+			}con.close(); /*SUPER IMPORTANTE*/
 		} catch(SQLException e) {
 			/*JOptionPane.showMessageDialog(null,"error al consultar"+ e);*/
 		}
@@ -95,6 +95,7 @@ public class VentasDAO {
 			*/
 			
 			resul=ps.executeUpdate()>0;
+			con.close(); /*SUPER IMPORTANTE*/
 		} catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "error al insertar: "+ex);*/
 		}
@@ -108,16 +109,7 @@ public class VentasDAO {
 		boolean bandera2 = false;
 		boolean bandera3 = false;
 		Long cedulaUsuario=null;
-		Long cedulaCliente=null;
-		
-			/*String sql="insert into ventas(cedula_cliente, cedula_usuario) values(?,?)";
-			ps=con.prepareStatement(sql);
-			
-			ps.setLong(1, cedulaCliente);
-			ps.setLong(2, cedulaUsuario);
-			
-			resul=ps.executeUpdate()>0; */
-		
+		Long cedulaCliente=null;		
 		
 			if (bandera=true) {
 				try {		
@@ -129,7 +121,8 @@ public class VentasDAO {
 					while(res.next()) {
 						bandera2=true;
 						cedulaUsuario= res.getLong(1); 
-						}
+						
+						}con.close(); /*SUPER IMPORTANTE*/
 					}
 						
 				 catch(SQLException e) {
@@ -147,7 +140,8 @@ public class VentasDAO {
 						  while(res.next()) {
 							  bandera3=true;
 							  cedulaCliente= res.getLong(1);
-						  }
+							  
+						  }con.close(); /*SUPER IMPORTANTE*/
 						  
 					  }catch(Exception e) {
 						  /*JOptionPane.showMessageDialog(null,"Error al Consultar el Cliente "+e);*/  
@@ -161,7 +155,8 @@ public class VentasDAO {
 				ps.setLong(1, cedulaCliente);
 				ps.setLong(2, cedulaUsuario);
 				
-				resul=ps.executeUpdate()>0;}
+				resul=ps.executeUpdate()>0;
+				con.close(); /*SUPER IMPORTANTE*/}
 				
 				catch(SQLException ex){/*JOptionPane.showMessageDialog(null, "error al inicializar la factura: "+ex)*/;}					
 			}
@@ -185,6 +180,7 @@ public class VentasDAO {
 			
 			
 			resul=ps.executeUpdate()>0;
+			con.close(); /*SUPER IMPORTANTE*/
 		} catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "error al insertar detalle de venta: "+ex);*/
 		}

@@ -33,7 +33,7 @@ public class ProveedorDAO {
            // se inserto el libro en la tabla, y enviarselo al controlador el
 		   //resultado, para que este a su vez lo envie a la interfaz
 		   resultado = ps.executeUpdate()>0;
-		   
+		   con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException e ) {
 			/*JOptionPane.showMessageDialog(null, "Error al Insertar el proveedor"+e);*/
 		
@@ -53,7 +53,7 @@ public class ProveedorDAO {
 			  while(res.next()) {
 				  //en usuario cargo los datos del usuario 
 				  prov = new ProveedorDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
-			  }
+			  }con.close(); /*SUPER IMPORTANTE*/
 			  
 		  }catch(Exception e) {
 			  /*JOptionPane.showMessageDialog(null,"Error al Consultar Proveedor "+e);*/
@@ -80,7 +80,7 @@ public class ProveedorDAO {
           // se inserto el libro en la tabla, y enviarselo al controlador el
 		   //resultado, para que este a su vez lo envie a la interfaz
 		   resultado = ps.executeUpdate()>0;
-		   
+		   con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException e ) {
 			/*JOptionPane.showMessageDialog(null, "Error al Actualizar el Proveedor "+e);*/
 		
@@ -100,7 +100,7 @@ public class ProveedorDAO {
           // se inserto el libro en la tabla, y enviarselo al controlador el
 		   //resultado, para que este a su vez lo envie a la interfaz
 		   resultado = ps.executeUpdate()>0;
-		   
+		   con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException e ) {
 			/*JOptionPane.showMessageDialog(null, "Error al Eliminar el Proveedor "+e);*/
 		
@@ -119,7 +119,7 @@ public class ProveedorDAO {
 		while(res.next()) {			
 			prov= new ProveedorDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 		    lista.add(prov);
-		}
+		}con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "Error"+ex);*/	}
 		

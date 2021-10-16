@@ -33,6 +33,7 @@ public class UsuarioDAO {
 			ps.setString(5, usu.getUsuario());
 			
 			resul=ps.executeUpdate()>0;
+			con.close(); /*SUPER IMPORTANTE*/
 		} catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "error al insertar: "+ex);*/
 		}
@@ -51,7 +52,8 @@ public class UsuarioDAO {
 			res=ps.executeQuery();
 			while(res.next()) {
 				usu = new UsuarioDTO(res.getObject(1, BigInteger.class),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
-			}
+				
+			}con.close(); /*SUPER IMPORTANTE*/
 		} catch(SQLException e) {
 			/*JOptionPane.showMessageDialog(null,"error al consultar"+ e);*/
 		}
@@ -71,7 +73,7 @@ public class UsuarioDAO {
 			res=ps.executeQuery();
 			while(res.next()) {
 				usu = new UsuarioDTO(res.getObject(1, BigInteger.class),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
-			}
+			}con.close(); /*SUPER IMPORTANTE*/
 		} catch(SQLException e) {
 			/*JOptionPane.showMessageDialog(null,"error al consultar"+ e);*/
 		}
@@ -92,6 +94,7 @@ public class UsuarioDAO {
 			ps.setObject(5, usu.getCedula_usuario(), java.sql.Types.BIGINT);
 			
 			resul=ps.executeUpdate()>0;
+			con.close(); /*SUPER IMPORTANTE*/
 		} catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "error al actualizar: "+ex);*/
 		}
@@ -107,6 +110,7 @@ public class UsuarioDAO {
 			ps.setString(1, usur);
 			
 			resul=ps.executeUpdate()>0;
+			con.close(); /*SUPER IMPORTANTE*/
 		} catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "error al Eliminar: "+ex);*/
 		}
@@ -126,7 +130,7 @@ public class UsuarioDAO {
 			
 			usu = new UsuarioDTO(res.getObject(1, BigInteger.class),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 		    lista.add(usu);
-		}
+		}con.close(); /*SUPER IMPORTANTE*/
 		}catch(SQLException ex) {
 			/*JOptionPane.showMessageDialog(null, "Error"+ex);*/	}
 		
